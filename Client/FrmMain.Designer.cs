@@ -35,6 +35,7 @@
             this.poslodavacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.poslodavacToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -56,19 +57,20 @@
             this.dodajToolStripMenuItem,
             this.izmeniToolStripMenuItem});
             this.omladinacToolStripMenuItem.Name = "omladinacToolStripMenuItem";
-            this.omladinacToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.omladinacToolStripMenuItem.Size = new System.Drawing.Size(95, 26);
             this.omladinacToolStripMenuItem.Text = "Omladinac";
             // 
             // dodajToolStripMenuItem
             // 
             this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
-            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.dodajToolStripMenuItem.Text = "Dodaj";
+            this.dodajToolStripMenuItem.Click += new System.EventHandler(this.dodajToolStripMenuItem_Click);
             // 
             // izmeniToolStripMenuItem
             // 
             this.izmeniToolStripMenuItem.Name = "izmeniToolStripMenuItem";
-            this.izmeniToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.izmeniToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.izmeniToolStripMenuItem.Text = "Izmeni";
             // 
             // poslodavacToolStripMenuItem
@@ -77,26 +79,35 @@
             this.dodajToolStripMenuItem1,
             this.izmeniToolStripMenuItem1});
             this.poslodavacToolStripMenuItem.Name = "poslodavacToolStripMenuItem";
-            this.poslodavacToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.poslodavacToolStripMenuItem.Size = new System.Drawing.Size(97, 26);
             this.poslodavacToolStripMenuItem.Text = "Poslodavac";
             // 
             // dodajToolStripMenuItem1
             // 
             this.dodajToolStripMenuItem1.Name = "dodajToolStripMenuItem1";
-            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
             this.dodajToolStripMenuItem1.Text = "Dodaj";
             // 
             // izmeniToolStripMenuItem1
             // 
             this.izmeniToolStripMenuItem1.Name = "izmeniToolStripMenuItem1";
-            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
             this.izmeniToolStripMenuItem1.Text = "Izmeni";
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 30);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(800, 420);
+            this.pnlMain.TabIndex = 1;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
@@ -117,5 +128,6 @@
         private System.Windows.Forms.ToolStripMenuItem poslodavacToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem izmeniToolStripMenuItem1;
+        private System.Windows.Forms.Panel pnlMain;
     }
 }

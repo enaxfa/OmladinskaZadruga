@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Operation.cs" />
-    <Compile Include="Request.cs" />
-    <Compile Include="Response.cs" />
-    <Compile Include="Transfer.cs" />
+    <Compile Include="Administrator.cs" />
+    <Compile Include="Communication\Operation.cs" />
+    <Compile Include="Communication\Request.cs" />
+    <Compile Include="Communication\Response.cs" />
+    <Compile Include="Communication\Transfer.cs" />
+    <Compile Include="IDomenskiObjekat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
