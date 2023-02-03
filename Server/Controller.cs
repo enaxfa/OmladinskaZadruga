@@ -1,6 +1,9 @@
 ﻿using Common;
+using Repository.Implementation;
+using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Security.Principal;
 
 namespace Server
 {
@@ -19,27 +22,19 @@ namespace Server
             }
         }
 
-        private List<Administrator> administrators;
+        private IDBRepository<IDomenskiObjekat> repository;
         private Controller()
         {
-            administrators = new List<Administrator>();
-            Administrator a = new Administrator
-            {
-                Ime = "Ena",
-                Prezime = "Fazlic",
-                KorisnickoIme = "enaxfa",
-                Sifra = "123"
-            };
-            administrators.Add(a);
+            repository = new GenericDBRepository();
         }
 
         internal object Login(Administrator administrator)
         {
-            foreach (Administrator a in administrators)
+            foreach (Administrator a in repository.GetAll(new Administrator()))
                 if (a.Equals(administrator))
                     return a;
             return null;
-
+            
         }
     }
 }

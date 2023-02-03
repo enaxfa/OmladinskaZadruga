@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Configuration;
 
 namespace Server
 {
@@ -18,9 +19,9 @@ namespace Server
         public void Connect()
         {
             
-                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                socket.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9000));
-                socket.Listen(5);
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            socket.Bind(new IPEndPoint(IPAddress.Parse(ConfigurationManager.AppSettings["ip"]), int.Parse(ConfigurationManager.AppSettings["port"])));
+            socket.Listen(5);
            
         }
 

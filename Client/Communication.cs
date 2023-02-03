@@ -32,7 +32,7 @@ namespace Client
         public void Connect()
         {
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect("127.0.0.1", 9000);
+            socket.Connect("127.0.0.1", 9999);
             transfer = new Transfer(socket);
         }
 
