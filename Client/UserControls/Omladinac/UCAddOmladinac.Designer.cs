@@ -1,6 +1,6 @@
 ﻿namespace Client.UserControls.Omladinac
 {
-    partial class UCViewOmladinac
+    partial class UCAddOmladinac
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.txtBrTelefona = new System.Windows.Forms.TextBox();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
-            this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBrRacuna = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -123,15 +123,16 @@
             this.dtpDatumRodjenja.Size = new System.Drawing.Size(213, 22);
             this.dtpDatumRodjenja.TabIndex = 9;
             // 
-            // btnSacuvaj
+            // btnDodaj
             // 
-            this.btnSacuvaj.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnSacuvaj.Location = new System.Drawing.Point(179, 348);
-            this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(215, 55);
-            this.btnSacuvaj.TabIndex = 10;
-            this.btnSacuvaj.Text = "Sacuvaj";
-            this.btnSacuvaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDodaj.Location = new System.Drawing.Point(179, 348);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(215, 55);
+            this.btnDodaj.TabIndex = 10;
+            this.btnDodaj.Text = "Dodaj omladinca";
+            this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // label6
             // 
@@ -149,13 +150,13 @@
             this.txtBrRacuna.Size = new System.Drawing.Size(213, 22);
             this.txtBrRacuna.TabIndex = 12;
             // 
-            // UCViewOmladinac
+            // UCAddOmladinac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtBrRacuna);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnSacuvaj);
+            this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtBrTelefona);
             this.Controls.Add(this.txtJMBG);
@@ -166,7 +167,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UCViewOmladinac";
+            this.Name = "UCAddOmladinac";
             this.Size = new System.Drawing.Size(465, 485);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,7 +186,7 @@
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.TextBox txtBrTelefona;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
-        private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBrRacuna;
     }

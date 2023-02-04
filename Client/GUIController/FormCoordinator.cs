@@ -1,4 +1,5 @@
 ﻿using Client.Controller;
+using Client.UserControls.Omladinac;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,6 @@ namespace Client.GUIController
         {
             mainController = new MainController();
             loginController = new LoginController();
-            
             frmLogin = new FrmLogin();
         }
 
@@ -50,5 +50,9 @@ namespace Client.GUIController
             Application.Run(frmLogin);
         }
 
+        internal void OpenUCSaveOmladinac()
+        {
+            frmMain.SetPanel(new UCAddOmladinac());
+        }
     }
 }

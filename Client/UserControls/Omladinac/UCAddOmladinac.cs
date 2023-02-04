@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Client.UserControls.Omladinac
 {
-    public partial class UCViewOmladinac : UserControl
+    public partial class UCAddOmladinac : UserControl
     {
-        public UCViewOmladinac()
+        public UCAddOmladinac()
         {
             InitializeComponent();
+            dtpDatumRodjenja.MaxDate = DateTime.Now;
+        }
+
+        private void btnSacuvaj_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Client.UserControls.Omladinac
 {
-    public partial class UCChangeOmladinac : UserControl
+    public partial class UCUpdateOmladinac : UserControl
     {
-        public UCChangeOmladinac()
+        public UCUpdateOmladinac()
         {
             InitializeComponent();
-            UserControl u = new UCViewOmladinac();
-            pnlDetails.Controls.Add(u);
+            
+            
         }
     }
 }

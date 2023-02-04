@@ -10,9 +10,6 @@ namespace Client.Controller
     internal class MainController
     {
         
-        internal void OpenUCAddOmladinac(FrmMain frmMain)
-        {
-            frmMain.SetPanel(new UCViewOmladinac());
-        }
+        
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Client.Controller;
+using Client.GUIController;
+using Client.UserControls.Omladinac;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +31,7 @@ namespace Client
 
         }
 
+       
         internal void SetPanel(UserControl userControl)
         {
             pnlMain.Controls.Clear();
@@ -38,7 +41,7 @@ namespace Client
 
         private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainController.OpenUCAddOmladinac(this);
+            FormCoordinator.Instance.OpenUCSaveOmladinac();
         }
 
         

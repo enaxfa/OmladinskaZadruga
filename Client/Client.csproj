@@ -65,17 +65,23 @@
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\Omladinac\UCViewOmladinac.cs">
+    <Compile Include="UserControls\Omladinac\UCAddOmladinac.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Omladinac\UCViewOmladinac.Designer.cs">
-      <DependentUpon>UCViewOmladinac.cs</DependentUpon>
+    <Compile Include="UserControls\Omladinac\UCAddOmladinac.Designer.cs">
+      <DependentUpon>UCAddOmladinac.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Omladinac\UCChangeOmladinac.cs">
+    <Compile Include="UserControls\Omladinac\UCDeleteOmladinca.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Omladinac\UCChangeOmladinac.Designer.cs">
-      <DependentUpon>UCChangeOmladinac.cs</DependentUpon>
+    <Compile Include="UserControls\Omladinac\UCDeleteOmladinca.Designer.cs">
+      <DependentUpon>UCDeleteOmladinca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Omladinac\UCUpdateOmladinac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Omladinac\UCUpdateOmladinac.Designer.cs">
+      <DependentUpon>UCUpdateOmladinac.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Poslodavac\UCChangePoslodavac.cs">
       <SubType>UserControl</SubType>
@@ -104,11 +110,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\Omladinac\UCViewOmladinac.resx">
-      <DependentUpon>UCViewOmladinac.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Omladinac\UCAddOmladinac.resx">
+      <DependentUpon>UCAddOmladinac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Omladinac\UCChangeOmladinac.resx">
-      <DependentUpon>UCChangeOmladinac.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Omladinac\UCDeleteOmladinca.resx">
+      <DependentUpon>UCDeleteOmladinca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Omladinac\UCUpdateOmladinac.resx">
+      <DependentUpon>UCUpdateOmladinac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Poslodavac\UCChangePoslodavac.resx">
       <DependentUpon>UCChangePoslodavac.cs</DependentUpon>
