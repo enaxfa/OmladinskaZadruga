@@ -2,6 +2,7 @@
 {
     public enum Operation
     {
-        Login
+        Login,
+        AddOmladinac
     }
 }

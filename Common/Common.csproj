@@ -47,6 +47,7 @@
     <Compile Include="Communication\Response.cs" />
     <Compile Include="Communication\Transfer.cs" />
     <Compile Include="IDomenskiObjekat.cs" />
+    <Compile Include="Omladinac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

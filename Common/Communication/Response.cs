@@ -12,7 +12,7 @@ namespace Common
         public object Result { get; set; }
         public Exception Exception { get; set; }
 
-        public T ParseResponse<T>()
+        public T GetResponseResult<T>()
         {
             if (this.Exception == null)
             {

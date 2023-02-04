@@ -52,7 +52,19 @@ namespace Client
             };
             transfer.Send(request);
             Response response = transfer.Receive<Response>();
-            return response.ParseResponse<Administrator>();
+            return response.GetResponseResult<Administrator>();
+        }
+
+        internal void AddOmladinca(Omladinac omladinac)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.AddOmladinac,
+                RequestObject = omladinac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Administrator>();
         }
     }
 }

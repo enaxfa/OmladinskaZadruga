@@ -48,6 +48,9 @@ namespace Server
                     case Operation.Login:
                         response.Result = Controller.Instance.Login((Administrator)request.RequestObject);
                         break;
+                    case Operation.AddOmladinac:
+                        Controller.Instance.AddOmladinac((Omladinac)request.RequestObject);
+                        break;
                     
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");

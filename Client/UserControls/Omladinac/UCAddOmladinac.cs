@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,15 @@ namespace Client.UserControls.Omladinac
 {
     public partial class UCAddOmladinac : UserControl
     {
+        MainController mainController = new MainController();
         public UCAddOmladinac()
         {
             InitializeComponent();
-            dtpDatumRodjenja.MaxDate = DateTime.Now;
         }
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-
+            mainController.AddOmladinca(txtJMBG, txtIme, txtPrezime, txtBrTelefona, txtBrRacuna, txtDatumRodjenja);
         }
     }
 }

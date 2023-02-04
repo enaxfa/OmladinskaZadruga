@@ -4,7 +4,9 @@ using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Security.Principal;
+using SystemOperations;
 using SystemOperations.AdministratorSO;
+using SystemOperations.OmladinacSO;
 
 namespace Server
 {
@@ -34,6 +36,12 @@ namespace Server
             LoginSO so = new LoginSO();
             so.ExecuteTemplate(administrator);
             return so.Result;
+        }
+
+        internal void AddOmladinac(Omladinac omladinac)
+        {
+            AddOmladinacSO so = new AddOmladinacSO();
+            so.ExecuteTemplate(omladinac);
         }
     }
 }

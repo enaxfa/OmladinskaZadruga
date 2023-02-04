@@ -37,10 +37,10 @@
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.txtBrTelefona = new System.Windows.Forms.TextBox();
-            this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBrRacuna = new System.Windows.Forms.TextBox();
+            this.txtDatumRodjenja = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -116,13 +116,6 @@
             this.txtBrTelefona.Size = new System.Drawing.Size(213, 22);
             this.txtBrTelefona.TabIndex = 8;
             // 
-            // dtpDatumRodjenja
-            // 
-            this.dtpDatumRodjenja.Location = new System.Drawing.Point(179, 278);
-            this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
-            this.dtpDatumRodjenja.Size = new System.Drawing.Size(213, 22);
-            this.dtpDatumRodjenja.TabIndex = 9;
-            // 
             // btnDodaj
             // 
             this.btnDodaj.BackColor = System.Drawing.Color.MediumPurple;
@@ -150,14 +143,21 @@
             this.txtBrRacuna.Size = new System.Drawing.Size(213, 22);
             this.txtBrRacuna.TabIndex = 12;
             // 
+            // txtDatumRodjenja
+            // 
+            this.txtDatumRodjenja.Location = new System.Drawing.Point(179, 275);
+            this.txtDatumRodjenja.Name = "txtDatumRodjenja";
+            this.txtDatumRodjenja.Size = new System.Drawing.Size(213, 22);
+            this.txtDatumRodjenja.TabIndex = 13;
+            // 
             // UCAddOmladinac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtDatumRodjenja);
             this.Controls.Add(this.txtBrRacuna);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtBrTelefona);
             this.Controls.Add(this.txtJMBG);
             this.Controls.Add(this.txtPrezime);
@@ -185,9 +185,9 @@
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.TextBox txtBrTelefona;
-        private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBrRacuna;
+        private System.Windows.Forms.TextBox txtDatumRodjenja;
     }
 }
