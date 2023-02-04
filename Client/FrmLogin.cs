@@ -23,8 +23,10 @@ namespace Client
         {
             if (loginController.Connect())
             {
-                loginController.Login(txtUsername, txtPassword, this);
+                loginController.Login(txtUsername, txtPassword);
             }
         }
+
+        
     }
 }

@@ -4,6 +4,7 @@ using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Security.Principal;
+using SystemOperations.AdministratorSO;
 
 namespace Server
 {
@@ -28,13 +29,11 @@ namespace Server
             repository = new GenericDBRepository();
         }
 
-        internal object Login(Administrator administrator)
+        internal Administrator Login(Administrator administrator)
         {
-            foreach (Administrator a in repository.GetAll(new Administrator()))
-                if (a.Equals(administrator))
-                    return a;
-            return null;
-            
+            LoginSO so = new LoginSO();
+            so.ExecuteTemplate(administrator);
+            return so.Result;
         }
     }
 }

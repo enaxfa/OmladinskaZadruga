@@ -27,7 +27,7 @@ namespace Client.GUIController
             }
         }
 
-        internal void Login(TextBox txtUsername, TextBox txtPassword, FrmLogin frmLogin)
+        internal void Login(TextBox txtUsername, TextBox txtPassword)
         {
             if (!Validator.EmptyFieldValidation(txtUsername) | !Validator.EmptyFieldValidation(txtPassword))
                 return;
@@ -41,17 +41,12 @@ namespace Client.GUIController
 
             if (administrator != null)
             {
-                FrmMain frmMain = new FrmMain();
-                MessageBox.Show($"Administrator {administrator.Ime} {administrator.Prezime} se uspešno prijavio!");
-                frmMain.FormBorderStyle = FormBorderStyle.FixedDialog;
-                frmLogin.Visible = false;
-                frmMain.ShowDialog();
-                frmLogin.Dispose();
-
+                MessageBox.Show("Uspesno ste se prijavili!");
+                FormCoordinator.Instance.ShowFrmMain(administrator.Ime, administrator.Prezime);
             }
             else
             {
-                MessageBox.Show("Wrong credentials!");
+                MessageBox.Show("Korisnik ne postoji!");
             }
         }
     }

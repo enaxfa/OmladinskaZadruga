@@ -14,9 +14,19 @@ namespace Client
     public partial class FrmMain : Form
     {
         private MainController mainController = new MainController();
+        
+
         public FrmMain()
         {
             InitializeComponent();
+            
+        }
+
+        public FrmMain(string ime, string prezime)
+        {
+            InitializeComponent();
+            lblAdministrator.Text = ime + " " + prezime;
+
         }
 
         internal void SetPanel(UserControl userControl)
@@ -30,5 +40,7 @@ namespace Client
         {
             mainController.OpenUCAddOmladinac(this);
         }
+
+        
     }
 }

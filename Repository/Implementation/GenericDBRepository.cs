@@ -13,11 +13,7 @@ namespace Repository.Implementation
 {
     public class GenericDBRepository : IDBRepository<IDomenskiObjekat>
     {
-        public void Add(IDomenskiObjekat entity)
-        {
-            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"insert into {entity.TableName} values ({entity.InsertValues})");
-            cmd.ExecuteNonQuery();
-        }
+        
 
         public void Close()
         {
@@ -32,6 +28,12 @@ namespace Repository.Implementation
         public void Rollback()
         {
             DBConnectionFactory.Instance.GetDBConnection().Rollback();
+        }
+
+        public void Add(IDomenskiObjekat entity)
+        {
+            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"insert into {entity.TableName} values ({entity.InsertValues})");
+            cmd.ExecuteNonQuery();
         }
 
         public void Delete(IDomenskiObjekat key)
@@ -64,5 +66,7 @@ namespace Repository.Implementation
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
