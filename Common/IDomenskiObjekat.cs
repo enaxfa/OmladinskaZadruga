@@ -12,6 +12,8 @@ namespace Common
     {
         string TableName { get; }
         string InsertValues { get; }
+        object SelectValues { get; }
+        string SearchCondition { get; }
         List<IDomenskiObjekat> GetEntities(SqlDataReader reader);
     }
 }

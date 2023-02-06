@@ -25,6 +25,9 @@ namespace Common
 
         public string InsertValues => "";
 
+        public object SelectValues => "";
+
+        public string SearchCondition => "";
 
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {

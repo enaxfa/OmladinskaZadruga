@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdministratorSO\LoginSO.cs" />
     <Compile Include="OmladinacSO\AddOmladinacSO.cs" />
+    <Compile Include="OmladinacSO\SearchOmladinac.cs" />
     <Compile Include="SOBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

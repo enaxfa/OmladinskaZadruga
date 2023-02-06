@@ -50,9 +50,14 @@ namespace Client.GUIController
             Application.Run(frmLogin);
         }
 
-        internal void OpenUCSaveOmladinac()
+        internal void OpenUCAddOmladinac()
         {
             frmMain.SetPanel(new UCAddOmladinac());
+        }
+
+        internal void OpenUCUpdateOmladinac()
+        {
+            frmMain.SetPanel(new UCUpdateOmladinac());
         }
     }
 }

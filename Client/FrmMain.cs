@@ -41,9 +41,12 @@ namespace Client
 
         private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCoordinator.Instance.OpenUCSaveOmladinac();
+            FormCoordinator.Instance.OpenUCAddOmladinac();
         }
 
-        
+        private void izmeniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCoordinator.Instance.OpenUCUpdateOmladinac();
+        }
     }
 }

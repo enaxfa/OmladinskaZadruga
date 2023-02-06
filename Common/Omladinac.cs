@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,17 @@ namespace Common
 
         public DateTime DatumRodjenja { get; set; }
 
+        [Browsable(false)]
         public string TableName => "Omladinac";
-
+        [Browsable(false)]
         public string InsertValues => $"'{Ime}','{Prezime}', '{JMBG}','{BrojTelefona}',{BrojRacuna},'{DatumRodjenja}'";
-
+        [Browsable(false)]
+        public object SelectValues => "*";
+        [Browsable(false)]
+        public string SearchCondition => Uslov;
+        [Browsable(false)]
+        public string Uslov { get; set; }
+        [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             List<IDomenskiObjekat> result = new List<IDomenskiObjekat>();

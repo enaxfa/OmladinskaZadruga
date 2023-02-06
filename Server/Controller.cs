@@ -25,10 +25,10 @@ namespace Server
             }
         }
 
-        private IDBRepository<IDomenskiObjekat> repository;
+        
         private Controller()
         {
-            repository = new GenericDBRepository();
+           
         }
 
         internal Administrator Login(Administrator administrator)
@@ -42,6 +42,13 @@ namespace Server
         {
             AddOmladinacSO so = new AddOmladinacSO();
             so.ExecuteTemplate(omladinac);
+        }
+
+        internal List<Omladinac> SearchOmladinac(Omladinac omladinac)
+        {
+            SearchOmladinac so = new SearchOmladinac();
+            so.ExecuteTemplate(omladinac);
+            return so.Result;
         }
     }
 }

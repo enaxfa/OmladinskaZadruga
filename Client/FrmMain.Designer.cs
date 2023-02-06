@@ -49,7 +49,7 @@
             this.poslodavacToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(957, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,15 +65,16 @@
             // dodajToolStripMenuItem
             // 
             this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
-            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajToolStripMenuItem.Text = "Dodaj";
             this.dodajToolStripMenuItem.Click += new System.EventHandler(this.dodajToolStripMenuItem_Click);
             // 
             // izmeniToolStripMenuItem
             // 
             this.izmeniToolStripMenuItem.Name = "izmeniToolStripMenuItem";
-            this.izmeniToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.izmeniToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.izmeniToolStripMenuItem.Text = "Izmeni";
+            this.izmeniToolStripMenuItem.Click += new System.EventHandler(this.izmeniToolStripMenuItem_Click);
             // 
             // poslodavacToolStripMenuItem
             // 
@@ -100,15 +101,15 @@
             // 
             this.pnlMain.Controls.Add(this.lblAdministrator);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 30);
+            this.pnlMain.Location = new System.Drawing.Point(0, 28);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(800, 420);
+            this.pnlMain.Size = new System.Drawing.Size(957, 459);
             this.pnlMain.TabIndex = 1;
             // 
             // lblAdministrator
             // 
             this.lblAdministrator.AutoSize = true;
-            this.lblAdministrator.Location = new System.Drawing.Point(720, 14);
+            this.lblAdministrator.Location = new System.Drawing.Point(888, 22);
             this.lblAdministrator.Name = "lblAdministrator";
             this.lblAdministrator.Size = new System.Drawing.Size(44, 16);
             this.lblAdministrator.TabIndex = 0;
@@ -118,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(957, 487);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

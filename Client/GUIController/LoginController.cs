@@ -29,7 +29,7 @@ namespace Client.GUIController
 
         internal void Login(TextBox txtUsername, TextBox txtPassword)
         {
-            if (!Validator.EmptyFieldValidation(txtUsername) | !Validator.EmptyFieldValidation(txtPassword))
+            if (!UCHelper.EmptyFieldValidation(txtUsername) | !UCHelper.EmptyFieldValidation(txtPassword))
                 return;
 
             Administrator a = new Administrator

@@ -1,4 +1,6 @@
-﻿namespace Client.UserControls.Omladinac
+﻿using System.Windows.Forms;
+
+namespace Client.UserControls.Omladinac
 {
     partial class UCUpdateOmladinac
     {
@@ -37,7 +39,6 @@
             this.txtBrRacuna = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnIzmeni = new System.Windows.Forms.Button();
-            this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.txtBrTelefona = new System.Windows.Forms.TextBox();
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
@@ -47,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnObrisi = new System.Windows.Forms.Button();
+            this.txtDatumRodjenja = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +85,7 @@
             this.btnPretrazi.TabIndex = 75;
             this.btnPretrazi.Text = "Pretraži";
             this.btnPretrazi.UseVisualStyleBackColor = false;
+            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
             // dgvOmladinci
             // 
@@ -95,6 +99,7 @@
             this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOmladinci.Size = new System.Drawing.Size(490, 195);
             this.dgvOmladinci.TabIndex = 74;
+
             // 
             // txtFilter
             // 
@@ -109,10 +114,11 @@
             // pnlDetails
             // 
             this.pnlDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlDetails.Controls.Add(this.txtDatumRodjenja);
+            this.pnlDetails.Controls.Add(this.btnObrisi);
             this.pnlDetails.Controls.Add(this.txtBrRacuna);
             this.pnlDetails.Controls.Add(this.label6);
             this.pnlDetails.Controls.Add(this.btnIzmeni);
-            this.pnlDetails.Controls.Add(this.dtpDatumRodjenja);
             this.pnlDetails.Controls.Add(this.txtBrTelefona);
             this.pnlDetails.Controls.Add(this.txtJMBG);
             this.pnlDetails.Controls.Add(this.txtPrezime);
@@ -146,19 +152,12 @@
             // btnIzmeni
             // 
             this.btnIzmeni.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnIzmeni.Location = new System.Drawing.Point(157, 328);
+            this.btnIzmeni.Location = new System.Drawing.Point(44, 331);
             this.btnIzmeni.Name = "btnIzmeni";
-            this.btnIzmeni.Size = new System.Drawing.Size(175, 37);
+            this.btnIzmeni.Size = new System.Drawing.Size(132, 31);
             this.btnIzmeni.TabIndex = 23;
             this.btnIzmeni.Text = "Sacuvaj izmene";
             this.btnIzmeni.UseVisualStyleBackColor = false;
-            // 
-            // dtpDatumRodjenja
-            // 
-            this.dtpDatumRodjenja.Location = new System.Drawing.Point(157, 258);
-            this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
-            this.dtpDatumRodjenja.Size = new System.Drawing.Size(173, 22);
-            this.dtpDatumRodjenja.TabIndex = 22;
             // 
             // txtBrTelefona
             // 
@@ -233,6 +232,23 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Ime";
             // 
+            // btnObrisi
+            // 
+            this.btnObrisi.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnObrisi.Location = new System.Drawing.Point(198, 331);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(132, 31);
+            this.btnObrisi.TabIndex = 26;
+            this.btnObrisi.Text = "Obrisi omladinca";
+            this.btnObrisi.UseVisualStyleBackColor = false;
+            // 
+            // txtDatumRodjenja
+            // 
+            this.txtDatumRodjenja.Location = new System.Drawing.Point(157, 252);
+            this.txtDatumRodjenja.Name = "txtDatumRodjenja";
+            this.txtDatumRodjenja.Size = new System.Drawing.Size(173, 22);
+            this.txtDatumRodjenja.TabIndex = 27;
+            // 
             // UCUpdateOmladinac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,7 +279,6 @@
         private System.Windows.Forms.TextBox txtBrRacuna;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnIzmeni;
-        private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.TextBox txtBrTelefona;
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.TextBox txtPrezime;
@@ -273,5 +288,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.TextBox txtDatumRodjenja;
     }
 }

@@ -62,7 +62,7 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Validator.cs" />
+    <Compile Include="Helpers\UCHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\Omladinac\UCAddOmladinac.cs">
@@ -70,12 +70,6 @@
     </Compile>
     <Compile Include="UserControls\Omladinac\UCAddOmladinac.Designer.cs">
       <DependentUpon>UCAddOmladinac.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Omladinac\UCDeleteOmladinca.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\Omladinac\UCDeleteOmladinca.Designer.cs">
-      <DependentUpon>UCDeleteOmladinca.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Omladinac\UCUpdateOmladinac.cs">
       <SubType>UserControl</SubType>
@@ -112,9 +106,6 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Omladinac\UCAddOmladinac.resx">
       <DependentUpon>UCAddOmladinac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Omladinac\UCDeleteOmladinca.resx">
-      <DependentUpon>UCDeleteOmladinca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Omladinac\UCUpdateOmladinac.resx">
       <DependentUpon>UCUpdateOmladinac.cs</DependentUpon>

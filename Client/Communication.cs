@@ -66,5 +66,17 @@ namespace Client
             Response response = transfer.Receive<Response>();
             response.GetResponseResult<Administrator>();
         }
+
+        internal List<Omladinac> SearchOmladinac(Omladinac omladinac)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SearchOmladinac,
+                RequestObject = omladinac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Omladinac>>();
+        }
     }
 }

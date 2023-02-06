@@ -57,9 +57,14 @@ namespace Repository.Implementation
         }
 
 
-        public List<IDomenskiObjekat> Search(string criteria)
+        public List<IDomenskiObjekat> Search(IDomenskiObjekat entity)
         {
-            throw new NotImplementedException();
+            List<IDomenskiObjekat> result;
+            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"select {entity.SelectValues} from {entity.TableName} where {entity.SearchCondition}");
+            SqlDataReader reader = cmd.ExecuteReader();
+            result = entity.GetEntities(reader);
+            reader.Close();
+            return result;
         }
 
         public void Update(IDomenskiObjekat entity)

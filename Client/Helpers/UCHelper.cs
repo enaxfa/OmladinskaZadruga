@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Client.Helpers
 {
-    internal class Validator
+    internal class UCHelper
     {
         public static bool EmptyFieldValidation(TextBox txt)
         {
@@ -80,6 +80,16 @@ namespace Client.Helpers
                 txt.BackColor = Color.White;
                 return true;
             }
+        }
+
+        internal static void ResetFields(TextBox txtIme, TextBox txtPrezime, TextBox txtJMBG, TextBox txtDatumRodjenja, TextBox txtBrRacuna, TextBox txtBrTelefona)
+        {
+            txtJMBG.Text = "";
+            txtIme.Text = "";
+            txtPrezime.Text = "";
+            txtBrTelefona.Text = "";
+            txtBrRacuna.Text = "";
+            txtDatumRodjenja.Text = "";
         }
     }
 }
