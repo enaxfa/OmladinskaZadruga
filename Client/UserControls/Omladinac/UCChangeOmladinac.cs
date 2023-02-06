@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace Client.UserControls.Omladinac
 {
-    public partial class UCUpdateOmladinac : UserControl
+    public partial class UCChangeOmladinac : UserControl
     {
         private MainController mainController = new MainController();
-        public UCUpdateOmladinac()
+        public UCChangeOmladinac()
         {
             InitializeComponent();
         }

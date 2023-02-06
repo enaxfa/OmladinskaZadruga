@@ -1,6 +1,6 @@
 ﻿namespace Client.UserControls.Omladinac
 {
-    partial class UCOmladinac
+    partial class UCAddPoslodavac
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.txtAdresa = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtBrTelefona = new System.Windows.Forms.TextBox();
-            this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -131,22 +131,23 @@
             this.txtBrTelefona.Size = new System.Drawing.Size(228, 22);
             this.txtBrTelefona.TabIndex = 9;
             // 
-            // btnSacuvaj
+            // btnDodaj
             // 
-            this.btnSacuvaj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSacuvaj.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnSacuvaj.Location = new System.Drawing.Point(318, 408);
-            this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(228, 55);
-            this.btnSacuvaj.TabIndex = 10;
-            this.btnSacuvaj.Text = "Sacuvaj";
-            this.btnSacuvaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDodaj.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnDodaj.Location = new System.Drawing.Point(318, 408);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(228, 55);
+            this.btnDodaj.TabIndex = 10;
+            this.btnDodaj.Text = "Dodaj poslodavca";
+            this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // UCOmladinac
+            // UCAddPoslodavac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnSacuvaj);
+            this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.txtBrTelefona);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtAdresa);
@@ -157,7 +158,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UCOmladinac";
+            this.Name = "UCAddPoslodavac";
             this.Size = new System.Drawing.Size(761, 570);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,6 +177,6 @@
         private System.Windows.Forms.TextBox txtAdresa;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtBrTelefona;
-        private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Button btnDodaj;
     }
 }

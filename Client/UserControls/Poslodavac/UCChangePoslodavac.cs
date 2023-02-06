@@ -15,7 +15,6 @@ namespace Client.UserControls.Poslodavac
         public UCChangePoslodavac()
         {
             InitializeComponent();
-            pnlDetails.Controls.Add(pnlDetails);
         }
     }
 }

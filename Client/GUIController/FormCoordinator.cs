@@ -1,5 +1,6 @@
 ﻿using Client.Controller;
 using Client.UserControls.Omladinac;
+using Client.UserControls.Poslodavac;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,9 +56,19 @@ namespace Client.GUIController
             frmMain.SetPanel(new UCAddOmladinac());
         }
 
-        internal void OpenUCUpdateOmladinac()
+        internal void OpenUCChangeOmladinac()
         {
-            frmMain.SetPanel(new UCUpdateOmladinac());
+            frmMain.SetPanel(new UCChangeOmladinac());
+        }
+
+        internal void OpenUCAddPoslodavac()
+        {
+            frmMain.SetPanel(new UCAddPoslodavac());
+        }
+
+        internal void OpenUCChangePoslodavac()
+        {
+            frmMain.SetPanel(new UCChangePoslodavac());
         }
     }
 }

@@ -35,14 +35,26 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.btnIzbrisi = new System.Windows.Forms.Button();
+            this.btnIzmeni = new System.Windows.Forms.Button();
+            this.txtBrTelefona = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAdresa = new System.Windows.Forms.TextBox();
+            this.txtPIB = new System.Windows.Forms.TextBox();
+            this.txtNaziv = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).BeginInit();
+            this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 83);
+            this.label1.Location = new System.Drawing.Point(179, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 83;
@@ -52,7 +64,7 @@
             // 
             this.btnOdaberi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOdaberi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnOdaberi.Location = new System.Drawing.Point(384, 399);
+            this.btnOdaberi.Location = new System.Drawing.Point(429, 397);
             this.btnOdaberi.Name = "btnOdaberi";
             this.btnOdaberi.Size = new System.Drawing.Size(172, 43);
             this.btnOdaberi.TabIndex = 82;
@@ -63,7 +75,7 @@
             // 
             this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPretrazi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPretrazi.Location = new System.Drawing.Point(440, 101);
+            this.btnPretrazi.Location = new System.Drawing.Point(485, 101);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(116, 36);
             this.btnPretrazi.TabIndex = 81;
@@ -74,20 +86,20 @@
             // 
             this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOmladinci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOmladinci.Location = new System.Drawing.Point(66, 169);
+            this.dgvOmladinci.Location = new System.Drawing.Point(72, 169);
             this.dgvOmladinci.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOmladinci.Name = "dgvOmladinci";
             this.dgvOmladinci.ReadOnly = true;
             this.dgvOmladinci.RowHeadersWidth = 51;
             this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOmladinci.Size = new System.Drawing.Size(490, 195);
+            this.dgvOmladinci.Size = new System.Drawing.Size(529, 206);
             this.dgvOmladinci.TabIndex = 80;
             // 
             // txtFilter
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFilter.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.txtFilter.Location = new System.Drawing.Point(160, 113);
+            this.txtFilter.Location = new System.Drawing.Point(182, 113);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);
@@ -96,26 +108,138 @@
             // pnlDetails
             // 
             this.pnlDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlDetails.Location = new System.Drawing.Point(625, 71);
+            this.pnlDetails.Controls.Add(this.btnIzbrisi);
+            this.pnlDetails.Controls.Add(this.btnIzmeni);
+            this.pnlDetails.Controls.Add(this.txtBrTelefona);
+            this.pnlDetails.Controls.Add(this.txtEmail);
+            this.pnlDetails.Controls.Add(this.txtAdresa);
+            this.pnlDetails.Controls.Add(this.txtPIB);
+            this.pnlDetails.Controls.Add(this.txtNaziv);
+            this.pnlDetails.Controls.Add(this.label5);
+            this.pnlDetails.Controls.Add(this.label4);
+            this.pnlDetails.Controls.Add(this.label3);
+            this.pnlDetails.Controls.Add(this.label2);
+            this.pnlDetails.Controls.Add(this.label6);
+            this.pnlDetails.Location = new System.Drawing.Point(647, 71);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(361, 408);
+            this.pnlDetails.Size = new System.Drawing.Size(428, 448);
             this.pnlDetails.TabIndex = 78;
             // 
             // btnIzbrisi
             // 
             this.btnIzbrisi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnIzbrisi.Location = new System.Drawing.Point(384, 462);
+            this.btnIzbrisi.Location = new System.Drawing.Point(242, 345);
             this.btnIzbrisi.Name = "btnIzbrisi";
             this.btnIzbrisi.Size = new System.Drawing.Size(172, 45);
             this.btnIzbrisi.TabIndex = 84;
             this.btnIzbrisi.Text = "Izbrisi poslodavca";
             this.btnIzbrisi.UseVisualStyleBackColor = false;
             // 
+            // btnIzmeni
+            // 
+            this.btnIzmeni.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIzmeni.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnIzmeni.Location = new System.Drawing.Point(27, 344);
+            this.btnIzmeni.Name = "btnIzmeni";
+            this.btnIzmeni.Size = new System.Drawing.Size(178, 46);
+            this.btnIzmeni.TabIndex = 21;
+            this.btnIzmeni.Text = "Sacuvaj izmene";
+            this.btnIzmeni.UseVisualStyleBackColor = false;
+            // 
+            // txtBrTelefona
+            // 
+            this.txtBrTelefona.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBrTelefona.Location = new System.Drawing.Point(158, 268);
+            this.txtBrTelefona.Name = "txtBrTelefona";
+            this.txtBrTelefona.Size = new System.Drawing.Size(228, 22);
+            this.txtBrTelefona.TabIndex = 20;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.Location = new System.Drawing.Point(158, 215);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(228, 22);
+            this.txtEmail.TabIndex = 19;
+            // 
+            // txtAdresa
+            // 
+            this.txtAdresa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdresa.Location = new System.Drawing.Point(158, 163);
+            this.txtAdresa.Name = "txtAdresa";
+            this.txtAdresa.Size = new System.Drawing.Size(228, 22);
+            this.txtAdresa.TabIndex = 18;
+            // 
+            // txtPIB
+            // 
+            this.txtPIB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPIB.Location = new System.Drawing.Point(158, 107);
+            this.txtPIB.Name = "txtPIB";
+            this.txtPIB.Size = new System.Drawing.Size(228, 22);
+            this.txtPIB.TabIndex = 17;
+            // 
+            // txtNaziv
+            // 
+            this.txtNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNaziv.Location = new System.Drawing.Point(158, 51);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.Size = new System.Drawing.Size(228, 22);
+            this.txtNaziv.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 271);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Broj telefona";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 163);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Adresa";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Email";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Naziv firme";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "PIB";
+            // 
             // UCChangePoslodavac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnIzbrisi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.btnPretrazi);
@@ -123,8 +247,10 @@
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCChangePoslodavac";
-            this.Size = new System.Drawing.Size(1053, 551);
+            this.Size = new System.Drawing.Size(1096, 551);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
+            this.pnlDetails.ResumeLayout(false);
+            this.pnlDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +265,16 @@
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.Button btnIzbrisi;
+        private System.Windows.Forms.Button btnIzmeni;
+        private System.Windows.Forms.TextBox txtBrTelefona;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAdresa;
+        private System.Windows.Forms.TextBox txtPIB;
+        private System.Windows.Forms.TextBox txtNaziv;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
     }
 }

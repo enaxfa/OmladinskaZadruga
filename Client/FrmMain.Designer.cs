@@ -38,7 +38,6 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblAdministrator = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -49,7 +48,7 @@
             this.poslodavacToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(957, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1194, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,28 +87,29 @@
             // dodajToolStripMenuItem1
             // 
             this.dodajToolStripMenuItem1.Name = "dodajToolStripMenuItem1";
-            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
+            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.dodajToolStripMenuItem1.Text = "Dodaj";
+            this.dodajToolStripMenuItem1.Click += new System.EventHandler(this.dodajToolStripMenuItem1_Click);
             // 
             // izmeniToolStripMenuItem1
             // 
             this.izmeniToolStripMenuItem1.Name = "izmeniToolStripMenuItem1";
-            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
+            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.izmeniToolStripMenuItem1.Text = "Izmeni";
+            this.izmeniToolStripMenuItem1.Click += new System.EventHandler(this.izmeniToolStripMenuItem1_Click);
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.lblAdministrator);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 28);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(957, 459);
+            this.pnlMain.Size = new System.Drawing.Size(1194, 477);
             this.pnlMain.TabIndex = 1;
             // 
             // lblAdministrator
             // 
             this.lblAdministrator.AutoSize = true;
-            this.lblAdministrator.Location = new System.Drawing.Point(888, 22);
+            this.lblAdministrator.Location = new System.Drawing.Point(1091, 9);
             this.lblAdministrator.Name = "lblAdministrator";
             this.lblAdministrator.Size = new System.Drawing.Size(44, 16);
             this.lblAdministrator.TabIndex = 0;
@@ -119,7 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 487);
+            this.ClientSize = new System.Drawing.Size(1194, 505);
+            this.Controls.Add(this.lblAdministrator);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -127,8 +128,6 @@
             this.Text = "FrmMain";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnlMain.ResumeLayout(false);
-            this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

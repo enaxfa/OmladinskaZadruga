@@ -40,7 +40,7 @@ namespace Client.Controller
                     DatumRodjenja = DateTime.ParseExact(datumRodjString, formatDatum, CultureInfo.InvariantCulture)
                 };
                 Communication.Instance.AddOmladinac(omladinac);
-                MessageBox.Show("Uspešno ste sačuvali omladinca!");
+                MessageBox.Show("Uspešno ste dodali omladinca!");
                 UCHelper.ResetFields(txtIme, txtPrezime, txtJMBG, txtDatumRodjenja, txtBrRacuna, txtBrTelefona);
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace Client.Controller
             }
         }
         
-        internal void SearchOmladinac(TextBox txtFilter, UCUpdateOmladinac userControl)
+        internal void SearchOmladinac(TextBox txtFilter, UCChangeOmladinac userControl)
         {
             if (!UCHelper.EmptyFieldValidation(txtFilter))
             {
@@ -146,6 +146,30 @@ namespace Client.Controller
             dgvOmladinci.DataSource = null;
             dgvOmladinci.Rows.Clear();
 
+        }
+
+        internal void AddPoslodavac(TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
+        {
+            if (!UCHelper.EmptyFieldValidation(txtNaziv)  | !UCHelper.EmptyFieldValidation(txtPIB) | !UCHelper.EmptyFieldValidation(txtAdresa) | !UCHelper.EmptyFieldValidation(txtEmail) |
+                 !UCHelper.EmptyFieldValidation(txtBrTelefona) | !UCHelper.AllNumberValidation(txtPIB) | !UCHelper.AllNumberValidation(txtBrTelefona)
+                 | !UCHelper.EmailValidation(txtEmail))
+            {
+                MessageBox.Show("Podaci nisu ispravno uneti!");
+                return;
+            }
+            
+                Poslodavac poslodavac = new Poslodavac
+                {
+                    Naziv = txtNaziv.Text,
+                    PIB = txtPIB.Text,
+                    Adresa = txtAdresa.Text,
+                    Email = txtEmail.Text,
+                    BrojTelefona = txtBrTelefona.Text
+                };
+                Communication.Instance.AddPoslodavac(poslodavac);
+                MessageBox.Show("Uspešno ste dodali poslodavca!");
+                UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
+            
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Client.UserControls.Omladinac
 {
-    partial class UCUpdateOmladinac
+    partial class UCChangeOmladinac
     {
         /// <summary> 
         /// Required designer variable.
@@ -92,13 +92,13 @@ namespace Client.UserControls.Omladinac
             // 
             this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOmladinci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOmladinci.Location = new System.Drawing.Point(21, 176);
+            this.dgvOmladinci.Location = new System.Drawing.Point(67, 176);
             this.dgvOmladinci.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOmladinci.Name = "dgvOmladinci";
             this.dgvOmladinci.ReadOnly = true;
             this.dgvOmladinci.RowHeadersWidth = 51;
             this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOmladinci.Size = new System.Drawing.Size(586, 209);
+            this.dgvOmladinci.Size = new System.Drawing.Size(540, 209);
             this.dgvOmladinci.TabIndex = 74;
             // 
             // txtFilter
@@ -146,7 +146,7 @@ namespace Client.UserControls.Omladinac
             this.btnObrisi.Enabled = false;
             this.btnObrisi.Location = new System.Drawing.Point(198, 331);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(132, 31);
+            this.btnObrisi.Size = new System.Drawing.Size(141, 43);
             this.btnObrisi.TabIndex = 26;
             this.btnObrisi.Text = "Obrisi omladinca";
             this.btnObrisi.UseVisualStyleBackColor = false;
@@ -172,9 +172,9 @@ namespace Client.UserControls.Omladinac
             // 
             this.btnIzmeni.BackColor = System.Drawing.Color.MediumPurple;
             this.btnIzmeni.Enabled = false;
-            this.btnIzmeni.Location = new System.Drawing.Point(44, 331);
+            this.btnIzmeni.Location = new System.Drawing.Point(29, 331);
             this.btnIzmeni.Name = "btnIzmeni";
-            this.btnIzmeni.Size = new System.Drawing.Size(132, 31);
+            this.btnIzmeni.Size = new System.Drawing.Size(147, 43);
             this.btnIzmeni.TabIndex = 23;
             this.btnIzmeni.Text = "Sacuvaj izmene";
             this.btnIzmeni.UseVisualStyleBackColor = false;
@@ -253,7 +253,7 @@ namespace Client.UserControls.Omladinac
             this.label7.TabIndex = 13;
             this.label7.Text = "Ime";
             // 
-            // UCUpdateOmladinac
+            // UCChangeOmladinac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,7 +263,7 @@ namespace Client.UserControls.Omladinac
             this.Controls.Add(this.dgvOmladinci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
-            this.Name = "UCUpdateOmladinac";
+            this.Name = "UCChangeOmladinac";
             this.Size = new System.Drawing.Size(1150, 566);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
             this.pnlDetails.ResumeLayout(false);

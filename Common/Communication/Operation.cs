@@ -6,6 +6,7 @@
         AddOmladinac,
         SearchOmladinac,
         UpdateOmladinac,
-        DeleteOmladinac
+        DeleteOmladinac,
+        AddPoslodavac
     }
 }

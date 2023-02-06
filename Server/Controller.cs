@@ -7,6 +7,7 @@ using System.Security.Principal;
 using SystemOperations;
 using SystemOperations.AdministratorSO;
 using SystemOperations.OmladinacSO;
+using SystemOperations.Poslodavac;
 
 namespace Server
 {
@@ -61,6 +62,12 @@ namespace Server
         {
             DeleteOmladinacSO so = new DeleteOmladinacSO();
             so.ExecuteTemplate(omladinac);
+        }
+
+        internal void AddPoslodavac(Poslodavac poslodavac)
+        {
+            AddPoslodavacSO so = new AddPoslodavacSO();
+            so.ExecuteTemplate(poslodavac);
         }
     }
 }

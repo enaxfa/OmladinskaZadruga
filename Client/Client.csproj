@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,11 +72,11 @@
     <Compile Include="UserControls\Omladinac\UCAddOmladinac.Designer.cs">
       <DependentUpon>UCAddOmladinac.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Omladinac\UCUpdateOmladinac.cs">
+    <Compile Include="UserControls\Omladinac\UCChangeOmladinac.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Omladinac\UCUpdateOmladinac.Designer.cs">
-      <DependentUpon>UCUpdateOmladinac.cs</DependentUpon>
+    <Compile Include="UserControls\Omladinac\UCChangeOmladinac.Designer.cs">
+      <DependentUpon>UCChangeOmladinac.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Poslodavac\UCChangePoslodavac.cs">
       <SubType>UserControl</SubType>
@@ -83,11 +84,11 @@
     <Compile Include="UserControls\Poslodavac\UCChangePoslodavac.Designer.cs">
       <DependentUpon>UCChangePoslodavac.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Poslodavac\UCViewPoslodavac.cs">
+    <Compile Include="UserControls\Poslodavac\UCAddPoslodavac.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Poslodavac\UCViewPoslodavac.Designer.cs">
-      <DependentUpon>UCViewPoslodavac.cs</DependentUpon>
+    <Compile Include="UserControls\Poslodavac\UCAddPoslodavac.Designer.cs">
+      <DependentUpon>UCAddPoslodavac.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -107,14 +108,14 @@
     <EmbeddedResource Include="UserControls\Omladinac\UCAddOmladinac.resx">
       <DependentUpon>UCAddOmladinac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Omladinac\UCUpdateOmladinac.resx">
-      <DependentUpon>UCUpdateOmladinac.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Omladinac\UCChangeOmladinac.resx">
+      <DependentUpon>UCChangeOmladinac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Poslodavac\UCChangePoslodavac.resx">
       <DependentUpon>UCChangePoslodavac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Poslodavac\UCViewPoslodavac.resx">
-      <DependentUpon>UCViewPoslodavac.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Poslodavac\UCAddPoslodavac.resx">
+      <DependentUpon>UCAddPoslodavac.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

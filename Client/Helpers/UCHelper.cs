@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -82,14 +83,24 @@ namespace Client.Helpers
             }
         }
 
-        internal static void ResetFields(TextBox txtIme, TextBox txtPrezime, TextBox txtJMBG, TextBox txtDatumRodjenja, TextBox txtBrRacuna, TextBox txtBrTelefona)
+        internal static void ResetFields(params TextBox[] txt)
         {
-            txtJMBG.Text = "";
-            txtIme.Text = "";
-            txtPrezime.Text = "";
-            txtBrTelefona.Text = "";
-            txtBrRacuna.Text = "";
-            txtDatumRodjenja.Text = "";
+            foreach (TextBox t in txt)
+                t.Text = "";
+        }
+
+        internal static bool EmailValidation(TextBox txt)
+        {
+            if( new EmailAddressAttribute().IsValid(txt.Text))
+            {
+                txt.BackColor = Color.White;
+                return true;
+            }
+            else
+            {
+                txt.BackColor = Color.LightCoral;
+                return false;
+            }
         }
     }
 }

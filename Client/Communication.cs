@@ -103,5 +103,17 @@ namespace Client
             Response response = transfer.Receive<Response>();
             response.GetResponseResult<Omladinac>();
         }
+
+        internal void AddPoslodavac(Poslodavac poslodavac)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.AddPoslodavac,
+                RequestObject = poslodavac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Poslodavac>();
+        }
     }
 }

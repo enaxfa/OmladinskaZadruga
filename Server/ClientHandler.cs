@@ -60,6 +60,9 @@ namespace Server
                     case Operation.DeleteOmladinac:
                         Controller.Instance.DeleteOmladinac((Omladinac)request.RequestObject);
                         break;
+                    case Operation.AddPoslodavac:
+                        Controller.Instance.AddPoslodavac((Poslodavac)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;
