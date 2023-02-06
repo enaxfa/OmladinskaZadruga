@@ -87,9 +87,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(203, 337);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Broj telefona";
+            this.label5.Text = "Kontakt";
             // 
             // txtNaziv
             // 

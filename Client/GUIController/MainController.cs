@@ -199,6 +199,65 @@ namespace Client.Controller
                 MessageBox.Show(ex.Message);
             }
         }
+        private Poslodavac poslodavac;
+        internal void PrikaziPoslodavca(DataGridView dgvPoslodavci, TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
+        {
+            if (dgvPoslodavci.SelectedRows.Count == 0 || (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem == null)
+            {
+                MessageBox.Show("Niste izabrali ni jednog poslodavca!");
+                return;
+            }
+            poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
+            txtNaziv.Text = poslodavac.Naziv;
+            txtPIB.Text = poslodavac.PIB;
+            txtAdresa.Text = poslodavac.Adresa;
+            txtEmail.Text = poslodavac.Email;
+            txtBrTelefona.Text = poslodavac.BrojTelefona;
+        }
+
+        internal void UpdatePoslodavac(DataGridView dgvPoslodavci, TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
+        {
+            if (!UCHelper.EmptyFieldValidation(txtNaziv) | !UCHelper.EmptyFieldValidation(txtPIB) | !UCHelper.EmptyFieldValidation(txtAdresa) | !UCHelper.EmptyFieldValidation(txtEmail) |
+                 !UCHelper.EmptyFieldValidation(txtBrTelefona) | !UCHelper.AllNumberValidation(txtPIB) | !UCHelper.AllNumberValidation(txtBrTelefona)
+                 | !UCHelper.EmailValidation(txtEmail))
+            {
+                MessageBox.Show("Podaci nisu ispravno uneti!");
+                return;
+            }
+            try
+            {
+                poslodavac.Naziv = txtNaziv.Text;
+                poslodavac.PIB = txtPIB.Text;
+                poslodavac.Adresa = txtAdresa.Text;
+                poslodavac.Email = txtEmail.Text;
+                poslodavac.BrojTelefona = txtBrTelefona.Text;
+
+                Communication.Instance.UpdatePoslodavac(poslodavac);
+                MessageBox.Show("Uspešno ste izmenili poslodavca!");
+                ClearTable(dgvPoslodavci);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void DeletePoslodavac(DataGridView dgvPoslodavci, TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
+        {
+            try
+            {
+                Communication.Instance.DeletePoslodavac(poslodavac);
+                MessageBox.Show("Uspešno ste obrisali omladinca!");
+                ClearTable(dgvPoslodavci);
+                UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 

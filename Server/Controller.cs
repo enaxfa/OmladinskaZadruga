@@ -72,9 +72,21 @@ namespace Server
 
         internal object SearchPoslodavac(Poslodavac poslodavac)
         {
-           SearchPoslodavac so = new SearchPoslodavac();
+           SearchPoslodavacSO so = new SearchPoslodavacSO();
             so.ExecuteTemplate(poslodavac);
             return so.Result;
+        }
+
+        internal void UpdatePoslodavac(Poslodavac poslodavac)
+        {
+            UpdatePoslodavacSO so = new UpdatePoslodavacSO();
+            so.ExecuteTemplate(poslodavac);
+        }
+
+        internal void DeletePoslodavac(Poslodavac poslodavac)
+        {
+            DeletePoslodavacSO so = new DeletePoslodavacSO();
+            so.ExecuteTemplate(poslodavac);
         }
     }
 }

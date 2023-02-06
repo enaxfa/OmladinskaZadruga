@@ -36,7 +36,7 @@ namespace Client.UserControls.Poslodavac
             this.dgvPoslodavci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
-            this.btnIzbrisi = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.txtBrTelefona = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -72,6 +72,7 @@ namespace Client.UserControls.Poslodavac
             this.btnOdaberi.TabIndex = 82;
             this.btnOdaberi.Text = "Izaberi poslodavca";
             this.btnOdaberi.UseVisualStyleBackColor = false;
+            this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
             // 
             // btnPretrazi
             // 
@@ -111,7 +112,7 @@ namespace Client.UserControls.Poslodavac
             // pnlDetails
             // 
             this.pnlDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlDetails.Controls.Add(this.btnIzbrisi);
+            this.pnlDetails.Controls.Add(this.btnObrisi);
             this.pnlDetails.Controls.Add(this.btnIzmeni);
             this.pnlDetails.Controls.Add(this.txtBrTelefona);
             this.pnlDetails.Controls.Add(this.txtEmail);
@@ -128,26 +129,30 @@ namespace Client.UserControls.Poslodavac
             this.pnlDetails.Size = new System.Drawing.Size(428, 448);
             this.pnlDetails.TabIndex = 78;
             // 
-            // btnIzbrisi
+            // btnObrisi
             // 
-            this.btnIzbrisi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnIzbrisi.Location = new System.Drawing.Point(242, 345);
-            this.btnIzbrisi.Name = "btnIzbrisi";
-            this.btnIzbrisi.Size = new System.Drawing.Size(172, 45);
-            this.btnIzbrisi.TabIndex = 84;
-            this.btnIzbrisi.Text = "Izbrisi poslodavca";
-            this.btnIzbrisi.UseVisualStyleBackColor = false;
+            this.btnObrisi.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnObrisi.Enabled = false;
+            this.btnObrisi.Location = new System.Drawing.Point(242, 345);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(172, 45);
+            this.btnObrisi.TabIndex = 84;
+            this.btnObrisi.Text = "Izbrisi poslodavca";
+            this.btnObrisi.UseVisualStyleBackColor = false;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnIzmeni
             // 
             this.btnIzmeni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnIzmeni.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnIzmeni.Enabled = false;
             this.btnIzmeni.Location = new System.Drawing.Point(27, 344);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.Size = new System.Drawing.Size(178, 46);
             this.btnIzmeni.TabIndex = 21;
             this.btnIzmeni.Text = "Sacuvaj izmene";
             this.btnIzmeni.UseVisualStyleBackColor = false;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // txtBrTelefona
             // 
@@ -195,9 +200,9 @@ namespace Client.UserControls.Poslodavac
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(43, 271);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Broj telefona";
+            this.label5.Text = "Kontakt";
             // 
             // label4
             // 
@@ -267,7 +272,7 @@ namespace Client.UserControls.Poslodavac
         private System.Windows.Forms.DataGridView dgvPoslodavci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;
-        private System.Windows.Forms.Button btnIzbrisi;
+        private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.TextBox txtBrTelefona;
         private System.Windows.Forms.TextBox txtEmail;

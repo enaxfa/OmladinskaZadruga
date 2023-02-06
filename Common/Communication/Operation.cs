@@ -8,6 +8,8 @@
         UpdateOmladinac,
         DeleteOmladinac,
         AddPoslodavac,
-        SearchPoslodavac
+        SearchPoslodavac,
+        UpdatePoslodavac,
+        DeletePoslodavac
     }
 }

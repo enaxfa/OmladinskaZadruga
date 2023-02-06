@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace SystemOperations.PoslodavacSO
 {
-    public class SearchPoslodavac : SOBase
+    public class UpdatePoslodavacSO : SOBase
     {
-        public List<Poslodavac> Result { get; set; }
         protected override void ExecuteOperation(IDomenskiObjekat entity)
         {
-            Result = repository.Search(entity).Cast<Poslodavac>().ToList();
+            repository.Update(entity);
         }
     }
 }

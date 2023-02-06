@@ -127,5 +127,29 @@ namespace Client
             Response response = transfer.Receive<Response>();
             return response.GetResponseResult<List<Poslodavac>>();
         }
+
+        internal void UpdatePoslodavac(Poslodavac poslodavac)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.UpdatePoslodavac,
+                RequestObject = poslodavac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Poslodavac>();
+        }
+
+        internal void DeletePoslodavac(Poslodavac poslodavac)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.DeletePoslodavac,
+                RequestObject = poslodavac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Poslodavac>();
+        }
     }
 }

@@ -47,7 +47,9 @@
     <Compile Include="OmladinacSO\SearchOmladinacSO.cs" />
     <Compile Include="OmladinacSO\UpdateOmladinacSO.cs" />
     <Compile Include="PoslodavacSO\AddPoslodavacSO.cs" />
-    <Compile Include="PoslodavacSO\SearchPoslodavac.cs" />
+    <Compile Include="PoslodavacSO\DeletePoslodavacSO.cs" />
+    <Compile Include="PoslodavacSO\SearchPoslodavacSO.cs" />
+    <Compile Include="PoslodavacSO\UpdatePoslodavacSO.cs" />
     <Compile Include="SOBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
