@@ -33,12 +33,20 @@ namespace Repository.Implementation
         public void Add(IDomenskiObjekat entity)
         {
             SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"insert into {entity.TableName} values ({entity.InsertValues})");
-            cmd.ExecuteNonQuery();
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                throw new Exception("Database error!");
+            }
         }
 
-        public void Delete(IDomenskiObjekat key)
+        public void Delete(IDomenskiObjekat entity)
         {
-            throw new NotImplementedException();
+
+            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"delete from {entity.TableName} where {entity.WhereCondition}");
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                throw new Exception("Database error!");
+            }
         }
 
         public IDomenskiObjekat Get(IDomenskiObjekat key)
@@ -70,7 +78,6 @@ namespace Repository.Implementation
         public void Update(IDomenskiObjekat entity)
         {
             SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"update {entity.TableName} set {entity.SetValues} where {entity.WhereCondition}");
-            cmd.ExecuteNonQuery();
             if (cmd.ExecuteNonQuery() != 1)
             {
                 throw new Exception("Database error!");

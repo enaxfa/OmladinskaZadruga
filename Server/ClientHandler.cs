@@ -57,6 +57,9 @@ namespace Server
                     case Operation.UpdateOmladinac:
                         Controller.Instance.UpdateOmladinac((Omladinac)request.RequestObject);
                         break;
+                    case Operation.DeleteOmladinac:
+                        Controller.Instance.DeleteOmladinac((Omladinac)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

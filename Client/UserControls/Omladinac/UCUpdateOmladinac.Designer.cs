@@ -58,7 +58,7 @@ namespace Client.UserControls.Omladinac
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 49);
+            this.label1.Location = new System.Drawing.Point(165, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 16);
             this.label1.TabIndex = 77;
@@ -68,7 +68,7 @@ namespace Client.UserControls.Omladinac
             // 
             this.btnOdaberi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOdaberi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnOdaberi.Location = new System.Drawing.Point(354, 356);
+            this.btnOdaberi.Location = new System.Drawing.Point(435, 405);
             this.btnOdaberi.Name = "btnOdaberi";
             this.btnOdaberi.Size = new System.Drawing.Size(172, 43);
             this.btnOdaberi.TabIndex = 76;
@@ -80,7 +80,7 @@ namespace Client.UserControls.Omladinac
             // 
             this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPretrazi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPretrazi.Location = new System.Drawing.Point(410, 74);
+            this.btnPretrazi.Location = new System.Drawing.Point(491, 105);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(116, 36);
             this.btnPretrazi.TabIndex = 75;
@@ -92,20 +92,20 @@ namespace Client.UserControls.Omladinac
             // 
             this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOmladinci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOmladinci.Location = new System.Drawing.Point(36, 137);
+            this.dgvOmladinci.Location = new System.Drawing.Point(21, 176);
             this.dgvOmladinci.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOmladinci.Name = "dgvOmladinci";
             this.dgvOmladinci.ReadOnly = true;
             this.dgvOmladinci.RowHeadersWidth = 51;
             this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOmladinci.Size = new System.Drawing.Size(490, 195);
+            this.dgvOmladinci.Size = new System.Drawing.Size(586, 209);
             this.dgvOmladinci.TabIndex = 74;
             // 
             // txtFilter
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFilter.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.txtFilter.Location = new System.Drawing.Point(87, 86);
+            this.txtFilter.Location = new System.Drawing.Point(168, 110);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);
@@ -128,7 +128,7 @@ namespace Client.UserControls.Omladinac
             this.pnlDetails.Controls.Add(this.label3);
             this.pnlDetails.Controls.Add(this.label2);
             this.pnlDetails.Controls.Add(this.label7);
-            this.pnlDetails.Location = new System.Drawing.Point(582, 69);
+            this.pnlDetails.Location = new System.Drawing.Point(663, 74);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(374, 406);
             this.pnlDetails.TabIndex = 0;
@@ -150,6 +150,7 @@ namespace Client.UserControls.Omladinac
             this.btnObrisi.TabIndex = 26;
             this.btnObrisi.Text = "Obrisi omladinca";
             this.btnObrisi.UseVisualStyleBackColor = false;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // txtBrRacuna
             // 
@@ -263,7 +264,7 @@ namespace Client.UserControls.Omladinac
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCUpdateOmladinac";
-            this.Size = new System.Drawing.Size(989, 557);
+            this.Size = new System.Drawing.Size(1150, 566);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();

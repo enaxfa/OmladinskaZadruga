@@ -30,5 +30,10 @@ namespace Client.UserControls.Omladinac
         {
             mainController.UpdateOmladinac(dgvOmladinci,txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
         }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            mainController.DeleteOmladinac(dgvOmladinci,txtIme,txtPrezime,txtJMBG,txtBrRacuna,txtBrTelefona,txtDatumRodjenja);
+        }
     }
 }

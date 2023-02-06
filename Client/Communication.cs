@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Client
 {
@@ -55,7 +56,7 @@ namespace Client
             return response.GetResponseResult<Administrator>();
         }
 
-        internal void AddOmladinca(Omladinac omladinac)
+        internal void AddOmladinac(Omladinac omladinac)
         {
             Request request = new Request()
             {
@@ -79,11 +80,23 @@ namespace Client
             return response.GetResponseResult<List<Omladinac>>();
         }
 
-        internal void UpdateOmladinca(Omladinac omladinac)
+        internal void UpdateOmladinac(Omladinac omladinac)
         {
             Request request = new Request()
             {
                 Operation = Operation.UpdateOmladinac,
+                RequestObject = omladinac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Omladinac>();
+        }
+
+        internal void DeleteOmladinac(Omladinac omladinac)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.DeleteOmladinac,
                 RequestObject = omladinac
             };
             transfer.Send(request);

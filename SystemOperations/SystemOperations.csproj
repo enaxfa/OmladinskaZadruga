@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdministratorSO\LoginSO.cs" />
     <Compile Include="OmladinacSO\AddOmladinacSO.cs" />
+    <Compile Include="OmladinacSO\DeleteOmladinacSO.cs" />
     <Compile Include="OmladinacSO\SearchOmladinacSO.cs" />
     <Compile Include="OmladinacSO\UpdateOmladinacSO.cs" />
     <Compile Include="SOBase.cs" />

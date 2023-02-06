@@ -56,5 +56,11 @@ namespace Server
             UpdateOmladinacSO so = new UpdateOmladinacSO();
             so.ExecuteTemplate(omladinac);
         }
+
+        internal void DeleteOmladinac(Omladinac omladinac)
+        {
+            DeleteOmladinacSO so = new DeleteOmladinacSO();
+            so.ExecuteTemplate(omladinac);
+        }
     }
 }
