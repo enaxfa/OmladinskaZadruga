@@ -55,7 +55,7 @@ namespace Client.Controller
             List<Omladinac> omladinci = Communication.Instance.SearchOmladinac(o);
             if (omladinci.Count == 0)
                 MessageBox.Show("Omladinac ne postoji");
-            else userControl.SetDataGridView(omladinci);
+            else userControl.DgvOmladinci.DataSource = omladinci;
         }
     }
 }

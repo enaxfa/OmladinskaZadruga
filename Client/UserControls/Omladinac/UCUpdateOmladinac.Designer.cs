@@ -269,6 +269,10 @@ namespace Client.UserControls.Omladinac
 
         }
 
+      
+
+        public DataGridView DgvOmladinci { get => dgvOmladinci; set => dgvOmladinci = value; }
+
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOdaberi;
