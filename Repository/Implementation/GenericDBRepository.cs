@@ -69,7 +69,12 @@ namespace Repository.Implementation
 
         public void Update(IDomenskiObjekat entity)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"update {entity.TableName} set {entity.SetValues} where {entity.WhereCondition}");
+            cmd.ExecuteNonQuery();
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                throw new Exception("Database error!");
+            }
         }
 
         

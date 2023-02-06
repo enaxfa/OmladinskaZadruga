@@ -4,6 +4,7 @@
     {
         Login,
         AddOmladinac,
-        SearchOmladinac
+        SearchOmladinac,
+        UpdateOmladinac
     }
 }

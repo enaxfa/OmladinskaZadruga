@@ -54,6 +54,9 @@ namespace Server
                     case Operation.SearchOmladinac:
                         response.Result = Controller.Instance.SearchOmladinac((Omladinac)request.RequestObject);
                         break;
+                    case Operation.UpdateOmladinac:
+                        Controller.Instance.UpdateOmladinac((Omladinac)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

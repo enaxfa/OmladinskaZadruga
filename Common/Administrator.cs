@@ -29,6 +29,9 @@ namespace Common
 
         public string SearchCondition => "";
 
+        public string SetValues => "";
+        public string WhereCondition => "";
+
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             List<IDomenskiObjekat> result = new List<IDomenskiObjekat>();

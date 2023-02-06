@@ -46,9 +46,15 @@ namespace Server
 
         internal List<Omladinac> SearchOmladinac(Omladinac omladinac)
         {
-            SearchOmladinac so = new SearchOmladinac();
+            SearchOmladinacSO so = new SearchOmladinacSO();
             so.ExecuteTemplate(omladinac);
             return so.Result;
+        }
+
+        internal void UpdateOmladinac(Omladinac omladinac)
+        {
+            UpdateOmladinacSO so = new UpdateOmladinacSO();
+            so.ExecuteTemplate(omladinac);
         }
     }
 }

@@ -16,7 +16,19 @@ namespace Client.UserControls.Omladinac
 
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
-            mainController.SearchOmladinac(txtFilter.Text, this);
+            mainController.SearchOmladinac(txtFilter, this);
+        }
+
+        private void btnOdaberi_Click(object sender, EventArgs e)
+        {
+            mainController.PrikaziOmladinca(dgvOmladinci, txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
+            btnIzmeni.Enabled = true;
+            btnObrisi.Enabled = true;
+        }
+
+        private void btnIzmeni_Click(object sender, EventArgs e)
+        {
+            mainController.UpdateOmladinac(dgvOmladinci,txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
         }
     }
 }

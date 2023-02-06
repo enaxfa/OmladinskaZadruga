@@ -11,6 +11,8 @@ namespace Common
     [Serializable]
     public class Omladinac : IDomenskiObjekat
     {
+        [Browsable(false)]
+        public int IDOmladinca { get; set; }
         public String Ime { get; set; }
 
         public String Prezime { get; set; }
@@ -33,6 +35,13 @@ namespace Common
         public string SearchCondition => Uslov;
         [Browsable(false)]
         public string Uslov { get; set; }
+
+        [Browsable(false)]
+        public string SetValues => $"Ime='{Ime}',Prezime='{Prezime}',DatumRodjenja='{DatumRodjenja}',JMBG='{JMBG}',BrojTelefona='{BrojTelefona}',BrojRacuna={BrojRacuna}";
+
+        [Browsable(false)]
+        public string WhereCondition => $"Id={IDOmladinca}";
+
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {
@@ -41,6 +50,7 @@ namespace Common
             {
                 result.Add(new Omladinac
                 {
+                    IDOmladinca = (int)reader[0],
                     Ime = (string)reader[1],
                     Prezime = (string)reader[2],
                     JMBG = (string)reader[3],

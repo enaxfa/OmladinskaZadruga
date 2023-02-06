@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace SystemOperations.OmladinacSO
 {
-    public class SearchOmladinac : SOBase
+    public class UpdateOmladinacSO : SOBase
     {
-        public List<Omladinac> Result { get; set; }
-
         protected override void ExecuteOperation(IDomenskiObjekat entity)
         {
-            Result = repository.Search(entity).Cast<Omladinac>().ToList();
+            repository.Update(entity);
         }
     }
 }

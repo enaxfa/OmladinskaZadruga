@@ -64,7 +64,7 @@ namespace Client
             };
             transfer.Send(request);
             Response response = transfer.Receive<Response>();
-            response.GetResponseResult<Administrator>();
+            response.GetResponseResult<Omladinac>();
         }
 
         internal List<Omladinac> SearchOmladinac(Omladinac omladinac)
@@ -77,6 +77,18 @@ namespace Client
             transfer.Send(request);
             Response response = transfer.Receive<Response>();
             return response.GetResponseResult<List<Omladinac>>();
+        }
+
+        internal void UpdateOmladinca(Omladinac omladinac)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.UpdateOmladinac,
+                RequestObject = omladinac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Omladinac>();
         }
     }
 }
