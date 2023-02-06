@@ -91,7 +91,7 @@ namespace Client.Helpers
 
         internal static bool EmailValidation(TextBox txt)
         {
-            if( new EmailAddressAttribute().IsValid(txt.Text))
+            if(new EmailAddressAttribute().IsValid(txt.Text))
             {
                 txt.BackColor = Color.White;
                 return true;

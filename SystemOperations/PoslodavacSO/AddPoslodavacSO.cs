@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemOperations.Poslodavac
+namespace SystemOperations.PoslodavacSO
 {
     public class AddPoslodavacSO : SOBase
     {

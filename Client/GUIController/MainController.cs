@@ -1,5 +1,6 @@
 ﻿using Client.Helpers;
 using Client.UserControls.Omladinac;
+using Client.UserControls.Poslodavac;
 using Common;
 using System;
 using System.Collections.Generic;
@@ -170,6 +171,33 @@ namespace Client.Controller
                 MessageBox.Show("Uspešno ste dodali poslodavca!");
                 UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
             
+        }
+
+        internal void SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
+        {
+            if (!UCHelper.EmptyFieldValidation(txtFilter))
+            {
+                MessageBox.Show("Unesite podatke za pretragu");
+                return;
+            }
+            try
+            {
+                Poslodavac p = new Poslodavac();
+                p.Uslov = $"Naziv like '{txtFilter.Text}%' or PIB like '{txtFilter.Text}%'";
+                List<Poslodavac> poslodavci = Communication.Instance.SearcPoslodavac(p);
+                if (poslodavci.Count == 0)
+                    MessageBox.Show("Poslodavac ne postoji");
+                else
+                {
+                    userControl.DgvPoslodavci.DataSource = poslodavci;
+                    UCHelper.ResetFields(txtFilter);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

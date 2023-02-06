@@ -7,7 +7,7 @@ using System.Security.Principal;
 using SystemOperations;
 using SystemOperations.AdministratorSO;
 using SystemOperations.OmladinacSO;
-using SystemOperations.Poslodavac;
+using SystemOperations.PoslodavacSO;
 
 namespace Server
 {
@@ -68,6 +68,13 @@ namespace Server
         {
             AddPoslodavacSO so = new AddPoslodavacSO();
             so.ExecuteTemplate(poslodavac);
+        }
+
+        internal object SearchPoslodavac(Poslodavac poslodavac)
+        {
+           SearchPoslodavac so = new SearchPoslodavac();
+            so.ExecuteTemplate(poslodavac);
+            return so.Result;
         }
     }
 }

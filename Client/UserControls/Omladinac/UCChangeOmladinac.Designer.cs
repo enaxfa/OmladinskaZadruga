@@ -33,7 +33,7 @@ namespace Client.UserControls.Omladinac
             this.label1 = new System.Windows.Forms.Label();
             this.btnOdaberi = new System.Windows.Forms.Button();
             this.btnPretrazi = new System.Windows.Forms.Button();
-            this.dgvOmladinci = new System.Windows.Forms.DataGridView();
+            this.dgvOmladinaci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.txtDatumRodjenja = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@ namespace Client.UserControls.Omladinac
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinaci)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,18 +88,18 @@ namespace Client.UserControls.Omladinac
             this.btnPretrazi.UseVisualStyleBackColor = false;
             this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
-            // dgvOmladinci
+            // dgvOmladinaci
             // 
-            this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvOmladinci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOmladinci.Location = new System.Drawing.Point(67, 176);
-            this.dgvOmladinci.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvOmladinci.Name = "dgvOmladinci";
-            this.dgvOmladinci.ReadOnly = true;
-            this.dgvOmladinci.RowHeadersWidth = 51;
-            this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOmladinci.Size = new System.Drawing.Size(540, 209);
-            this.dgvOmladinci.TabIndex = 74;
+            this.dgvOmladinaci.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvOmladinaci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOmladinaci.Location = new System.Drawing.Point(67, 176);
+            this.dgvOmladinaci.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOmladinaci.Name = "dgvOmladinaci";
+            this.dgvOmladinaci.ReadOnly = true;
+            this.dgvOmladinaci.RowHeadersWidth = 51;
+            this.dgvOmladinaci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOmladinaci.Size = new System.Drawing.Size(540, 209);
+            this.dgvOmladinaci.TabIndex = 74;
             // 
             // txtFilter
             // 
@@ -260,12 +260,12 @@ namespace Client.UserControls.Omladinac
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.btnPretrazi);
-            this.Controls.Add(this.dgvOmladinci);
+            this.Controls.Add(this.dgvOmladinaci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCChangeOmladinac";
             this.Size = new System.Drawing.Size(1150, 566);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinaci)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
             this.ResumeLayout(false);
@@ -275,13 +275,13 @@ namespace Client.UserControls.Omladinac
 
       
 
-        public DataGridView DgvOmladinci { get => dgvOmladinci; set => dgvOmladinci = value; }
+        public DataGridView DgvOmladinci { get => dgvOmladinaci; set => dgvOmladinaci = value; }
 
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.Button btnPretrazi;
-        private System.Windows.Forms.DataGridView dgvOmladinci;
+        private System.Windows.Forms.DataGridView dgvOmladinaci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.TextBox txtBrRacuna;

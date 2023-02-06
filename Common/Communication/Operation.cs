@@ -7,6 +7,7 @@
         SearchOmladinac,
         UpdateOmladinac,
         DeleteOmladinac,
-        AddPoslodavac
+        AddPoslodavac,
+        SearchPoslodavac
     }
 }

@@ -115,5 +115,17 @@ namespace Client
             Response response = transfer.Receive<Response>();
             response.GetResponseResult<Poslodavac>();
         }
+
+        internal List<Poslodavac> SearcPoslodavac(Poslodavac poslodavac)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SearchPoslodavac,
+                RequestObject = poslodavac
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Poslodavac>>();
+        }
     }
 }

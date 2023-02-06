@@ -63,6 +63,9 @@ namespace Server
                     case Operation.AddPoslodavac:
                         Controller.Instance.AddPoslodavac((Poslodavac)request.RequestObject);
                         break;
+                    case Operation.SearchPoslodavac:
+                        response.Result = Controller.Instance.SearchPoslodavac((Poslodavac)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

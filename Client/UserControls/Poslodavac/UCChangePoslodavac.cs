@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Client.UserControls.Poslodavac
 {
     public partial class UCChangePoslodavac : UserControl
     {
+        private MainController mainController = new MainController();
         public UCChangePoslodavac()
         {
             InitializeComponent();
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            mainController.SearchPoslodavac(txtFilter, this);
         }
     }
 }

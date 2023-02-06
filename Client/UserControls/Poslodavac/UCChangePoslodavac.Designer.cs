@@ -1,4 +1,6 @@
-﻿namespace Client.UserControls.Poslodavac
+﻿using System.Windows.Forms;
+
+namespace Client.UserControls.Poslodavac
 {
     partial class UCChangePoslodavac
     {
@@ -31,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnOdaberi = new System.Windows.Forms.Button();
             this.btnPretrazi = new System.Windows.Forms.Button();
-            this.dgvOmladinci = new System.Windows.Forms.DataGridView();
+            this.dgvPoslodavci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.btnIzbrisi = new System.Windows.Forms.Button();
@@ -46,7 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoslodavci)).BeginInit();
             this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,19 +83,20 @@
             this.btnPretrazi.TabIndex = 81;
             this.btnPretrazi.Text = "Pretraži";
             this.btnPretrazi.UseVisualStyleBackColor = false;
+            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
-            // dgvOmladinci
+            // dgvPoslodavci
             // 
-            this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvOmladinci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOmladinci.Location = new System.Drawing.Point(72, 169);
-            this.dgvOmladinci.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvOmladinci.Name = "dgvOmladinci";
-            this.dgvOmladinci.ReadOnly = true;
-            this.dgvOmladinci.RowHeadersWidth = 51;
-            this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOmladinci.Size = new System.Drawing.Size(529, 206);
-            this.dgvOmladinci.TabIndex = 80;
+            this.dgvPoslodavci.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvPoslodavci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPoslodavci.Location = new System.Drawing.Point(72, 169);
+            this.dgvPoslodavci.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPoslodavci.Name = "dgvPoslodavci";
+            this.dgvPoslodavci.ReadOnly = true;
+            this.dgvPoslodavci.RowHeadersWidth = 51;
+            this.dgvPoslodavci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPoslodavci.Size = new System.Drawing.Size(529, 206);
+            this.dgvPoslodavci.TabIndex = 80;
             // 
             // txtFilter
             // 
@@ -243,25 +246,25 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.btnPretrazi);
-            this.Controls.Add(this.dgvOmladinci);
+            this.Controls.Add(this.dgvPoslodavci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCChangePoslodavac";
             this.Size = new System.Drawing.Size(1096, 551);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoslodavci)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
+        public DataGridView DgvPoslodavci { get => dgvPoslodavci; set => dgvPoslodavci = value; }
         #endregion
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.Button btnPretrazi;
-        private System.Windows.Forms.DataGridView dgvOmladinci;
+        private System.Windows.Forms.DataGridView dgvPoslodavci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.Button btnIzbrisi;

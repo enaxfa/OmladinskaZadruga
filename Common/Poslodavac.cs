@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Common
     [Serializable]
     public class Poslodavac : IDomenskiObjekat
     {
-
+        [Browsable(false)]
         public int IDPoslodavca { get; set; }
         public String Naziv { get; set; }
         public String PIB { get; set; }
@@ -18,19 +19,21 @@ namespace Common
         public String Email { get; set; }
         public String BrojTelefona { get; set; }
 
+        [Browsable(false)]
         public string TableName => "Poslodavac";
-
+        [Browsable(false)]
         public string InsertValues => $"'{Naziv}', '{PIB}', '{Adresa}','{Email}','{BrojTelefona}'";
-
+        [Browsable(false)]
         public object SelectValues => "*";
-
+        [Browsable(false)]
         public String Uslov { get; set; }
+        [Browsable(false)]
         public string SearchCondition => Uslov;
-
+        [Browsable(false)]
         public string SetValues => $"Naziv = '{Naziv}', PIB = '{PIB}', Adresa = '{Adresa}', Email = '{Email}', BrojTelefona = '{BrojTelefona}'";
-
+        [Browsable(false)]
         public string WhereCondition => $"Id = {IDPoslodavca}";
-
+        [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             List<IDomenskiObjekat> result = new List<IDomenskiObjekat>();
