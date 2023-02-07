@@ -21,7 +21,7 @@ namespace Common
         [Browsable(false)]
         public string TableName => "Posao";
         [Browsable(false)]
-        public string InsertValues => $"'{IdPosla}', '{Lokacija}', '{Satnica}','{CenaRadnogSata}','{BrojOmladinaca}', '{Poslodavac.IDPoslodavca}', '{TipPosla.Id}'";
+        public string InsertValues => $"'{Lokacija}', '{Satnica}','{CenaRadnogSata}','{BrojOmladinaca}', '{Poslodavac.IDPoslodavca}', '{TipPosla.Id}'";
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]

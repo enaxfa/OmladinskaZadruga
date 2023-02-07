@@ -19,5 +19,10 @@ namespace Client.UserControls.Posao
             InitializeComponent();
             mainController.LoadComboBox(cbPoslodavac, cbTipPosla);
         }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            mainController.AddPosao(txtLokacija, txtSat, txtCenaRS, txtBrOml, cbPoslodavac, cbTipPosla);
+        }
     }
 }

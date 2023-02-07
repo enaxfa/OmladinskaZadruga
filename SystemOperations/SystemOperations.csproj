@@ -46,6 +46,7 @@
     <Compile Include="OmladinacSO\DeleteOmladinacSO.cs" />
     <Compile Include="OmladinacSO\SearchOmladinacSO.cs" />
     <Compile Include="OmladinacSO\UpdateOmladinacSO.cs" />
+    <Compile Include="PosaoSO\AddPosaoSO.cs" />
     <Compile Include="PoslodavacSO\AddPoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\DeletePoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\GetPoslodavceSO.cs" />

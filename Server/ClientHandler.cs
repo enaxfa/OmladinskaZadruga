@@ -78,6 +78,9 @@ namespace Server
                     case Operation.GetTipPoslova:
                         response.Result = Controller.Instance.GetTipPoslova((TipPosla)request.RequestObject);
                         break;
+                    case Operation.AddPosao:
+                        Controller.Instance.AddPosao((Posao)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

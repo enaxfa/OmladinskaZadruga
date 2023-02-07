@@ -102,5 +102,25 @@ namespace Client.Helpers
                 return false;
             }
         }
+
+        public static bool ComboBoxValidation(ComboBox cmb)
+        {
+            if (cmb.SelectedIndex == -1)
+            {
+                cmb.BackColor = Color.LightCoral;
+                return false;
+            }
+            else
+            {
+                cmb.BackColor = Color.White;
+                return true;
+            }
+        }
+
+        internal static void ResetComboBox(params ComboBox[] comboBoxes)
+        {
+            foreach (ComboBox cb in comboBoxes)
+                cb.SelectedItem = null; 
+        }
     }
 }

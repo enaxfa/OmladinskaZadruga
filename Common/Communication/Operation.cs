@@ -12,6 +12,7 @@
         UpdatePoslodavac,
         DeletePoslodavac,
         GetPoslodavce,
-        GetTipPoslova
+        GetTipPoslova,
+        AddPosao
     }
 }

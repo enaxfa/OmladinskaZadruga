@@ -34,10 +34,10 @@
             this.txtCenaRS = new System.Windows.Forms.TextBox();
             this.txtSat = new System.Windows.Forms.TextBox();
             this.txtLokacija = new System.Windows.Forms.TextBox();
-            this.txtBrOmladinaca = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCena = new System.Windows.Forms.Label();
-            this.txtSatnica = new System.Windows.Forms.Label();
+            this.labal2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labal3 = new System.Windows.Forms.Label();
+            this.labal4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbPoslodavac = new System.Windows.Forms.ComboBox();
             this.cbTipPosla = new System.Windows.Forms.ComboBox();
@@ -61,6 +61,7 @@
             this.btnDodaj.TabIndex = 23;
             this.btnDodaj.Text = "Dodaj posao";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // txtBrOml
             // 
@@ -90,41 +91,41 @@
             this.txtLokacija.Size = new System.Drawing.Size(213, 22);
             this.txtLokacija.TabIndex = 19;
             // 
-            // txtBrOmladinaca
+            // labal2
             // 
-            this.txtBrOmladinaca.AutoSize = true;
-            this.txtBrOmladinaca.Location = new System.Drawing.Point(59, 196);
-            this.txtBrOmladinaca.Name = "txtBrOmladinaca";
-            this.txtBrOmladinaca.Size = new System.Drawing.Size(105, 16);
-            this.txtBrOmladinaca.TabIndex = 18;
-            this.txtBrOmladinaca.Text = "Broj omladinaca";
+            this.labal2.AutoSize = true;
+            this.labal2.Location = new System.Drawing.Point(59, 196);
+            this.labal2.Name = "labal2";
+            this.labal2.Size = new System.Drawing.Size(105, 16);
+            this.labal2.TabIndex = 18;
+            this.labal2.Text = "Broj omladinaca";
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Tip posla";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(59, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 16);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Tip posla";
             // 
-            // txtCena
+            // labal3
             // 
-            this.txtCena.AutoSize = true;
-            this.txtCena.Location = new System.Drawing.Point(59, 244);
-            this.txtCena.Name = "txtCena";
-            this.txtCena.Size = new System.Drawing.Size(114, 16);
-            this.txtCena.TabIndex = 16;
-            this.txtCena.Text = "Cena radnog sata";
+            this.labal3.AutoSize = true;
+            this.labal3.Location = new System.Drawing.Point(59, 244);
+            this.labal3.Name = "labal3";
+            this.labal3.Size = new System.Drawing.Size(114, 16);
+            this.labal3.TabIndex = 16;
+            this.labal3.Text = "Cena radnog sata";
             // 
-            // txtSatnica
+            // labal4
             // 
-            this.txtSatnica.AutoSize = true;
-            this.txtSatnica.Location = new System.Drawing.Point(59, 287);
-            this.txtSatnica.Name = "txtSatnica";
-            this.txtSatnica.Size = new System.Drawing.Size(55, 16);
-            this.txtSatnica.TabIndex = 15;
-            this.txtSatnica.Text = "Broj sati";
+            this.labal4.AutoSize = true;
+            this.labal4.Location = new System.Drawing.Point(59, 287);
+            this.labal4.Name = "labal4";
+            this.labal4.Size = new System.Drawing.Size(55, 16);
+            this.labal4.TabIndex = 15;
+            this.labal4.Text = "Broj sati";
             // 
             // label1
             // 
@@ -163,10 +164,10 @@
             this.Controls.Add(this.txtCenaRS);
             this.Controls.Add(this.txtSat);
             this.Controls.Add(this.txtLokacija);
-            this.Controls.Add(this.txtBrOmladinaca);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtCena);
-            this.Controls.Add(this.txtSatnica);
+            this.Controls.Add(this.labal2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labal3);
+            this.Controls.Add(this.labal4);
             this.Controls.Add(this.label1);
             this.Name = "UCAddPosao";
             this.Size = new System.Drawing.Size(478, 481);
@@ -182,10 +183,10 @@
         private System.Windows.Forms.TextBox txtCenaRS;
         private System.Windows.Forms.TextBox txtSat;
         private System.Windows.Forms.TextBox txtLokacija;
-        private System.Windows.Forms.Label txtBrOmladinaca;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label txtCena;
-        private System.Windows.Forms.Label txtSatnica;
+        private System.Windows.Forms.Label labal2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labal3;
+        private System.Windows.Forms.Label labal4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbPoslodavac;
         private System.Windows.Forms.ComboBox cbTipPosla;

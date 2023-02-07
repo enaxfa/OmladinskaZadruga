@@ -41,9 +41,9 @@ namespace Client.GUIController
             };
             Administrator administrator = Communication.Instance.Login(a);
 
-            if (administrator != null)
+           if (administrator != null)
             {
-                MessageBox.Show("Uspesno ste se prijavili!");
+                //MessageBox.Show("Uspesno ste se prijavili!");
                 FormCoordinator.Instance.ShowFrmMain(administrator.Ime, administrator.Prezime);
             }
             else

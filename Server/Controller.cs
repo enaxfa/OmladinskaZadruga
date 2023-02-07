@@ -7,6 +7,7 @@ using System.Security.Principal;
 using SystemOperations;
 using SystemOperations.AdministratorSO;
 using SystemOperations.OmladinacSO;
+using SystemOperations.PosaoSO;
 using SystemOperations.PoslodavacSO;
 using SystemOperations.TipPoslaSO;
 
@@ -102,6 +103,12 @@ namespace Server
             GetTipPoslovaSO so = new GetTipPoslovaSO();
             so.ExecuteTemplate(tipPosla);
             return so.Result;
+        }
+
+        internal void AddPosao(Posao posao)
+        {
+            AddPosaoSO so = new AddPosaoSO();
+            so.ExecuteTemplate(posao);
         }
     }
 }

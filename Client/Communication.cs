@@ -175,5 +175,17 @@ namespace Client
             Response response = transfer.Receive<Response>();
             return response.GetResponseResult<List<TipPosla>>();
         }
+
+        internal void AddPosao(Posao posao)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.AddPosao,
+                RequestObject = posao
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Posao>();
+        }
     }
 }

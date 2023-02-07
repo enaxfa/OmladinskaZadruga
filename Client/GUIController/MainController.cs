@@ -158,7 +158,9 @@ namespace Client.Controller
                 MessageBox.Show("Podaci nisu ispravno uneti!");
                 return;
             }
-            
+
+            try
+            {
                 Poslodavac poslodavac = new Poslodavac
                 {
                     Naziv = txtNaziv.Text,
@@ -170,6 +172,12 @@ namespace Client.Controller
                 Communication.Instance.AddPoslodavac(poslodavac);
                 MessageBox.Show("Uspešno ste dodali poslodavca!");
                 UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             
         }
 
@@ -261,8 +269,40 @@ namespace Client.Controller
 
         internal void LoadComboBox(ComboBox cbPoslodavac, ComboBox cbTipPosla)
         {
-            cbPoslodavac.DataSource = Communication.Instance.GetPoslodavac();
-            cbTipPosla.DataSource = Communication.Instance.GetTipPoslova();
+            try
+            {
+                cbPoslodavac.DataSource = Communication.Instance.GetPoslodavac();
+                cbPoslodavac.SelectedItem = null;
+                cbTipPosla.DataSource = Communication.Instance.GetTipPoslova();
+                cbTipPosla.SelectedItem = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void AddPosao(TextBox txtLokacija, TextBox txtSat, TextBox txtCenaRS, TextBox txtBrOml, ComboBox cbPoslodavac, ComboBox cbTipPosla)
+        {
+            if (!UCHelper.EmptyFieldValidation(txtLokacija) | !UCHelper.EmptyFieldValidation(txtSat) | !UCHelper.EmptyFieldValidation(txtCenaRS) | !UCHelper.EmptyFieldValidation(txtBrOml)
+                  | !UCHelper.AllNumberValidation(txtCenaRS) | !UCHelper.AllNumberValidation(txtSat) | !UCHelper.AllNumberValidation(txtBrOml) | !UCHelper.ComboBoxValidation(cbPoslodavac) | !UCHelper.ComboBoxValidation(cbTipPosla))
+            {
+                MessageBox.Show("Podaci nisu ispravno uneti!");
+                return;
+            }
+            Posao posao = new Posao
+            {
+                Lokacija = txtLokacija.Text,
+                Satnica = int.Parse(txtSat.Text),
+                CenaRadnogSata = int.Parse(txtCenaRS.Text),
+                BrojOmladinaca = int.Parse(txtBrOml.Text),
+                Poslodavac = (Poslodavac)cbPoslodavac.SelectedItem,
+                TipPosla = (TipPosla)cbTipPosla.SelectedItem
+            };
+            Communication.Instance.AddPosao(posao);
+            MessageBox.Show("Uspešno ste dodali posao!");
+            UCHelper.ResetFields(txtLokacija, txtSat, txtCenaRS, txtBrOml);
+            UCHelper.ResetComboBox(cbPoslodavac, cbTipPosla);
         }
     }
 }
