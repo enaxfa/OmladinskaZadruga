@@ -13,6 +13,7 @@
         DeletePoslodavac,
         GetPoslodavce,
         GetTipPoslova,
-        AddPosao
+        AddPosao,
+        SearchPosao
     }
 }

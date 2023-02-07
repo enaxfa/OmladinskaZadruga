@@ -35,10 +35,11 @@
             this.poslodavacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblAdministrator = new System.Windows.Forms.Label();
             this.posaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblAdministrator = new System.Windows.Forms.Label();
+            this.pretraziToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +102,22 @@
             this.izmeniToolStripMenuItem1.Text = "Izmeni";
             this.izmeniToolStripMenuItem1.Click += new System.EventHandler(this.izmeniToolStripMenuItem1_Click);
             // 
+            // posaoToolStripMenuItem
+            // 
+            this.posaoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajToolStripMenuItem2,
+            this.pretraziToolStripMenuItem});
+            this.posaoToolStripMenuItem.Name = "posaoToolStripMenuItem";
+            this.posaoToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.posaoToolStripMenuItem.Text = "Posao";
+            // 
+            // dodajToolStripMenuItem2
+            // 
+            this.dodajToolStripMenuItem2.Name = "dodajToolStripMenuItem2";
+            this.dodajToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.dodajToolStripMenuItem2.Text = "Dodaj";
+            this.dodajToolStripMenuItem2.Click += new System.EventHandler(this.dodajToolStripMenuItem2_Click);
+            // 
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -118,20 +135,12 @@
             this.lblAdministrator.TabIndex = 0;
             this.lblAdministrator.Text = "label1";
             // 
-            // posaoToolStripMenuItem
+            // pretraziToolStripMenuItem
             // 
-            this.posaoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajToolStripMenuItem2});
-            this.posaoToolStripMenuItem.Name = "posaoToolStripMenuItem";
-            this.posaoToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.posaoToolStripMenuItem.Text = "Posao";
-            // 
-            // dodajToolStripMenuItem2
-            // 
-            this.dodajToolStripMenuItem2.Name = "dodajToolStripMenuItem2";
-            this.dodajToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.dodajToolStripMenuItem2.Text = "Dodaj";
-            this.dodajToolStripMenuItem2.Click += new System.EventHandler(this.dodajToolStripMenuItem2_Click);
+            this.pretraziToolStripMenuItem.Name = "pretraziToolStripMenuItem";
+            this.pretraziToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pretraziToolStripMenuItem.Text = "Pretrazi";
+            this.pretraziToolStripMenuItem.Click += new System.EventHandler(this.pretraziToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -164,5 +173,6 @@
         private System.Windows.Forms.Label lblAdministrator;
         private System.Windows.Forms.ToolStripMenuItem posaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem pretraziToolStripMenuItem;
     }
 }

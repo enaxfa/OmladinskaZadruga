@@ -84,6 +84,12 @@
     <Compile Include="UserControls\Posao\UCAddPosao.Designer.cs">
       <DependentUpon>UCAddPosao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Posao\UCChangePosao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Posao\UCChangePosao.Designer.cs">
+      <DependentUpon>UCChangePosao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Poslodavac\UCChangePoslodavac.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Posao\UCAddPosao.resx">
       <DependentUpon>UCAddPosao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Posao\UCChangePosao.resx">
+      <DependentUpon>UCChangePosao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Poslodavac\UCChangePoslodavac.resx">
       <DependentUpon>UCChangePoslodavac.cs</DependentUpon>

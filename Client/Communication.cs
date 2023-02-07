@@ -116,7 +116,7 @@ namespace Client
             response.GetResponseResult<Poslodavac>();
         }
 
-        internal List<Poslodavac> SearcPoslodavac(Poslodavac poslodavac)
+        internal List<Poslodavac> SearchPoslodavac(Poslodavac poslodavac)
         {
             Request request = new Request
             {
@@ -186,6 +186,18 @@ namespace Client
             transfer.Send(request);
             Response response = transfer.Receive<Response>();
             response.GetResponseResult<Posao>();
+        }
+
+        internal List<Posao> SearchPosao(Posao posao)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SearchPosao,
+                RequestObject = posao
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Posao>>();
         }
     }
 }

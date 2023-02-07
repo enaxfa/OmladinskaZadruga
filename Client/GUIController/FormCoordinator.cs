@@ -77,5 +77,10 @@ namespace Client.GUIController
             frmMain.SetPanel(new UCAddPosao());
             
         }
+
+        internal void OpenUCChangePosao()
+        {
+            frmMain.SetPanel(new UCChangePosao());
+        }
     }
 }

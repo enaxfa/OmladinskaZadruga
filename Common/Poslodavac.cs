@@ -38,6 +38,13 @@ namespace Common
         public string SetValues => $"Naziv = '{Naziv}', PIB = '{PIB}', Adresa = '{Adresa}', Email = '{Email}', BrojTelefona = '{BrojTelefona}'";
         [Browsable(false)]
         public string WhereCondition => $"Id = {IDPoslodavca}";
+
+        public string JoinCondition => "";
+
+        public string JoinTable => "";
+
+        public string TableAlias => "";
+
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {

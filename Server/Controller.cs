@@ -110,5 +110,12 @@ namespace Server
             AddPosaoSO so = new AddPosaoSO();
             so.ExecuteTemplate(posao);
         }
+
+        internal object SearchPosao(Posao posao)
+        {
+            SearchPosaoSO so = new SearchPosaoSO();
+            so.ExecuteTemplate(posao);
+            return so.Result;
+        }
     }
 }

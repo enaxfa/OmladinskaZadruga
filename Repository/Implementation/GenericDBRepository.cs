@@ -84,6 +84,14 @@ namespace Repository.Implementation
             }
         }
 
-        
+        public List<IDomenskiObjekat> GetAllWithCondition(IDomenskiObjekat entity)
+        {
+            List<IDomenskiObjekat> result;
+            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"select {entity.SelectValues} from {entity.TableName} {entity.TableAlias} {entity.JoinTable} {entity.JoinCondition} where {entity.SearchCondition}");
+            SqlDataReader reader = cmd.ExecuteReader();
+            result = entity.GetEntities(reader);
+            reader.Close();
+            return result;
+        }
     }
 }

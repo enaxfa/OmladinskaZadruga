@@ -13,6 +13,8 @@ namespace Repository
         void Delete(IDomenskiObjekat key);
         IDomenskiObjekat Get(IDomenskiObjekat key);
         List<IDomenskiObjekat> GetAll(IDomenskiObjekat entity);
+
+        List<IDomenskiObjekat> GetAllWithCondition(IDomenskiObjekat entity);
         List<IDomenskiObjekat> Search(IDomenskiObjekat entity);
     }
 }

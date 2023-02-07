@@ -81,6 +81,9 @@ namespace Server
                     case Operation.AddPosao:
                         Controller.Instance.AddPosao((Posao)request.RequestObject);
                         break;
+                    case Operation.SearchPosao:
+                        response.Result = Controller.Instance.SearchPosao((Posao)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

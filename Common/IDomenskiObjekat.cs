@@ -16,6 +16,9 @@ namespace Common
         string SearchCondition { get; }
         string SetValues { get;  }
         string WhereCondition { get; }
+        string JoinCondition { get; }
+        string JoinTable { get; }
+        string TableAlias { get; }
 
         List<IDomenskiObjekat> GetEntities(SqlDataReader reader);
     }

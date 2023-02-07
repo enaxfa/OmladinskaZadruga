@@ -11,6 +11,7 @@ namespace Common
     [Serializable]
     public class TipPosla : IDomenskiObjekat
     {
+        [Browsable(false)]
         public int Id { get; set; }
         public String Naziv { get; set; }
 
@@ -31,6 +32,13 @@ namespace Common
         public string SetValues => "";
         [Browsable(false)]
         public string WhereCondition => $"Id = {Id}";
+
+        public string JoinCondition => "";
+
+        public string JoinTable => "";
+
+        public string TableAlias => "";
+
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {

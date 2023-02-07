@@ -21,19 +21,19 @@ namespace Client.UserControls.Omladinac
 
         private void btnOdaberi_Click(object sender, EventArgs e)
         {
-            mainController.PrikaziOmladinca(dgvOmladinaci, txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
+            mainController.PrikaziOmladinca(dgvOmladinci, txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
             btnIzmeni.Enabled = true;
             btnObrisi.Enabled = true;
         }
 
         private void btnIzmeni_Click(object sender, EventArgs e)
         {
-            mainController.UpdateOmladinac(dgvOmladinaci,txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
+            mainController.UpdateOmladinac(dgvOmladinci,txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            mainController.DeleteOmladinac(dgvOmladinaci,txtIme,txtPrezime,txtJMBG,txtBrRacuna,txtBrTelefona,txtDatumRodjenja);
+            mainController.DeleteOmladinac(dgvOmladinci,txtIme,txtPrezime,txtJMBG,txtBrRacuna,txtBrTelefona,txtDatumRodjenja);
         }
     }
 }

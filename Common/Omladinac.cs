@@ -42,6 +42,12 @@ namespace Common
         [Browsable(false)]
         public string WhereCondition => $"Id={IDOmladinca}";
 
+        public string JoinCondition => "";
+
+        public string JoinTable => "";
+
+        public string TableAlias => "";
+
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {

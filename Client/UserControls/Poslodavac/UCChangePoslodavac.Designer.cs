@@ -56,7 +56,7 @@ namespace Client.UserControls.Poslodavac
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 83);
+            this.label1.Location = new System.Drawing.Point(69, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 83;
@@ -78,7 +78,7 @@ namespace Client.UserControls.Poslodavac
             // 
             this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPretrazi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPretrazi.Location = new System.Drawing.Point(485, 101);
+            this.btnPretrazi.Location = new System.Drawing.Point(377, 101);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(116, 36);
             this.btnPretrazi.TabIndex = 81;
@@ -103,7 +103,7 @@ namespace Client.UserControls.Poslodavac
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFilter.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.txtFilter.Location = new System.Drawing.Point(182, 113);
+            this.txtFilter.Location = new System.Drawing.Point(72, 113);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);

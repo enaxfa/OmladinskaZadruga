@@ -32,6 +32,12 @@ namespace Common
         public string SetValues => "";
         public string WhereCondition => "";
 
+        public string JoinCondition => "";
+
+        public string JoinTable => "";
+
+        public string TableAlias => "";
+
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {
             List<IDomenskiObjekat> result = new List<IDomenskiObjekat>();

@@ -63,5 +63,10 @@ namespace Client
         {
             FormCoordinator.Instance.OpenUCAddPosao();
         }
+
+        private void pretraziToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCoordinator.Instance.OpenUCChangePosao();
+        }
     }
 }

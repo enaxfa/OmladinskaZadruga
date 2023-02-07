@@ -1,5 +1,6 @@
 ﻿using Client.Helpers;
 using Client.UserControls.Omladinac;
+using Client.UserControls.Posao;
 using Client.UserControls.Poslodavac;
 using Common;
 using System;
@@ -192,7 +193,7 @@ namespace Client.Controller
             {
                 Poslodavac p = new Poslodavac();
                 p.Uslov = $"Naziv like '{txtFilter.Text}%' or PIB like '{txtFilter.Text}%' or Adresa like '{txtFilter.Text}%' or Email like '{txtFilter.Text}%'";
-                List<Poslodavac> poslodavci = Communication.Instance.SearcPoslodavac(p);
+                List<Poslodavac> poslodavci = Communication.Instance.SearchPoslodavac(p);
                 if (poslodavci.Count == 0)
                     MessageBox.Show("Poslodavac ne postoji");
                 else
@@ -257,7 +258,7 @@ namespace Client.Controller
             try
             {
                 Communication.Instance.DeletePoslodavac(poslodavac);
-                MessageBox.Show("Uspešno ste obrisali omladinca!");
+                MessageBox.Show("Uspešno ste obrisali poslodavca!");
                 ClearTable(dgvPoslodavci);
                 UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
             }
@@ -294,7 +295,7 @@ namespace Client.Controller
             {
                 Lokacija = txtLokacija.Text,
                 Satnica = int.Parse(txtSat.Text),
-                CenaRadnogSata = int.Parse(txtCenaRS.Text),
+                CenaRadnogSata = decimal.Parse(txtCenaRS.Text),
                 BrojOmladinaca = int.Parse(txtBrOml.Text),
                 Poslodavac = (Poslodavac)cbPoslodavac.SelectedItem,
                 TipPosla = (TipPosla)cbTipPosla.SelectedItem
@@ -303,6 +304,27 @@ namespace Client.Controller
             MessageBox.Show("Uspešno ste dodali posao!");
             UCHelper.ResetFields(txtLokacija, txtSat, txtCenaRS, txtBrOml);
             UCHelper.ResetComboBox(cbPoslodavac, cbTipPosla);
+        }
+
+        internal void SearchPosao(TextBox txtFilter, UCChangePosao userControl)
+        {
+            if (!UCHelper.EmptyFieldValidation(txtFilter))
+            {
+                MessageBox.Show("Unesite podatke za pretragu");
+                return;
+            }
+            
+                Posao p = new Posao();
+                p.Uslov = $"po.lokacija like '{txtFilter.Text}%' or p.Naziv like '{txtFilter.Text}%' or tp.Naziv like '{txtFilter.Text}%'";
+                List<Posao> poslovi = Communication.Instance.SearchPosao(p);
+                if (poslovi.Count == 0)
+                    MessageBox.Show("Posao ne postoji");
+                else
+                {
+                    userControl.DgvOmladinci.DataSource = poslovi;
+                    UCHelper.ResetFields(txtFilter);
+                }
+            
         }
     }
 }
