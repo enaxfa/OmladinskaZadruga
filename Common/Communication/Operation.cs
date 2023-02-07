@@ -10,6 +10,8 @@
         AddPoslodavac,
         SearchPoslodavac,
         UpdatePoslodavac,
-        DeletePoslodavac
+        DeletePoslodavac,
+        GetPoslodavce,
+        GetTipPoslova
     }
 }

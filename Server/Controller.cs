@@ -8,6 +8,7 @@ using SystemOperations;
 using SystemOperations.AdministratorSO;
 using SystemOperations.OmladinacSO;
 using SystemOperations.PoslodavacSO;
+using SystemOperations.TipPoslaSO;
 
 namespace Server
 {
@@ -70,7 +71,7 @@ namespace Server
             so.ExecuteTemplate(poslodavac);
         }
 
-        internal object SearchPoslodavac(Poslodavac poslodavac)
+        internal List<Poslodavac> SearchPoslodavac(Poslodavac poslodavac)
         {
            SearchPoslodavacSO so = new SearchPoslodavacSO();
             so.ExecuteTemplate(poslodavac);
@@ -87,6 +88,20 @@ namespace Server
         {
             DeletePoslodavacSO so = new DeletePoslodavacSO();
             so.ExecuteTemplate(poslodavac);
+        }
+
+        internal List<Poslodavac> GetPoslodavce(Poslodavac poslodavac)
+        {
+            GetPoslodavceSO so = new GetPoslodavceSO();
+            so.ExecuteTemplate(poslodavac);
+            return so.Result;
+        }
+
+        internal List<TipPosla> GetTipPoslova(TipPosla tipPosla)
+        {
+            GetTipPoslovaSO so = new GetTipPoslovaSO();
+            so.ExecuteTemplate(tipPosla);
+            return so.Result;
         }
     }
 }

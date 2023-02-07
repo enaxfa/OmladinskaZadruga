@@ -72,6 +72,12 @@ namespace Server
                     case Operation.DeletePoslodavac:
                         Controller.Instance.DeletePoslodavac((Poslodavac)request.RequestObject);
                         break;
+                    case Operation.GetPoslodavce:
+                        response.Result = Controller.Instance.GetPoslodavce((Poslodavac)request.RequestObject);
+                        break;
+                    case Operation.GetTipPoslova:
+                        response.Result = Controller.Instance.GetTipPoslova((TipPosla)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

@@ -58,5 +58,10 @@ namespace Client
         {
             FormCoordinator.Instance.OpenUCChangePoslodavac();
         }
+
+        private void dodajToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormCoordinator.Instance.OpenUCAddPosao();
+        }
     }
 }

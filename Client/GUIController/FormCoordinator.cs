@@ -1,5 +1,6 @@
 ﻿using Client.Controller;
 using Client.UserControls.Omladinac;
+using Client.UserControls.Posao;
 using Client.UserControls.Poslodavac;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,12 @@ namespace Client.GUIController
         internal void OpenUCChangePoslodavac()
         {
             frmMain.SetPanel(new UCChangePoslodavac());
+        }
+
+        internal void OpenUCAddPosao()
+        {
+            frmMain.SetPanel(new UCAddPosao());
+            
         }
     }
 }

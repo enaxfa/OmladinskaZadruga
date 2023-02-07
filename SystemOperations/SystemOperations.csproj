@@ -48,10 +48,12 @@
     <Compile Include="OmladinacSO\UpdateOmladinacSO.cs" />
     <Compile Include="PoslodavacSO\AddPoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\DeletePoslodavacSO.cs" />
+    <Compile Include="PoslodavacSO\GetPoslodavceSO.cs" />
     <Compile Include="PoslodavacSO\SearchPoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\UpdatePoslodavacSO.cs" />
     <Compile Include="SOBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipPoslaSO\GetTipPoslovaSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

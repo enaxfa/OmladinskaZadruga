@@ -151,5 +151,29 @@ namespace Client
             Response response = transfer.Receive<Response>();
             response.GetResponseResult<Poslodavac>();
         }
+
+        internal List<Poslodavac> GetPoslodavac()
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.GetPoslodavce,
+                RequestObject = new Poslodavac()
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Poslodavac>>();
+        }
+
+        internal List<TipPosla> GetTipPoslova()
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.GetTipPoslova,
+                RequestObject = new TipPosla()
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<TipPosla>>();
+        }
     }
 }

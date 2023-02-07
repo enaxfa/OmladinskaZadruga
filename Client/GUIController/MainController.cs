@@ -183,7 +183,7 @@ namespace Client.Controller
             try
             {
                 Poslodavac p = new Poslodavac();
-                p.Uslov = $"Naziv like '{txtFilter.Text}%' or PIB like '{txtFilter.Text}%'";
+                p.Uslov = $"Naziv like '{txtFilter.Text}%' or PIB like '{txtFilter.Text}%' or Adresa like '{txtFilter.Text}%' or Email like '{txtFilter.Text}%'";
                 List<Poslodavac> poslodavci = Communication.Instance.SearcPoslodavac(p);
                 if (poslodavci.Count == 0)
                     MessageBox.Show("Poslodavac ne postoji");
@@ -257,6 +257,12 @@ namespace Client.Controller
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        internal void LoadComboBox(ComboBox cbPoslodavac, ComboBox cbTipPosla)
+        {
+            cbPoslodavac.DataSource = Communication.Instance.GetPoslodavac();
+            cbTipPosla.DataSource = Communication.Instance.GetTipPoslova();
         }
     }
 }

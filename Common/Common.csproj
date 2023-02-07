@@ -48,8 +48,10 @@
     <Compile Include="Communication\Transfer.cs" />
     <Compile Include="IDomenskiObjekat.cs" />
     <Compile Include="Omladinac.cs" />
+    <Compile Include="Posao.cs" />
     <Compile Include="Poslodavac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipPosla.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

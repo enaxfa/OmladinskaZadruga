@@ -19,6 +19,11 @@ namespace Common
         public String Email { get; set; }
         public String BrojTelefona { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Naziv}";
+        }
+
         [Browsable(false)]
         public string TableName => "Poslodavac";
         [Browsable(false)]

@@ -78,6 +78,12 @@
     <Compile Include="UserControls\Omladinac\UCChangeOmladinac.Designer.cs">
       <DependentUpon>UCChangeOmladinac.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Posao\UCAddPosao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Posao\UCAddPosao.Designer.cs">
+      <DependentUpon>UCAddPosao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Poslodavac\UCChangePoslodavac.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Omladinac\UCChangeOmladinac.resx">
       <DependentUpon>UCChangeOmladinac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Posao\UCAddPosao.resx">
+      <DependentUpon>UCAddPosao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Poslodavac\UCChangePoslodavac.resx">
       <DependentUpon>UCChangePoslodavac.cs</DependentUpon>
