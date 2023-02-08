@@ -84,11 +84,11 @@
     <Compile Include="UserControls\Posao\UCAddPosao.Designer.cs">
       <DependentUpon>UCAddPosao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Posao\UCChangePosao.cs">
+    <Compile Include="UserControls\Angazovanje\UCAddAngazovanje.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Posao\UCChangePosao.Designer.cs">
-      <DependentUpon>UCChangePosao.cs</DependentUpon>
+    <Compile Include="UserControls\Angazovanje\UCAddAngazovanje.Designer.cs">
+      <DependentUpon>UCAddAngazovanje.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Poslodavac\UCChangePoslodavac.cs">
       <SubType>UserControl</SubType>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="UserControls\Posao\UCAddPosao.resx">
       <DependentUpon>UCAddPosao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Posao\UCChangePosao.resx">
-      <DependentUpon>UCChangePosao.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Angazovanje\UCAddAngazovanje.resx">
+      <DependentUpon>UCAddAngazovanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Poslodavac\UCChangePoslodavac.resx">
       <DependentUpon>UCChangePoslodavac.cs</DependentUpon>

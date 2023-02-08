@@ -78,9 +78,9 @@ namespace Client.GUIController
             
         }
 
-        internal void OpenUCChangePosao()
+        internal void OpenUCAddAngazovanje()
         {
-            frmMain.SetPanel(new UCChangePosao());
+            frmMain.SetPanel(new UCAddAngazovanje());
         }
     }
 }

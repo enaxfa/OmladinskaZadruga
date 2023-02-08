@@ -23,5 +23,7 @@ namespace Client.UserControls.Omladinac
         {
             mainController.AddOmladinca(txtJMBG, txtIme, txtPrezime, txtBrTelefona, txtBrRacuna, txtDatumRodjenja);
         }
+
+        
     }
 }

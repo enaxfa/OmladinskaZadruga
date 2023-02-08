@@ -11,19 +11,25 @@ using System.Windows.Forms;
 
 namespace Client.UserControls.Posao
 {
-    public partial class UCChangePosao : UserControl
+    public partial class UCAddAngazovanje : UserControl
     {
         private MainController mainController = new MainController();
-        public UCChangePosao()
+        public UCAddAngazovanje()
         {
             InitializeComponent();
             dgvPoslovi.DataSource = mainController.GetPoslovi();
+            dgvOmladinci.DataSource = mainController.GetOmladinci();
         }
 
 
-        private void txtFilter_TextChanged(object sender, EventArgs e)
+        private void txtFilterPosao_TextChanged(object sender, EventArgs e)
         {
-            mainController.SearchPosao(txtFilter, this);
+            dgvPoslovi.DataSource = mainController.SearchPosao(txtFilterPosao);
+        }
+
+        private void txtFilterOmladinac_TextChanged(object sender, EventArgs e)
+        {
+            dgvOmladinci.DataSource = mainController.SearchOmladinac(txtFilterOmladinac);
         }
     }
 }

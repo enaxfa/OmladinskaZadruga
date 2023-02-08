@@ -34,7 +34,7 @@ namespace Client.UserControls.Omladinac
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            mainController.SearchOmladinac(txtFilter, this);
+            dgvOmladinci.DataSource = mainController.SearchOmladinac(txtFilter);
         }
     }
 }

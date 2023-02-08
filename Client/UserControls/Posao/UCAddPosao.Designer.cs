@@ -45,8 +45,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(163, 87);
+            this.label6.Location = new System.Drawing.Point(71, 64);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 16);
             this.label6.TabIndex = 24;
@@ -54,8 +55,9 @@
             // 
             // btnDodaj
             // 
+            this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDodaj.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnDodaj.Location = new System.Drawing.Point(289, 381);
+            this.btnDodaj.Location = new System.Drawing.Point(199, 345);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(215, 55);
             this.btnDodaj.TabIndex = 23;
@@ -65,36 +67,41 @@
             // 
             // txtBrOml
             // 
-            this.txtBrOml.Location = new System.Drawing.Point(291, 215);
+            this.txtBrOml.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBrOml.Location = new System.Drawing.Point(199, 192);
             this.txtBrOml.Name = "txtBrOml";
             this.txtBrOml.Size = new System.Drawing.Size(213, 22);
             this.txtBrOml.TabIndex = 22;
             // 
             // txtCenaRS
             // 
-            this.txtCenaRS.Location = new System.Drawing.Point(291, 263);
+            this.txtCenaRS.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCenaRS.Location = new System.Drawing.Point(199, 240);
             this.txtCenaRS.Name = "txtCenaRS";
             this.txtCenaRS.Size = new System.Drawing.Size(213, 22);
             this.txtCenaRS.TabIndex = 21;
             // 
             // txtSat
             // 
-            this.txtSat.Location = new System.Drawing.Point(289, 306);
+            this.txtSat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSat.Location = new System.Drawing.Point(197, 283);
             this.txtSat.Name = "txtSat";
             this.txtSat.Size = new System.Drawing.Size(215, 22);
             this.txtSat.TabIndex = 20;
             // 
             // txtLokacija
             // 
-            this.txtLokacija.Location = new System.Drawing.Point(291, 165);
+            this.txtLokacija.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLokacija.Location = new System.Drawing.Point(199, 142);
             this.txtLokacija.Name = "txtLokacija";
             this.txtLokacija.Size = new System.Drawing.Size(213, 22);
             this.txtLokacija.TabIndex = 19;
             // 
             // labal2
             // 
+            this.labal2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labal2.AutoSize = true;
-            this.labal2.Location = new System.Drawing.Point(163, 215);
+            this.labal2.Location = new System.Drawing.Point(71, 192);
             this.labal2.Name = "labal2";
             this.labal2.Size = new System.Drawing.Size(105, 16);
             this.labal2.TabIndex = 18;
@@ -102,8 +109,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(163, 128);
+            this.label5.Location = new System.Drawing.Point(71, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 17;
@@ -111,8 +119,9 @@
             // 
             // labal3
             // 
+            this.labal3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labal3.AutoSize = true;
-            this.labal3.Location = new System.Drawing.Point(163, 263);
+            this.labal3.Location = new System.Drawing.Point(71, 240);
             this.labal3.Name = "labal3";
             this.labal3.Size = new System.Drawing.Size(114, 16);
             this.labal3.TabIndex = 16;
@@ -120,8 +129,9 @@
             // 
             // labal4
             // 
+            this.labal4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labal4.AutoSize = true;
-            this.labal4.Location = new System.Drawing.Point(163, 306);
+            this.labal4.Location = new System.Drawing.Point(71, 283);
             this.labal4.Name = "labal4";
             this.labal4.Size = new System.Drawing.Size(55, 16);
             this.labal4.TabIndex = 15;
@@ -129,8 +139,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 171);
+            this.label1.Location = new System.Drawing.Point(71, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 14;
@@ -138,8 +149,9 @@
             // 
             // cbPoslodavac
             // 
+            this.cbPoslodavac.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbPoslodavac.FormattingEnabled = true;
-            this.cbPoslodavac.Location = new System.Drawing.Point(291, 78);
+            this.cbPoslodavac.Location = new System.Drawing.Point(199, 55);
             this.cbPoslodavac.Name = "cbPoslodavac";
             this.cbPoslodavac.Size = new System.Drawing.Size(213, 24);
             this.cbPoslodavac.TabIndex = 25;
@@ -147,8 +159,9 @@
             // 
             // cbTipPosla
             // 
+            this.cbTipPosla.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTipPosla.FormattingEnabled = true;
-            this.cbTipPosla.Location = new System.Drawing.Point(291, 120);
+            this.cbTipPosla.Location = new System.Drawing.Point(199, 97);
             this.cbTipPosla.Name = "cbTipPosla";
             this.cbTipPosla.Size = new System.Drawing.Size(213, 24);
             this.cbTipPosla.TabIndex = 26;
@@ -172,7 +185,8 @@
             this.Controls.Add(this.labal4);
             this.Controls.Add(this.label1);
             this.Name = "UCAddPosao";
-            this.Size = new System.Drawing.Size(732, 531);
+            this.Size = new System.Drawing.Size(485, 485);
+            this.Load += new System.EventHandler(this.UCAddPosao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -21,14 +21,12 @@ namespace Client
         public FrmMain()
         {
             InitializeComponent();
-            
         }
 
         public FrmMain(string ime, string prezime)
         {
             InitializeComponent();
             lblAdministrator.Text = ime + " " + prezime;
-
         }
 
        
@@ -64,9 +62,10 @@ namespace Client
             FormCoordinator.Instance.OpenUCAddPosao();
         }
 
-        private void pretraziToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void dodajToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            FormCoordinator.Instance.OpenUCChangePosao();
+            FormCoordinator.Instance.OpenUCAddAngazovanje();
         }
     }
 }

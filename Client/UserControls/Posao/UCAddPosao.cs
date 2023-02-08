@@ -17,12 +17,17 @@ namespace Client.UserControls.Posao
         public UCAddPosao()
         {
             InitializeComponent();
-            mainController.LoadComboBox(cbPoslodavac, cbTipPosla);
+            
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             mainController.AddPosao(txtLokacija, txtSat, txtCenaRS, txtBrOml, cbPoslodavac, cbTipPosla);
+        }
+
+        private void UCAddPosao_Load(object sender, EventArgs e)
+        {
+            mainController.LoadComboBox(cbPoslodavac, cbTipPosla);
         }
     }
 }

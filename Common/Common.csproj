@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
+    <Compile Include="Angazovanje.cs" />
     <Compile Include="Communication\Operation.cs" />
     <Compile Include="Communication\Request.cs" />
     <Compile Include="Communication\Response.cs" />

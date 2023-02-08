@@ -40,7 +40,7 @@ namespace Client.UserControls.Poslodavac
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            mainController.SearchPoslodavac(txtFilter, this);
+            dgvPoslodavci.DataSource = mainController.SearchPoslodavac(txtFilter, this);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Client.Controller
             }
         }
         
-        internal void SearchOmladinac(TextBox txtFilter, UCChangeOmladinac userControl)
+        internal List<Omladinac> SearchOmladinac(TextBox txtFilter)
         {
             
             try
@@ -59,13 +59,15 @@ namespace Client.Controller
                 Omladinac o = new Omladinac();
                 o.Uslov = $"Ime like '%{txtFilter.Text}%' or Prezime like '%{txtFilter.Text}%' or JMBG like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%' or BrojRacuna like '%{txtFilter.Text}%' or DatumRodjenja like '%{txtFilter.Text}%'";
                 List<Omladinac> omladinci = Communication.Instance.SearchOmladinac(o);
-                userControl.DgvOmladinci.DataSource = omladinci;
+                return omladinci;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                return null;
             }
+            
         }
 
         private Omladinac omladinac;
@@ -158,7 +160,7 @@ namespace Client.Controller
                     PIB = txtPIB.Text,
                     Adresa = txtAdresa.Text,
                     Email = txtEmail.Text,
-                    BrojTelefona = txtBrTelefona.Text
+                    Kontakt = txtBrTelefona.Text
                 };
                 Communication.Instance.AddPoslodavac(poslodavac);
                 MessageBox.Show("Uspešno ste dodali poslodavca!");
@@ -172,19 +174,20 @@ namespace Client.Controller
             
         }
 
-        internal void SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
+        internal List<Poslodavac> SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
         {
             try
             {
                 Poslodavac p = new Poslodavac();
                 p.Uslov = $"Naziv like '%{txtFilter.Text}%' or PIB like '%{txtFilter.Text}%' or Adresa like '%{txtFilter.Text}%' or Email like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%'";
                 List<Poslodavac> poslodavci = Communication.Instance.SearchPoslodavac(p);
-                userControl.DgvPoslodavci.DataSource = poslodavci;
+                return poslodavci;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                return null;
             }
         }
         private Poslodavac poslodavac;
@@ -200,7 +203,7 @@ namespace Client.Controller
             txtPIB.Text = poslodavac.PIB;
             txtAdresa.Text = poslodavac.Adresa;
             txtEmail.Text = poslodavac.Email;
-            txtBrTelefona.Text = poslodavac.BrojTelefona;
+            txtBrTelefona.Text = poslodavac.Kontakt;
         }
 
         internal void UpdatePoslodavac(DataGridView dgvPoslodavci, TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
@@ -218,7 +221,7 @@ namespace Client.Controller
                 poslodavac.PIB = txtPIB.Text;
                 poslodavac.Adresa = txtAdresa.Text;
                 poslodavac.Email = txtEmail.Text;
-                poslodavac.BrojTelefona = txtBrTelefona.Text;
+                poslodavac.Kontakt = txtBrTelefona.Text;
 
                 Communication.Instance.UpdatePoslodavac(poslodavac);
                 MessageBox.Show("Uspešno ste izmenili poslodavca!");
@@ -285,20 +288,22 @@ namespace Client.Controller
             UCHelper.ResetComboBox(cbPoslodavac, cbTipPosla);
         }
 
-        internal void SearchPosao(TextBox txtFilter, UCChangePosao userControl)
+        internal List<Posao> SearchPosao(TextBox txtFilter)
         {
             
             try
             {
                 Posao p = new Posao();
-                p.Uslov = $"posao.lokacija like '%{txtFilter.Text}%' or posao.satnica like '%{txtFilter.Text}%' or posao.cenaradnogsata like '%{txtFilter.Text}%' or p.Naziv like '%{txtFilter.Text}%' or tp.Naziv like '%{txtFilter.Text}%'";
+                p.Uslov = $"posao.lokacija like '%{txtFilter.Text}%' or posao.satnica like '%{txtFilter.Text}%' or posao.cenaradnogsata like '%{txtFilter.Text}%'" +
+                    $" or posao.brojomladinaca like '%{txtFilter.Text}%' or p.Naziv like '%{txtFilter.Text}%' or tp.Naziv like '%{txtFilter.Text}%'";
                 List<Posao> poslovi = Communication.Instance.SearchPosao(p);
-                userControl.DgvOmladinci.DataSource = poslovi;
+                return poslovi;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                return null;
             }
             
         }

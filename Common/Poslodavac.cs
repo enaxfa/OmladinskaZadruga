@@ -17,7 +17,7 @@ namespace Common
         public String PIB { get; set; }
         public String Adresa { get; set; }
         public String Email { get; set; }
-        public String BrojTelefona { get; set; }
+        public String Kontakt { get; set; }
 
         public override string ToString()
         {
@@ -27,7 +27,7 @@ namespace Common
         [Browsable(false)]
         public string TableName => "Poslodavac";
         [Browsable(false)]
-        public string InsertValues => $"'{Naziv}', '{PIB}', '{Adresa}','{Email}','{BrojTelefona}'";
+        public string InsertValues => $"'{Naziv}', '{PIB}', '{Adresa}','{Email}','{Kontakt}'";
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]
@@ -35,7 +35,7 @@ namespace Common
         [Browsable(false)]
         public string SearchCondition => Uslov;
         [Browsable(false)]
-        public string SetValues => $"Naziv = '{Naziv}', PIB = '{PIB}', Adresa = '{Adresa}', Email = '{Email}', BrojTelefona = '{BrojTelefona}'";
+        public string SetValues => $"Naziv = '{Naziv}', PIB = '{PIB}', Adresa = '{Adresa}', Email = '{Email}', BrojTelefona = '{Kontakt}'";
         [Browsable(false)]
         public string WhereCondition => $"Id = {IDPoslodavca}";
         [Browsable(false)]
@@ -58,7 +58,7 @@ namespace Common
                     PIB = (string)reader[2],
                     Adresa = (string)reader[3],
                     Email = (string)reader[4],
-                    BrojTelefona = (string)reader[5],
+                    Kontakt = (string)reader[5],
                 });
             }
             return result;
