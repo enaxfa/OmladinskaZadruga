@@ -17,11 +17,13 @@ namespace Client.UserControls.Posao
         public UCChangePosao()
         {
             InitializeComponent();
+            dgvPoslovi.DataSource = mainController.GetPoslovi();
         }
 
-        private void btnPretrazi_Click(object sender, EventArgs e)
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            mainController.SearchPosao(txtFilter,this);
+            mainController.SearchPosao(txtFilter, this);
         }
     }
 }

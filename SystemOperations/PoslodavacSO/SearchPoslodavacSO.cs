@@ -12,7 +12,7 @@ namespace SystemOperations.PoslodavacSO
         public List<Poslodavac> Result { get; set; }
         protected override void ExecuteOperation(IDomenskiObjekat entity)
         {
-            Result = repository.Search(entity).Cast<Poslodavac>().ToList();
+            Result = repository.GetAllWithCondition(entity).Cast<Poslodavac>().ToList();
         }
     }
 }

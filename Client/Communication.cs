@@ -1,6 +1,7 @@
 ﻿using Common;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -152,7 +153,7 @@ namespace Client
             response.GetResponseResult<Poslodavac>();
         }
 
-        internal List<Poslodavac> GetPoslodavac()
+        internal List<Poslodavac> GetPoslodavci()
         {
             Request request = new Request()
             {
@@ -199,5 +200,31 @@ namespace Client
             Response response = transfer.Receive<Response>();
             return response.GetResponseResult<List<Posao>>();
         }
+
+        internal List<Omladinac> GetOmladinci()
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.GetOmladinci,
+                RequestObject = new Omladinac()
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Omladinac>>();
+        }
+
+        internal List<Posao> GetPoslovi()
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.GetPoslovi,
+                RequestObject = new Posao()
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Posao>>();
+        }
+
+        
     }
 }

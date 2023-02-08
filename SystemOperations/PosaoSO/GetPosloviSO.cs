@@ -5,15 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemOperations.OmladinacSO
+namespace SystemOperations.PosaoSO
 {
-    public class SearchOmladinacSO : SOBase
+    public class GetPosloviSO : SOBase
     {
-        public List<Omladinac> Result { get; set; }
-
+        public List<Posao> Result { get; set; }
         protected override void ExecuteOperation(IDomenskiObjekat entity)
         {
-            Result = repository.GetAllWithCondition(entity).Cast<Omladinac>().ToList();
+           Result = repository.GetAll(entity).Cast<Posao>().ToList();
         }
     }
 }

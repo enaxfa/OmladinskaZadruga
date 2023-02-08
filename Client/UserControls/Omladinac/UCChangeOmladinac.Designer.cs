@@ -32,7 +32,6 @@ namespace Client.UserControls.Omladinac
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnOdaberi = new System.Windows.Forms.Button();
-            this.btnPretrazi = new System.Windows.Forms.Button();
             this.dgvOmladinci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
@@ -76,18 +75,6 @@ namespace Client.UserControls.Omladinac
             this.btnOdaberi.UseVisualStyleBackColor = false;
             this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
             // 
-            // btnPretrazi
-            // 
-            this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPretrazi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPretrazi.Location = new System.Drawing.Point(380, 124);
-            this.btnPretrazi.Name = "btnPretrazi";
-            this.btnPretrazi.Size = new System.Drawing.Size(116, 36);
-            this.btnPretrazi.TabIndex = 75;
-            this.btnPretrazi.Text = "Pretraži";
-            this.btnPretrazi.UseVisualStyleBackColor = false;
-            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
-            // 
             // dgvOmladinci
             // 
             this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -110,6 +97,7 @@ namespace Client.UserControls.Omladinac
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);
             this.txtFilter.TabIndex = 73;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // pnlDetails
             // 
@@ -259,7 +247,6 @@ namespace Client.UserControls.Omladinac
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOdaberi);
-            this.Controls.Add(this.btnPretrazi);
             this.Controls.Add(this.dgvOmladinci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
@@ -280,7 +267,6 @@ namespace Client.UserControls.Omladinac
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOdaberi;
-        private System.Windows.Forms.Button btnPretrazi;
         private System.Windows.Forms.DataGridView dgvOmladinci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;

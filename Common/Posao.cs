@@ -13,18 +13,19 @@ namespace Common
     {
         [Browsable(false)]
         public int IdPosla { get; set; }
+        public Poslodavac Poslodavac { get; set; }
+        public TipPosla TipPosla { get; set; }
         public String Lokacija { get; set; }
         public int Satnica { get; set; }
         public decimal CenaRadnogSata { get; set; }
         public int BrojOmladinaca { get; set; }
-        public Poslodavac Poslodavac { get; set; }
-        public TipPosla TipPosla { get; set; }
+        
         [Browsable(false)]
         public string TableName => "Posao";
         [Browsable(false)]
         public string InsertValues => $"'{Lokacija}', '{Satnica}','{CenaRadnogSata}','{BrojOmladinaca}', '{Poslodavac.IDPoslodavca}', '{TipPosla.Id}'";
         [Browsable(false)]
-        public object SelectValues => "p.Id, p.Naziv, tp.Id, tp.Naziv, po.Id, po.Lokacija, po.Satnica, po.CenaRadnogSata, po.BrojOmladinaca";
+        public object SelectValues => "p.Id, p.Naziv, tp.Id, tp.Naziv, posao.Id, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.BrojOmladinaca";
         [Browsable(false)]
         public String Uslov { get; set; }
         [Browsable(false)]
@@ -34,11 +35,11 @@ namespace Common
         [Browsable(false)]
         public string WhereCondition =>$"Id = {IdPosla}";
         [Browsable(false)]
-        public string JoinCondition => "on (po.Poslodavac=p.Id) join TipPosla tp on (tp.Id=po.TipPosla)";
+        public string JoinCondition => "on (posao.Poslodavac=p.Id) join TipPosla tp on (tp.Id=posao.TipPosla)";
         [Browsable(false)]
         public string JoinTable => "join Poslodavac p";
         [Browsable(false)]
-        public string TableAlias => "po";
+        public string TableAlias => "";
 
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)

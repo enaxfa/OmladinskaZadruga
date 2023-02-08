@@ -53,23 +53,13 @@ namespace Client.Controller
         
         internal void SearchOmladinac(TextBox txtFilter, UCChangeOmladinac userControl)
         {
-            if (!UCHelper.EmptyFieldValidation(txtFilter))
-            {
-                MessageBox.Show("Unesite podatke za pretragu");
-                return;
-            }
+            
             try
             {
                 Omladinac o = new Omladinac();
-                o.Uslov = $"Ime like '{txtFilter.Text}%' or Prezime like '{txtFilter.Text}%' or JMBG like '{txtFilter.Text}%'";
+                o.Uslov = $"Ime like '%{txtFilter.Text}%' or Prezime like '%{txtFilter.Text}%' or JMBG like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%' or BrojRacuna like '%{txtFilter.Text}%' or DatumRodjenja like '%{txtFilter.Text}%'";
                 List<Omladinac> omladinci = Communication.Instance.SearchOmladinac(o);
-                if (omladinci.Count == 0)
-                    MessageBox.Show("Omladinac ne postoji");
-                else
-                {
-                    userControl.DgvOmladinci.DataSource = omladinci;
-                    txtFilter.Text = "";
-                }
+                userControl.DgvOmladinci.DataSource = omladinci;
             }
             catch (Exception ex)
             {
@@ -184,23 +174,12 @@ namespace Client.Controller
 
         internal void SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
         {
-            if (!UCHelper.EmptyFieldValidation(txtFilter))
-            {
-                MessageBox.Show("Unesite podatke za pretragu");
-                return;
-            }
             try
             {
                 Poslodavac p = new Poslodavac();
-                p.Uslov = $"Naziv like '{txtFilter.Text}%' or PIB like '{txtFilter.Text}%' or Adresa like '{txtFilter.Text}%' or Email like '{txtFilter.Text}%'";
+                p.Uslov = $"Naziv like '%{txtFilter.Text}%' or PIB like '%{txtFilter.Text}%' or Adresa like '%{txtFilter.Text}%' or Email like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%'";
                 List<Poslodavac> poslodavci = Communication.Instance.SearchPoslodavac(p);
-                if (poslodavci.Count == 0)
-                    MessageBox.Show("Poslodavac ne postoji");
-                else
-                {
-                    userControl.DgvPoslodavci.DataSource = poslodavci;
-                    UCHelper.ResetFields(txtFilter);
-                }
+                userControl.DgvPoslodavci.DataSource = poslodavci;
             }
             catch (Exception ex)
             {
@@ -272,7 +251,7 @@ namespace Client.Controller
         {
             try
             {
-                cbPoslodavac.DataSource = Communication.Instance.GetPoslodavac();
+                cbPoslodavac.DataSource = Communication.Instance.GetPoslodavci();
                 cbPoslodavac.SelectedItem = null;
                 cbTipPosla.DataSource = Communication.Instance.GetTipPoslova();
                 cbTipPosla.SelectedItem = null;
@@ -308,23 +287,35 @@ namespace Client.Controller
 
         internal void SearchPosao(TextBox txtFilter, UCChangePosao userControl)
         {
-            if (!UCHelper.EmptyFieldValidation(txtFilter))
+            
+            try
             {
-                MessageBox.Show("Unesite podatke za pretragu");
-                return;
+                Posao p = new Posao();
+                p.Uslov = $"posao.lokacija like '%{txtFilter.Text}%' or posao.satnica like '%{txtFilter.Text}%' or posao.cenaradnogsata like '%{txtFilter.Text}%' or p.Naziv like '%{txtFilter.Text}%' or tp.Naziv like '%{txtFilter.Text}%'";
+                List<Posao> poslovi = Communication.Instance.SearchPosao(p);
+                userControl.DgvOmladinci.DataSource = poslovi;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
             
-                Posao p = new Posao();
-                p.Uslov = $"po.lokacija like '{txtFilter.Text}%' or p.Naziv like '{txtFilter.Text}%' or tp.Naziv like '{txtFilter.Text}%'";
-                List<Posao> poslovi = Communication.Instance.SearchPosao(p);
-                if (poslovi.Count == 0)
-                    MessageBox.Show("Posao ne postoji");
-                else
-                {
-                    userControl.DgvOmladinci.DataSource = poslovi;
-                    UCHelper.ResetFields(txtFilter);
-                }
-            
+        }
+
+        internal List<Omladinac> GetOmladinci()
+        {
+            return Communication.Instance.GetOmladinci();
+        }
+
+        internal List<Posao> GetPoslovi()
+        {
+            return Communication.Instance.GetPoslovi();
+        }
+
+        internal object GetPoslodavci()
+        {
+            return Communication.Instance.GetPoslodavci();
         }
     }
 }

@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace SystemOperations.OmladinacSO
 {
-    public class SearchOmladinacSO : SOBase
+    public class GetOmladinciSO : SOBase
     {
         public List<Omladinac> Result { get; set; }
-
         protected override void ExecuteOperation(IDomenskiObjekat entity)
         {
-            Result = repository.GetAllWithCondition(entity).Cast<Omladinac>().ToList();
+            Result = repository.GetAll(entity).Cast<Omladinac>().ToList();
         }
     }
 }

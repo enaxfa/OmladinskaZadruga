@@ -11,13 +11,9 @@ namespace Client.UserControls.Omladinac
         public UCChangeOmladinac()
         {
             InitializeComponent();
+            dgvOmladinci.DataSource = mainController.GetOmladinci();
         }
 
-
-        private void btnPretrazi_Click(object sender, EventArgs e)
-        {
-            mainController.SearchOmladinac(txtFilter, this);
-        }
 
         private void btnOdaberi_Click(object sender, EventArgs e)
         {
@@ -34,6 +30,11 @@ namespace Client.UserControls.Omladinac
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             mainController.DeleteOmladinac(dgvOmladinci,txtIme,txtPrezime,txtJMBG,txtBrRacuna,txtBrTelefona,txtDatumRodjenja);
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            mainController.SearchOmladinac(txtFilter, this);
         }
     }
 }

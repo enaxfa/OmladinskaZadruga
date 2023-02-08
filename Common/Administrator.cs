@@ -25,7 +25,7 @@ namespace Common
 
         public string InsertValues => "";
 
-        public object SelectValues => "";
+        public object SelectValues => "*";
 
         public string SearchCondition => "";
 

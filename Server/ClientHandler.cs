@@ -84,6 +84,12 @@ namespace Server
                     case Operation.SearchPosao:
                         response.Result = Controller.Instance.SearchPosao((Posao)request.RequestObject);
                         break;
+                    case Operation.GetOmladinci:
+                        response.Result = Controller.Instance.GetOmladinci((Omladinac)request.RequestObject);
+                        break;
+                    case Operation.GetPoslovi:
+                        response.Result = Controller.Instance.GetPoslovi((Posao)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

@@ -32,7 +32,6 @@ namespace Client.UserControls.Poslodavac
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnOdaberi = new System.Windows.Forms.Button();
-            this.btnPretrazi = new System.Windows.Forms.Button();
             this.dgvPoslodavci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
@@ -56,7 +55,7 @@ namespace Client.UserControls.Poslodavac
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 82);
+            this.label1.Location = new System.Drawing.Point(68, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 83;
@@ -66,7 +65,7 @@ namespace Client.UserControls.Poslodavac
             // 
             this.btnOdaberi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOdaberi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnOdaberi.Location = new System.Drawing.Point(429, 397);
+            this.btnOdaberi.Location = new System.Drawing.Point(495, 402);
             this.btnOdaberi.Name = "btnOdaberi";
             this.btnOdaberi.Size = new System.Drawing.Size(172, 43);
             this.btnOdaberi.TabIndex = 82;
@@ -74,40 +73,29 @@ namespace Client.UserControls.Poslodavac
             this.btnOdaberi.UseVisualStyleBackColor = false;
             this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
             // 
-            // btnPretrazi
-            // 
-            this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPretrazi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPretrazi.Location = new System.Drawing.Point(377, 101);
-            this.btnPretrazi.Name = "btnPretrazi";
-            this.btnPretrazi.Size = new System.Drawing.Size(116, 36);
-            this.btnPretrazi.TabIndex = 81;
-            this.btnPretrazi.Text = "Pretraži";
-            this.btnPretrazi.UseVisualStyleBackColor = false;
-            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
-            // 
             // dgvPoslodavci
             // 
             this.dgvPoslodavci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPoslodavci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPoslodavci.Location = new System.Drawing.Point(72, 169);
+            this.dgvPoslodavci.Location = new System.Drawing.Point(71, 174);
             this.dgvPoslodavci.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPoslodavci.Name = "dgvPoslodavci";
             this.dgvPoslodavci.ReadOnly = true;
             this.dgvPoslodavci.RowHeadersWidth = 51;
             this.dgvPoslodavci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPoslodavci.Size = new System.Drawing.Size(529, 206);
+            this.dgvPoslodavci.Size = new System.Drawing.Size(596, 206);
             this.dgvPoslodavci.TabIndex = 80;
             // 
             // txtFilter
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFilter.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.txtFilter.Location = new System.Drawing.Point(72, 113);
+            this.txtFilter.Location = new System.Drawing.Point(71, 122);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);
             this.txtFilter.TabIndex = 79;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // pnlDetails
             // 
@@ -124,7 +112,7 @@ namespace Client.UserControls.Poslodavac
             this.pnlDetails.Controls.Add(this.label3);
             this.pnlDetails.Controls.Add(this.label2);
             this.pnlDetails.Controls.Add(this.label6);
-            this.pnlDetails.Location = new System.Drawing.Point(647, 71);
+            this.pnlDetails.Location = new System.Drawing.Point(713, 76);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(428, 448);
             this.pnlDetails.TabIndex = 78;
@@ -250,12 +238,11 @@ namespace Client.UserControls.Poslodavac
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOdaberi);
-            this.Controls.Add(this.btnPretrazi);
             this.Controls.Add(this.dgvPoslodavci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCChangePoslodavac";
-            this.Size = new System.Drawing.Size(1096, 551);
+            this.Size = new System.Drawing.Size(1229, 560);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoslodavci)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
@@ -268,7 +255,6 @@ namespace Client.UserControls.Poslodavac
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOdaberi;
-        private System.Windows.Forms.Button btnPretrazi;
         private System.Windows.Forms.DataGridView dgvPoslodavci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;

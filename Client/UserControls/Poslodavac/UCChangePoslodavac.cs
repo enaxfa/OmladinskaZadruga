@@ -18,11 +18,7 @@ namespace Client.UserControls.Poslodavac
         public UCChangePoslodavac()
         {
             InitializeComponent();
-        }
-
-        private void btnPretrazi_Click(object sender, EventArgs e)
-        {
-            mainController.SearchPoslodavac(txtFilter, this);
+            dgvPoslodavci.DataSource = mainController.GetPoslodavci();
         }
 
         private void btnOdaberi_Click(object sender, EventArgs e)
@@ -40,6 +36,11 @@ namespace Client.UserControls.Poslodavac
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             mainController.DeletePoslodavac(dgvPoslodavci, txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            mainController.SearchPoslodavac(txtFilter, this);
         }
     }
 }

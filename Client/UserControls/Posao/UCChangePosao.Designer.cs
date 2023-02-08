@@ -31,10 +31,9 @@ namespace Client.UserControls.Posao
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPretrazi = new System.Windows.Forms.Button();
-            this.dgvOmladinci = new System.Windows.Forms.DataGridView();
+            this.dgvPoslovi = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,32 +46,18 @@ namespace Client.UserControls.Posao
             this.label1.TabIndex = 83;
             this.label1.Text = "Pretraži poslove";
             // 
-            // btnPretrazi
+            // dgvPoslovi
             // 
-            this.btnPretrazi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPretrazi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnPretrazi.Location = new System.Drawing.Point(334, 115);
-            this.btnPretrazi.Name = "btnPretrazi";
-            this.btnPretrazi.Size = new System.Drawing.Size(116, 36);
-            this.btnPretrazi.TabIndex = 81;
-            this.btnPretrazi.Text = "Pretraži";
-            this.btnPretrazi.UseVisualStyleBackColor = false;
-            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
-            // 
-            // dgvOmladinci
-            // 
-            
-            this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvOmladinci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOmladinci.Location = new System.Drawing.Point(47, 174);
-            this.dgvOmladinci.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvOmladinci.Name = "dgvOmladinci";
-            this.dgvOmladinci.ReadOnly = true;
-            this.dgvOmladinci.RowHeadersWidth = 51;
-            this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOmladinci.Size = new System.Drawing.Size(894, 241);
-            this.dgvOmladinci.TabIndex = 80;
-           
+            this.dgvPoslovi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvPoslovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPoslovi.Location = new System.Drawing.Point(47, 174);
+            this.dgvPoslovi.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPoslovi.Name = "dgvPoslovi";
+            this.dgvPoslovi.ReadOnly = true;
+            this.dgvPoslovi.RowHeadersWidth = 51;
+            this.dgvPoslovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPoslovi.Size = new System.Drawing.Size(894, 241);
+            this.dgvPoslovi.TabIndex = 80;
             // 
             // txtFilter
             // 
@@ -83,18 +68,18 @@ namespace Client.UserControls.Posao
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);
             this.txtFilter.TabIndex = 79;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // UCChangePosao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnPretrazi);
-            this.Controls.Add(this.dgvOmladinci);
+            this.Controls.Add(this.dgvPoslovi);
             this.Controls.Add(this.txtFilter);
             this.Name = "UCChangePosao";
             this.Size = new System.Drawing.Size(1065, 550);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,10 +87,9 @@ namespace Client.UserControls.Posao
 
         #endregion
 
-        public DataGridView DgvOmladinci { get => dgvOmladinci; set => dgvOmladinci = value; }
+        public DataGridView DgvOmladinci { get => dgvPoslovi; set => dgvPoslovi = value; }
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnPretrazi;
-        private System.Windows.Forms.DataGridView dgvOmladinci;
+        private System.Windows.Forms.DataGridView dgvPoslovi;
         private System.Windows.Forms.TextBox txtFilter;
     }
 }

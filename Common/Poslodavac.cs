@@ -38,11 +38,11 @@ namespace Common
         public string SetValues => $"Naziv = '{Naziv}', PIB = '{PIB}', Adresa = '{Adresa}', Email = '{Email}', BrojTelefona = '{BrojTelefona}'";
         [Browsable(false)]
         public string WhereCondition => $"Id = {IDPoslodavca}";
-
+        [Browsable(false)]
         public string JoinCondition => "";
-
+        [Browsable(false)]
         public string JoinTable => "";
-
+        [Browsable(false)]
         public string TableAlias => "";
 
         [Browsable(false)]

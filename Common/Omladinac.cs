@@ -41,11 +41,11 @@ namespace Common
 
         [Browsable(false)]
         public string WhereCondition => $"Id={IDOmladinca}";
-
+        [Browsable(false)]
         public string JoinCondition => "";
-
+        [Browsable(false)]
         public string JoinTable => "";
-
+        [Browsable(false)]
         public string TableAlias => "";
 
         [Browsable(false)]

@@ -15,6 +15,6 @@ namespace Repository
         List<IDomenskiObjekat> GetAll(IDomenskiObjekat entity);
 
         List<IDomenskiObjekat> GetAllWithCondition(IDomenskiObjekat entity);
-        List<IDomenskiObjekat> Search(IDomenskiObjekat entity);
+        
     }
 }

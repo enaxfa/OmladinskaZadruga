@@ -14,6 +14,8 @@
         GetPoslodavce,
         GetTipPoslova,
         AddPosao,
-        SearchPosao
+        SearchPosao,
+        GetOmladinci,
+        GetPoslovi
     }
 }

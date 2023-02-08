@@ -15,6 +15,7 @@ namespace Server
 {
     internal class Controller
     {
+        #region singlton
         private static Controller instance;
         public static Controller Instance
         {
@@ -28,11 +29,11 @@ namespace Server
             }
         }
 
-        
         private Controller()
         {
-           
-        }
+
+        } 
+        #endregion
 
         internal Administrator Login(Administrator administrator)
         {
@@ -111,9 +112,23 @@ namespace Server
             so.ExecuteTemplate(posao);
         }
 
-        internal object SearchPosao(Posao posao)
+        internal List<Posao> SearchPosao(Posao posao)
         {
             SearchPosaoSO so = new SearchPosaoSO();
+            so.ExecuteTemplate(posao);
+            return so.Result;
+        }
+
+        internal List<Omladinac> GetOmladinci(Omladinac omladinac)
+        {
+            GetOmladinciSO so = new GetOmladinciSO();
+            so.ExecuteTemplate(omladinac);
+            return so.Result;
+        }
+
+        internal object GetPoslovi(Posao posao)
+        {
+            GetPosloviSO so = new GetPosloviSO();
             so.ExecuteTemplate(posao);
             return so.Result;
         }

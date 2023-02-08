@@ -57,7 +57,7 @@ namespace Repository.Implementation
         public List<IDomenskiObjekat> GetAll(IDomenskiObjekat entity)
         {
             List<IDomenskiObjekat> result;
-            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"select * from {entity.TableName}");
+            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"select {entity.SelectValues} from {entity.TableName} {entity.TableAlias} {entity.JoinTable} {entity.JoinCondition}");
             SqlDataReader reader = cmd.ExecuteReader();
             result = entity.GetEntities(reader);
             reader.Close();
@@ -65,15 +65,6 @@ namespace Repository.Implementation
         }
 
 
-        public List<IDomenskiObjekat> Search(IDomenskiObjekat entity)
-        {
-            List<IDomenskiObjekat> result;
-            SqlCommand cmd = DBConnectionFactory.Instance.GetDBConnection().CreateCommand($"select {entity.SelectValues} from {entity.TableName} where {entity.SearchCondition}");
-            SqlDataReader reader = cmd.ExecuteReader();
-            result = entity.GetEntities(reader);
-            reader.Close();
-            return result;
-        }
 
         public void Update(IDomenskiObjekat entity)
         {
