@@ -19,6 +19,7 @@ namespace Client.UserControls.Posao
             InitializeComponent();
             dgvPoslovi.DataSource = mainController.GetPoslovi();
             dgvOmladinci.DataSource = mainController.GetOmladinci();
+            dtpDatumAngazovanja.MinDate = System.DateTime.Now;
         }
 
 
@@ -30,6 +31,24 @@ namespace Client.UserControls.Posao
         private void txtFilterOmladinac_TextChanged(object sender, EventArgs e)
         {
             dgvOmladinci.DataSource = mainController.SearchOmladinac(txtFilterOmladinac);
+        }
+
+        private void dgvPoslovi_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            label4.Visible = true;
+            lblBrOml.Visible = true;
+            lblBrOml.Text = mainController.VratiBrojOmladinacaZaPosao(dgvPoslovi);
+        }
+
+        private void dgvOmladinci_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblBrOml.Text = mainController.VratiBrojPreostalihOmladinaca(dgvOmladinci);
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            mainController.AddAngazovanje(dgvPoslovi, dgvOmladinci, dtpDatumAngazovanja, lblBrOml);
         }
     }
 }

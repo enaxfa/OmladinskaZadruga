@@ -51,7 +51,7 @@ namespace Client.Controller
             }
         }
         
-        internal List<Omladinac> SearchOmladinac(TextBox txtFilter)
+        internal BindingList<Omladinac> SearchOmladinac(TextBox txtFilter)
         {
             
             try
@@ -59,7 +59,7 @@ namespace Client.Controller
                 Omladinac o = new Omladinac();
                 o.Uslov = $"Ime like '%{txtFilter.Text}%' or Prezime like '%{txtFilter.Text}%' or JMBG like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%' or BrojRacuna like '%{txtFilter.Text}%' or DatumRodjenja like '%{txtFilter.Text}%'";
                 List<Omladinac> omladinci = Communication.Instance.SearchOmladinac(o);
-                return omladinci;
+                return new BindingList<Omladinac>(omladinci);
             }
             catch (Exception ex)
             {
@@ -174,14 +174,14 @@ namespace Client.Controller
             
         }
 
-        internal List<Poslodavac> SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
+        internal BindingList<Poslodavac> SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
         {
             try
             {
                 Poslodavac p = new Poslodavac();
                 p.Uslov = $"Naziv like '%{txtFilter.Text}%' or PIB like '%{txtFilter.Text}%' or Adresa like '%{txtFilter.Text}%' or Email like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%'";
                 List<Poslodavac> poslodavci = Communication.Instance.SearchPoslodavac(p);
-                return poslodavci;
+                return new BindingList<Poslodavac>(poslodavci);
             }
             catch (Exception ex)
             {
@@ -255,9 +255,11 @@ namespace Client.Controller
             try
             {
                 cbPoslodavac.DataSource = Communication.Instance.GetPoslodavci();
-                cbPoslodavac.SelectedItem = null;
+                cbPoslodavac.SelectedIndex = -1;
+                cbPoslodavac.Text = "Izaberite poslodavca";
                 cbTipPosla.DataSource = Communication.Instance.GetTipPoslova();
-                cbTipPosla.SelectedItem = null;
+                cbTipPosla.SelectedIndex = -1;
+                cbTipPosla.Text = "Izaberite tip posla";
             }
             catch (Exception ex)
             {
@@ -288,7 +290,7 @@ namespace Client.Controller
             UCHelper.ResetComboBox(cbPoslodavac, cbTipPosla);
         }
 
-        internal List<Posao> SearchPosao(TextBox txtFilter)
+        internal BindingList<Posao> SearchPosao(TextBox txtFilter)
         {
             
             try
@@ -297,7 +299,7 @@ namespace Client.Controller
                 p.Uslov = $"posao.lokacija like '%{txtFilter.Text}%' or posao.satnica like '%{txtFilter.Text}%' or posao.cenaradnogsata like '%{txtFilter.Text}%'" +
                     $" or posao.brojomladinaca like '%{txtFilter.Text}%' or p.Naziv like '%{txtFilter.Text}%' or tp.Naziv like '%{txtFilter.Text}%'";
                 List<Posao> poslovi = Communication.Instance.SearchPosao(p);
-                return poslovi;
+                return new BindingList<Posao>(poslovi);
             }
             catch (Exception ex)
             {
@@ -308,19 +310,96 @@ namespace Client.Controller
             
         }
 
-        internal List<Omladinac> GetOmladinci()
+        internal BindingList<Omladinac> GetOmladinci()
         {
-            return Communication.Instance.GetOmladinci();
+            try
+            {
+                return new BindingList<Omladinac>(Communication.Instance.GetOmladinci());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
 
-        internal List<Posao> GetPoslovi()
+        internal BindingList<Posao> GetPoslovi()
         {
-            return Communication.Instance.GetPoslovi();
+            try
+            {
+                return new BindingList<Posao>(Communication.Instance.GetPoslovi());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
 
-        internal object GetPoslodavci()
+        internal BindingList<Poslodavac> GetPoslodavci()
         {
-            return Communication.Instance.GetPoslodavci();
+            try
+            {
+                return new BindingList<Poslodavac>(Communication.Instance.GetPoslodavci());
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); return null; }
+        }
+
+        private int brojOmladinaca;
+        internal string VratiBrojOmladinacaZaPosao(DataGridView dgvPoslovi)
+        {
+            Posao posao = (Posao)dgvPoslovi.SelectedRows[0].DataBoundItem;
+            brojOmladinaca = posao.BrojOmladinaca;
+            return brojOmladinaca.ToString();
+        }
+
+        internal string VratiBrojPreostalihOmladinaca(DataGridView dgvOmladinci)
+        {
+            int brojPreostalihOmladinaca = brojOmladinaca - dgvOmladinci.SelectedRows.Count;
+            if (brojPreostalihOmladinaca < 0)
+                return "/";
+            return brojPreostalihOmladinaca.ToString();
+        }
+
+        internal void AddAngazovanje(DataGridView dgvPoslovi, DataGridView dgvOmladinci, DateTimePicker dtpDatumAngazovanja, Label lblBrOml)
+        {
+            if (dgvPoslovi.SelectedRows.Count == 0 | dgvOmladinci.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste izabrali posao ili omladince!");
+                return;
+            }
+            if(dgvPoslovi.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Izaberite samo jedan posao za koji unosite angazovanje");
+                return;
+            }
+            if(lblBrOml.Text == "/")
+            {
+                MessageBox.Show("Izabrali ste vise omladinaca nego sto je potrebno za ovaj posao");
+                return;
+            }
+            String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
+            List<Omladinac> omladinci = new List<Omladinac>();
+            foreach (DataGridViewRow row in dgvOmladinci.SelectedRows)
+                omladinci.Add((Omladinac)row.DataBoundItem);
+            Posao posao = (Posao)dgvPoslovi.SelectedRows[0].DataBoundItem;
+            List<Angazovanje> angazovanja = new List<Angazovanje>();
+            foreach(Omladinac o in omladinci)
+            {
+                Angazovanje a = new Angazovanje
+                {
+                    Posao = posao,
+                    Omladinac = o,
+                    DatumAngazovanja = Convert.ToDateTime(datum)
+                };
+                angazovanja.Add(a);
+            }
+            Communication.Instance.AddAngazovanja(angazovanja);
+            posao.BrojOmladinaca -= omladinci.Count;
+            Communication.Instance.UpdatePosao(posao);
+            MessageBox.Show("Uspesno ste dodali angazovanja");
         }
     }
 }

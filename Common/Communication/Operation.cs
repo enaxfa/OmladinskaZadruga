@@ -16,6 +16,8 @@
         AddPosao,
         SearchPosao,
         GetOmladinci,
-        GetPoslovi
+        GetPoslovi,
+        AddAngazovanja,
+        UpdatePosao
     }
 }

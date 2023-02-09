@@ -225,6 +225,28 @@ namespace Client
             return response.GetResponseResult<List<Posao>>();
         }
 
-        
+        internal void AddAngazovanja(List<Angazovanje> angazovanja)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.AddAngazovanja,
+                RequestObject = angazovanja
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Angazovanje>();
+        }
+
+        internal void UpdatePosao(Posao posao)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.UpdatePosao,
+                RequestObject = posao
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Posao>();
+        }
     }
 }

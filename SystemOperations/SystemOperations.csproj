@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministratorSO\LoginSO.cs" />
+    <Compile Include="AngazovanjeSO\AddAngazovanjaSO.cs" />
     <Compile Include="OmladinacSO\AddOmladinacSO.cs" />
     <Compile Include="OmladinacSO\DeleteOmladinacSO.cs" />
     <Compile Include="OmladinacSO\GetOmladinciSO.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="PosaoSO\AddPosaoSO.cs" />
     <Compile Include="PosaoSO\GetPosloviSO.cs" />
     <Compile Include="PosaoSO\SearchPosaoSO.cs" />
+    <Compile Include="PosaoSO\UpdatePosaoSO.cs" />
     <Compile Include="PoslodavacSO\AddPoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\DeletePoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\GetPoslodavceSO.cs" />

@@ -31,7 +31,7 @@ namespace Common
         [Browsable(false)]
         public string SearchCondition => Uslov;
         [Browsable(false)]
-        public string SetValues => $"Id = '{IdPosla}', Lokacija = '{Lokacija}', Satnica = '{Satnica}', Cena radnog sata = '{CenaRadnogSata}', Broj omladinaca = '{BrojOmladinaca}', Poslodavac = '{Poslodavac.IDPoslodavca}', TipPosla = '{TipPosla.Id}'";
+        public string SetValues => $"Lokacija = '{Lokacija}', Satnica = '{Satnica}', CenaRadnogSata = '{CenaRadnogSata}', BrojOmladinaca = '{BrojOmladinaca}', Poslodavac = '{Poslodavac.IDPoslodavca}', TipPosla = '{TipPosla.Id}'";
         [Browsable(false)]
         public string WhereCondition =>$"Id = {IdPosla}";
         [Browsable(false)]

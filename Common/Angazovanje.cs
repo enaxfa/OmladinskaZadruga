@@ -17,9 +17,9 @@ namespace Common
         public Posao Posao { get; set; }
         public DateTime DatumAngazovanja { get; set; }
         [Browsable(false)]
-        public string TableName => throw new NotImplementedException();
+        public string TableName => "Angazovanje";
         [Browsable(false)]
-        public string InsertValues => throw new NotImplementedException();
+        public string InsertValues => $"'{Omladinac.IDOmladinca}','{Posao.Poslodavac.IDPoslodavca}','{Posao.IdPosla}', '{DatumAngazovanja}'";
         [Browsable(false)]
         public object SelectValues => throw new NotImplementedException();
         [Browsable(false)]

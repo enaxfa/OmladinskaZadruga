@@ -40,7 +40,7 @@ namespace Client.UserControls.Posao
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblBrOml = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,7 @@ namespace Client.UserControls.Posao
             this.dgvPoslovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPoslovi.Size = new System.Drawing.Size(795, 158);
             this.dgvPoslovi.TabIndex = 80;
+            this.dgvPoslovi.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPoslovi_CellMouseClick);
             // 
             // txtFilterPosao
             // 
@@ -101,6 +102,7 @@ namespace Client.UserControls.Posao
             this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOmladinci.Size = new System.Drawing.Size(795, 158);
             this.dgvOmladinci.TabIndex = 85;
+            this.dgvOmladinci.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOmladinci_CellClick);
             // 
             // txtFilterOmladinac
             // 
@@ -140,6 +142,7 @@ namespace Client.UserControls.Posao
             this.label4.Size = new System.Drawing.Size(255, 16);
             this.label4.TabIndex = 89;
             this.label4.Text = "Broj potrebnih omladinaca za ovaj posao:";
+            this.label4.Visible = false;
             // 
             // btnDodaj
             // 
@@ -151,22 +154,24 @@ namespace Client.UserControls.Posao
             this.btnDodaj.TabIndex = 91;
             this.btnDodaj.Text = "Dodaj angazovanje";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // label5
+            // lblBrOml
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1320, 227);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 92;
-            this.label5.Text = "label5";
+            this.lblBrOml.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblBrOml.AutoSize = true;
+            this.lblBrOml.Location = new System.Drawing.Point(1317, 227);
+            this.lblBrOml.Name = "lblBrOml";
+            this.lblBrOml.Size = new System.Drawing.Size(44, 16);
+            this.lblBrOml.TabIndex = 92;
+            this.lblBrOml.Text = "label5";
+            this.lblBrOml.Visible = false;
             // 
             // UCAddAngazovanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblBrOml);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -199,6 +204,6 @@ namespace Client.UserControls.Posao
         private Label label3;
         private Label label4;
         private Button btnDodaj;
-        private Label label5;
+        private Label lblBrOml;
     }
 }

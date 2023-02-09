@@ -17,7 +17,6 @@ namespace Client.UserControls.Posao
         public UCAddPosao()
         {
             InitializeComponent();
-            
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)

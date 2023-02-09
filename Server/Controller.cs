@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Security.Principal;
 using SystemOperations;
 using SystemOperations.AdministratorSO;
+using SystemOperations.AngazovanjeSO;
 using SystemOperations.OmladinacSO;
 using SystemOperations.PosaoSO;
 using SystemOperations.PoslodavacSO;
@@ -131,6 +132,21 @@ namespace Server
             GetPosloviSO so = new GetPosloviSO();
             so.ExecuteTemplate(posao);
             return so.Result;
+        }
+
+        internal void AddAngazovanja(List<Angazovanje> angazovanja)
+        {
+            AddAngazovanjaSO so = new AddAngazovanjaSO();
+            foreach(Angazovanje a in angazovanja)
+            {
+                so.ExecuteTemplate(a);
+            }
+        }
+
+        internal void UpdatePosao(Posao posao)
+        {
+            UpdatePosaoSO so = new UpdatePosaoSO();
+            so.ExecuteTemplate(posao);
         }
     }
 }

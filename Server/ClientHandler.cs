@@ -1,5 +1,6 @@
 ﻿using Common;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
@@ -81,6 +82,9 @@ namespace Server
                     case Operation.AddPosao:
                         Controller.Instance.AddPosao((Posao)request.RequestObject);
                         break;
+                    case Operation.UpdatePosao:
+                        Controller.Instance.UpdatePosao((Posao)request.RequestObject);
+                        break;
                     case Operation.SearchPosao:
                         response.Result = Controller.Instance.SearchPosao((Posao)request.RequestObject);
                         break;
@@ -89,6 +93,9 @@ namespace Server
                         break;
                     case Operation.GetPoslovi:
                         response.Result = Controller.Instance.GetPoslovi((Posao)request.RequestObject);
+                        break;
+                    case Operation.AddAngazovanja:
+                        Controller.Instance.AddAngazovanja((List<Angazovanje>)request.RequestObject);
                         break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");

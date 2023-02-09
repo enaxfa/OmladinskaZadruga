@@ -155,7 +155,7 @@
             this.cbPoslodavac.Name = "cbPoslodavac";
             this.cbPoslodavac.Size = new System.Drawing.Size(213, 24);
             this.cbPoslodavac.TabIndex = 25;
-            this.cbPoslodavac.Text = "Izaberite poslodavca";
+            
             // 
             // cbTipPosla
             // 
@@ -165,7 +165,7 @@
             this.cbTipPosla.Name = "cbTipPosla";
             this.cbTipPosla.Size = new System.Drawing.Size(213, 24);
             this.cbTipPosla.TabIndex = 26;
-            this.cbTipPosla.Text = "Izaberite tip posla";
+            
             // 
             // UCAddPosao
             // 
