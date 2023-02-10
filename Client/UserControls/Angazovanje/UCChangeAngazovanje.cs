@@ -54,5 +54,11 @@ namespace Client.UserControls.Angazovanje
         {
             mainController.UpdateAngazovanje(dgvAngazovanja, dgvOmladinci, dtpDatumAngazovanja);
         }
+
+
+        private void dtpDatumAngazovanja_MouseEnter(object sender, EventArgs e)
+        {
+            btnIzmeni.Enabled = true;
+        }
     }
 }

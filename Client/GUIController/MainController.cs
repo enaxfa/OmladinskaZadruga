@@ -519,13 +519,21 @@ namespace Client.Controller
                 MessageBox.Show("Izaberite samo jedno angazovanje!");
                 return;
             }
-            Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
-            angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
-            String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
-            angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
-            Communication.Instance.UpdateAngazovanje(angazovanje);
-            dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
-            MessageBox.Show("Uspesno ste sacuvali angazovanje");
+            try
+            {
+                Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
+                angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
+                String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
+                angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
+                Communication.Instance.UpdateAngazovanje(angazovanje);
+                dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
+                MessageBox.Show("Uspesno ste sacuvali angazovanje");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

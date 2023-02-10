@@ -49,10 +49,6 @@ namespace Repository.Implementation
             }
         }
 
-        public IDomenskiObjekat Get(IDomenskiObjekat key)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<IDomenskiObjekat> GetAll(IDomenskiObjekat entity)
         {

@@ -10,8 +10,8 @@ namespace Repository
     {
         void Add(IDomenskiObjekat entity);
         void Update(IDomenskiObjekat entity);
-        void Delete(IDomenskiObjekat key);
-        IDomenskiObjekat Get(IDomenskiObjekat key);
+        void Delete(IDomenskiObjekat entity);
+        
         List<IDomenskiObjekat> GetAll(IDomenskiObjekat entity);
 
         List<IDomenskiObjekat> GetAllWithCondition(IDomenskiObjekat entity);

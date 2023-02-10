@@ -48,6 +48,8 @@ namespace Common
         [Browsable(false)]
         public string TableAlias => "";
 
+        
+
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {

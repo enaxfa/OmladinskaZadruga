@@ -30,12 +30,12 @@ namespace Client.GUIController
         internal void Login(TextBox txtUsername, TextBox txtPassword)
         {
             //if (!UCHelper.EmptyFieldValidation(txtUsername) | !UCHelper.EmptyFieldValidation(txtPassword))
-               // return;
+                //return;
 
             Administrator a = new Administrator
             {
                 //KorisnickoIme = txtUsername.Text,
-                // Sifra = txtPassword.Text
+                //Sifra = txtPassword.Text
                 KorisnickoIme = "pera",
                 Sifra = "pera"
             };
@@ -43,7 +43,7 @@ namespace Client.GUIController
 
            if (administrator != null)
             {
-                //MessageBox.Show("Uspesno ste se prijavili!");
+               // MessageBox.Show("Uspesno ste se prijavili!");
                 FormCoordinator.Instance.ShowFrmMain(administrator.Ime, administrator.Prezime);
             }
             else

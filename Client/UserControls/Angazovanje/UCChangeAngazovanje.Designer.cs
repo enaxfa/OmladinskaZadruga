@@ -364,6 +364,7 @@
             this.dtpDatumAngazovanja.Name = "dtpDatumAngazovanja";
             this.dtpDatumAngazovanja.Size = new System.Drawing.Size(247, 22);
             this.dtpDatumAngazovanja.TabIndex = 90;
+            this.dtpDatumAngazovanja.MouseEnter += new System.EventHandler(this.dtpDatumAngazovanja_MouseEnter);
             // 
             // UCChangeAngazovanje
             // 

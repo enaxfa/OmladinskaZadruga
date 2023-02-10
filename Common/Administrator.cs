@@ -30,13 +30,15 @@ namespace Common
         public string SearchCondition => "";
 
         public string SetValues => "";
-        public string WhereCondition => "";
-
         public string JoinCondition => "";
 
         public string JoinTable => "";
 
         public string TableAlias => "";
+
+        public string WhereCondition => "";
+
+        
 
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {

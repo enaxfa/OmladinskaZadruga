@@ -32,12 +32,13 @@ namespace Common
         public string SetValues => "";
         [Browsable(false)]
         public string WhereCondition => $"Id = {Id}";
-
+        [Browsable(false)]
         public string JoinCondition => "";
-
+        [Browsable(false)]
         public string JoinTable => "";
-
+        [Browsable(false)]
         public string TableAlias => "";
+        
 
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
