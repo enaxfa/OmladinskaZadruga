@@ -103,6 +103,12 @@ namespace Server
                     case Operation.SearchAngazovanje:
                         response.Result = Controller.Instance.SearchAngazovanja((Angazovanje)request.RequestObject);
                         break;
+                    case Operation.DeleteAngazovanje:
+                        Controller.Instance.DeleteAngazovanje((Angazovanje)request.RequestObject);
+                        break;
+                    case Operation.UpdateAngazovanje:
+                        Controller.Instance.UpdateAngazovanje((Angazovanje)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

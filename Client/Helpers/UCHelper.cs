@@ -117,10 +117,5 @@ namespace Client.Helpers
             }
         }
 
-        internal static void ResetComboBox(params ComboBox[] comboBoxes)
-        {
-            foreach (ComboBox cb in comboBoxes)
-                cb.SelectedItem = null; 
-        }
     }
 }

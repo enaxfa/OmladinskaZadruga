@@ -69,10 +69,14 @@ namespace Client.Controller
             
         }
 
-        private Omladinac omladinac;
         internal void PrikaziOmladinca(DataGridView dgvOmladinci, TextBox txtIme, TextBox txtPrezime, TextBox txtJMBG, TextBox txtBrRacuna, TextBox txtBrTelefona, TextBox txtDatumRodjenja)
         {
-            omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
+            if (dgvOmladinci.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste izabrali ni jednog omladinca!");
+                return;
+            }
+            Omladinac omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
             txtIme.Text = omladinac.Ime;
             txtPrezime.Text = omladinac.Prezime;
             txtJMBG.Text = omladinac.JMBG;
@@ -95,6 +99,7 @@ namespace Client.Controller
             {
                 String datumRodjString = txtDatumRodjenja.Text;
                 String formatDatum = "yyyy-MM-dd";
+                Omladinac omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
                 omladinac.Ime = txtIme.Text;
                 omladinac.Prezime = txtPrezime.Text;
                 omladinac.JMBG = txtJMBG.Text;
@@ -118,6 +123,7 @@ namespace Client.Controller
         {
             try
             {
+                Omladinac omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
                 Communication.Instance.DeleteOmladinac(omladinac);
                 MessageBox.Show("Uspešno ste obrisali omladinca!");
                 dgvOmladinci.DataSource = GetOmladinci();
@@ -183,10 +189,15 @@ namespace Client.Controller
                 return null;
             }
         }
-        private Poslodavac poslodavac;
+        
         internal void PrikaziPoslodavca(DataGridView dgvPoslodavci, TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
         {
-            poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
+            if (dgvPoslodavci.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste izabrali ni jednog poslodavca!");
+                return;
+            }
+            Poslodavac poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
             txtNaziv.Text = poslodavac.Naziv;
             txtPIB.Text = poslodavac.PIB;
             txtAdresa.Text = poslodavac.Adresa;
@@ -205,6 +216,7 @@ namespace Client.Controller
             }
             try
             {
+                Poslodavac poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
                 poslodavac.Naziv = txtNaziv.Text;
                 poslodavac.PIB = txtPIB.Text;
                 poslodavac.Adresa = txtAdresa.Text;
@@ -227,6 +239,7 @@ namespace Client.Controller
         {
             try
             {
+                Poslodavac poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
                 Communication.Instance.DeletePoslodavac(poslodavac);
                 dgvPoslodavci.DataSource = GetPoslodavci();
                 MessageBox.Show("Uspešno ste obrisali poslodavca!");
@@ -263,19 +276,27 @@ namespace Client.Controller
                 MessageBox.Show("Podaci nisu ispravno uneti!");
                 return;
             }
-            Posao posao = new Posao
+            try
             {
-                Lokacija = txtLokacija.Text,
-                Satnica = int.Parse(txtSat.Text),
-                CenaRadnogSata = decimal.Parse(txtCenaRS.Text),
-                BrojOmladinaca = int.Parse(txtBrOml.Text),
-                Poslodavac = (Poslodavac)cbPoslodavac.SelectedItem,
-                TipPosla = (TipPosla)cbTipPosla.SelectedItem
-            };
-            Communication.Instance.AddPosao(posao);
-            MessageBox.Show("Uspešno ste dodali posao!");
-            UCHelper.ResetFields(txtLokacija, txtSat, txtCenaRS, txtBrOml);
-            UCHelper.ResetComboBox(cbPoslodavac, cbTipPosla);
+                Posao posao = new Posao
+                {
+                    Lokacija = txtLokacija.Text,
+                    Satnica = int.Parse(txtSat.Text),
+                    CenaRadnogSata = decimal.Parse(txtCenaRS.Text),
+                    BrojOmladinaca = int.Parse(txtBrOml.Text),
+                    Poslodavac = (Poslodavac)cbPoslodavac.SelectedItem,
+                    TipPosla = (TipPosla)cbTipPosla.SelectedItem
+                };
+                Communication.Instance.AddPosao(posao);
+                MessageBox.Show("Uspešno ste dodali posao!");
+                UCHelper.ResetFields(txtLokacija, txtSat, txtCenaRS, txtBrOml);
+                LoadComboBox(cbPoslodavac, cbTipPosla);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         internal List<Posao> SearchPosao(TextBox txtFilter)
@@ -367,26 +388,34 @@ namespace Client.Controller
                 MessageBox.Show("Izabrali ste vise omladinaca nego sto je potrebno za ovaj posao");
                 return;
             }
-            String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
-            List<Omladinac> omladinci = new List<Omladinac>();
-            foreach (DataGridViewRow row in dgvOmladinci.SelectedRows)
-                omladinci.Add((Omladinac)row.DataBoundItem);
-            Posao posao = (Posao)dgvPoslovi.SelectedRows[0].DataBoundItem;
-            List<Angazovanje> angazovanja = new List<Angazovanje>();
-            foreach(Omladinac o in omladinci)
+            try
             {
-                Angazovanje a = new Angazovanje
+                String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
+                List<Omladinac> omladinci = new List<Omladinac>();
+                foreach (DataGridViewRow row in dgvOmladinci.SelectedRows)
+                    omladinci.Add((Omladinac)row.DataBoundItem);
+                Posao posao = (Posao)dgvPoslovi.SelectedRows[0].DataBoundItem;
+                List<Angazovanje> angazovanja = new List<Angazovanje>();
+                foreach (Omladinac o in omladinci)
                 {
-                    Posao = posao,
-                    Omladinac = o,
-                    DatumAngazovanja = Convert.ToDateTime(datum)
-                };
-                angazovanja.Add(a);
+                    Angazovanje a = new Angazovanje
+                    {
+                        Posao = posao,
+                        Omladinac = o,
+                        DatumAngazovanja = Convert.ToDateTime(datum)
+                    };
+                    angazovanja.Add(a);
+                }
+                Communication.Instance.AddAngazovanja(angazovanja);
+                posao.BrojOmladinaca -= omladinci.Count;
+                Communication.Instance.UpdatePosao(posao);
+                MessageBox.Show("Uspesno ste dodali angazovanja");
             }
-            Communication.Instance.AddAngazovanja(angazovanja);
-            posao.BrojOmladinaca -= omladinci.Count;
-            Communication.Instance.UpdatePosao(posao);
-            MessageBox.Show("Uspesno ste dodali angazovanja");
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         internal List<Angazovanje> GetAngazovanja()
@@ -418,6 +447,85 @@ namespace Client.Controller
                 MessageBox.Show(ex.Message);
                 return null;
             }
+        }
+
+       
+
+        internal void PrikaziAngazovanje(DataGridView dgvAngazovanja, TextBox txtImeOmladinca, TextBox txtBrTelOml, TextBox txtBrRacOml, TextBox txtDatumRodj, TextBox txtPosao, TextBox txtPoslodavac, TextBox txtSatnica, TextBox txtCenaRS, TextBox txtBrOml)
+        {
+            if (dgvAngazovanja.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste izabrali ni jedno angazovanje!");
+                return;
+            }
+            Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
+            txtImeOmladinca.Text = angazovanje.Omladinac.ToString();
+            txtBrTelOml.Text = angazovanje.Omladinac.BrojTelefona;
+            txtBrRacOml.Text = angazovanje.Omladinac.BrojRacuna;
+            txtDatumRodj.Text = angazovanje.Omladinac.DatumRodjenja.ToString("yyyy-MM-dd");
+            txtPosao.Text = angazovanje.Posao.TipPosla.Naziv;
+            txtPoslodavac.Text = angazovanje.Posao.Poslodavac.Naziv;
+            txtSatnica.Text = angazovanje.Posao.Satnica.ToString();
+            txtCenaRS.Text = angazovanje.Posao.CenaRadnogSata.ToString();
+            txtBrOml.Text = angazovanje.Posao.BrojOmladinaca.ToString();
+        }
+
+        internal void DeleteAngazovanje(DataGridView dgvAngazovanja)
+        {
+            try
+            {
+                Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
+                Communication.Instance.DeleteAngazovanje(angazovanje);
+                angazovanje.Posao.BrojOmladinaca += 1;
+                Communication.Instance.UpdatePosao(angazovanje.Posao);
+                dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
+                MessageBox.Show("Uspesno ste izbrisali angazovanje");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal void PrikaziOmladinca(DataGridView dgvOmladinci, TextBox txtImeOmladinca, TextBox txtBrTelOml, TextBox txtBrRacOml, TextBox txtDatumRodj)
+        {
+            if (dgvOmladinci.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste izabrali ni jednog omladinca!");
+                return;
+            }
+            Omladinac omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
+            txtImeOmladinca.Text = omladinac.ToString();
+            txtBrTelOml.Text = omladinac.BrojTelefona;
+            txtBrRacOml.Text = omladinac.BrojRacuna;
+            txtDatumRodj.Text = omladinac.DatumRodjenja.ToString("yyyy-MM-dd");
+        }
+
+        internal void UpdateAngazovanje(DataGridView dgvAngazovanja, DataGridView dgvOmladinci, DateTimePicker dtpDatumAngazovanja)
+        {
+            if (dgvOmladinci.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Niste izabrali ni jednog omladinca!");
+                return;
+            }
+            if (dgvOmladinci.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Izaberite samo jednog omladinca!");
+                return;
+            }
+            if (dgvAngazovanja.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Izaberite samo jedno angazovanje!");
+                return;
+            }
+            Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
+            angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
+            String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
+            angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
+            Communication.Instance.UpdateAngazovanje(angazovanje);
+            dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
+            MessageBox.Show("Uspesno ste sacuvali angazovanje");
         }
     }
 }

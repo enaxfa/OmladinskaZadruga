@@ -38,7 +38,7 @@ namespace Common
         [Browsable(false)]
         public string SetValues => $"Lokacija = '{Lokacija}', Satnica = '{Satnica}', CenaRadnogSata = '{CenaRadnogSata}', BrojOmladinaca = '{BrojOmladinaca}', Poslodavac = '{Poslodavac.IDPoslodavca}', TipPosla = '{TipPosla.Id}'";
         [Browsable(false)]
-        public string WhereCondition =>$"Id = {IdPosla}";
+        public string WhereCondition =>$"Id = {IdPosla} and Poslodavac = {Poslodavac.IDPoslodavca}";
         [Browsable(false)]
         public string JoinCondition => "on (posao.Poslodavac=p.Id) join TipPosla tp on (tp.Id=posao.TipPosla)";
         [Browsable(false)]

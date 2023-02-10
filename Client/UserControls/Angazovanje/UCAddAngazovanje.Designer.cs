@@ -120,7 +120,7 @@ namespace Client.UserControls.Posao
             this.dtpDatumAngazovanja.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpDatumAngazovanja.Location = new System.Drawing.Point(1047, 153);
             this.dtpDatumAngazovanja.Name = "dtpDatumAngazovanja";
-            this.dtpDatumAngazovanja.Size = new System.Drawing.Size(237, 22);
+            this.dtpDatumAngazovanja.Size = new System.Drawing.Size(267, 22);
             this.dtpDatumAngazovanja.TabIndex = 87;
             // 
             // label3

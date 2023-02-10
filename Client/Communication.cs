@@ -272,5 +272,29 @@ namespace Client
             Response response = transfer.Receive<Response>();
             return response.GetResponseResult<List<Angazovanje>>();
         }
+
+        internal void DeleteAngazovanje(Angazovanje angazovanje)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.DeleteAngazovanje,
+                RequestObject = angazovanje
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Angazovanje>();
+        }
+
+        internal void UpdateAngazovanje(Angazovanje angazovanje)
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.UpdateAngazovanje,
+                RequestObject = angazovanje
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            response.GetResponseResult<Angazovanje>();
+        }
     }
 }

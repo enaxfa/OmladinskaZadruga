@@ -162,5 +162,17 @@ namespace Server
             so.ExecuteTemplate(angazovanje);
             return so.Result;
         }
+
+        internal void DeleteAngazovanje(Angazovanje angazovanje)
+        {
+            DeleteAngazovanjeSO so = new DeleteAngazovanjeSO();
+            so.ExecuteTemplate(angazovanje);
+        }
+
+        internal void UpdateAngazovanje(Angazovanje angazovanje)
+        {
+            UpdateAngazovanjeSO so = new UpdateAngazovanjeSO();
+            so.ExecuteTemplate(angazovanje);
+        }
     }
 }

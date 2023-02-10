@@ -20,6 +20,8 @@
         AddAngazovanja,
         UpdatePosao,
         GetAngazovanja,
-        SearchAngazovanje
+        SearchAngazovanje,
+        DeleteAngazovanje,
+        UpdateAngazovanje
     }
 }
