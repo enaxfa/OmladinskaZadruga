@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOdaberi = new System.Windows.Forms.Button();
             this.dgvAngazovanja = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAngazovanja)).BeginInit();
@@ -44,17 +43,6 @@
             this.label1.Size = new System.Drawing.Size(133, 16);
             this.label1.TabIndex = 81;
             this.label1.Text = "Pretraži angazovanja";
-            // 
-            // btnOdaberi
-            // 
-            this.btnOdaberi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOdaberi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnOdaberi.Location = new System.Drawing.Point(489, 407);
-            this.btnOdaberi.Name = "btnOdaberi";
-            this.btnOdaberi.Size = new System.Drawing.Size(172, 45);
-            this.btnOdaberi.TabIndex = 80;
-            this.btnOdaberi.Text = "Izaberi angazovanje";
-            this.btnOdaberi.UseVisualStyleBackColor = false;
             // 
             // dgvAngazovanja
             // 
@@ -78,13 +66,13 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(247, 24);
             this.txtFilter.TabIndex = 78;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // UCChangeAngazovanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.dgvAngazovanja);
             this.Controls.Add(this.txtFilter);
             this.Name = "UCChangeAngazovanje";
@@ -98,7 +86,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.DataGridView dgvAngazovanja;
         private System.Windows.Forms.TextBox txtFilter;
     }

@@ -22,8 +22,8 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => $"'{Omladinac.IDOmladinca}','{Posao.Poslodavac.IDPoslodavca}','{Posao.IdPosla}', '{DatumAngazovanja}'";
         [Browsable(false)]
-        public object SelectValues => "a.id, o.id, o.ime, o.prezime o.jmbg, o.brojracuna, o.brojtelefona, o.datumrodjenja" +
-            ",p.id, p.naziv,p.pib, p.adresa, p.email, p.brojtelefona, tp.id, tp.Naziv, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.brojOmladinaca a.Datum";
+        public object SelectValues => "a.id, o.id, o.ime, o.prezime, o.jmbg, o.brojracuna, o.brojtelefona, o.datumrodjenja" +
+            ",p.id, p.naziv, p.pib, p.adresa, p.email, p.brojtelefona, tp.id, tp.Naziv, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.brojOmladinaca, a.Datum";
         [Browsable(false)]
         public string SearchCondition => Uslov;
         [Browsable(false)]
@@ -33,7 +33,7 @@ namespace Common
         [Browsable(false)]
         public string WhereCondition => $"Id = {Id}";
         [Browsable(false)]
-        public string JoinCondition => "join Posao on (a.Poslodavac = posao.Poslodavac and a.Posao = posao.Id) join Poslodavac p on (posao.Poslodavac = p.Id) join \r\nTipPosla tp on(posao.TipPosla = tp.Id)";
+        public string JoinCondition => "join Posao on (a.Poslodavac = posao.Poslodavac and a.Posao = posao.Id) join Poslodavac p on (posao.Poslodavac = p.Id) join TipPosla tp on(posao.TipPosla = tp.Id)";
         [Browsable(false)]
         public string JoinTable => "join Omladinac o on (a.Omladinac = o.Id) ";
         [Browsable(false)]
@@ -75,7 +75,7 @@ namespace Common
                        },
                        Lokacija = (string)reader[16],
                        Satnica = (int)reader[17],
-                       CenaRadnogSata = (int)reader[18],
+                       CenaRadnogSata = (decimal)reader[18],
                        BrojOmladinaca = (int)reader[19]
                     },
                     DatumAngazovanja = (DateTime)reader[20]

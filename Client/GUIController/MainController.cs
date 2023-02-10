@@ -72,11 +72,6 @@ namespace Client.Controller
         private Omladinac omladinac;
         internal void PrikaziOmladinca(DataGridView dgvOmladinci, TextBox txtIme, TextBox txtPrezime, TextBox txtJMBG, TextBox txtBrRacuna, TextBox txtBrTelefona, TextBox txtDatumRodjenja)
         {
-            if (dgvOmladinci.SelectedRows.Count == 0 || (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem == null)
-            {
-                MessageBox.Show("Niste izabrali ni jednog omladinca!");
-                return;
-            }
             omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
             txtIme.Text = omladinac.Ime;
             txtPrezime.Text = omladinac.Prezime;
@@ -191,11 +186,6 @@ namespace Client.Controller
         private Poslodavac poslodavac;
         internal void PrikaziPoslodavca(DataGridView dgvPoslodavci, TextBox txtNaziv, TextBox txtPIB, TextBox txtAdresa, TextBox txtEmail, TextBox txtBrTelefona)
         {
-            if (dgvPoslodavci.SelectedRows.Count == 0 || (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem == null)
-            {
-                MessageBox.Show("Niste izabrali ni jednog poslodavca!");
-                return;
-            }
             poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
             txtNaziv.Text = poslodavac.Naziv;
             txtPIB.Text = poslodavac.PIB;
@@ -404,6 +394,23 @@ namespace Client.Controller
             try
             {
                 return Communication.Instance.GetAngazovanja();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        internal List<Angazovanje> SearchAngazovanja(TextBox txtFilter)
+        {
+            try
+            {
+                Angazovanje a = new Angazovanje();
+                a.Uslov = $"o.ime like '%{txtFilter.Text}%' or o.prezime like '%{txtFilter.Text}%' or p.naziv like '%{txtFilter.Text}%'" +
+                    $" or tp.naziv like '%{txtFilter.Text}%' or a.datum like '%{txtFilter.Text}%'";
+                return Communication.Instance.SearchAngazovanje(a);
             }
             catch (Exception ex)
             {

@@ -260,5 +260,17 @@ namespace Client
             Response response = transfer.Receive<Response>();
             return response.GetResponseResult<List<Angazovanje>>();
         }
+
+        internal List<Angazovanje> SearchAngazovanje(Angazovanje angazovanje)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SearchAngazovanje,
+                RequestObject = angazovanje
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Angazovanje>>();
+        }
     }
 }

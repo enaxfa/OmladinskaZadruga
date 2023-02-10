@@ -19,6 +19,7 @@
         GetPoslovi,
         AddAngazovanja,
         UpdatePosao,
-        GetAngazovanja
+        GetAngazovanja,
+        SearchAngazovanje
     }
 }

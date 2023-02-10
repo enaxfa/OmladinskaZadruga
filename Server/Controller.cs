@@ -155,5 +155,12 @@ namespace Server
             so.ExecuteTemplate(angazovanje);
             return so.Result;
         }
+
+        internal object SearchAngazovanja(Angazovanje angazovanje)
+        {
+            SearchAngazovanjaSO so = new SearchAngazovanjaSO();
+            so.ExecuteTemplate(angazovanje);
+            return so.Result;
+        }
     }
 }

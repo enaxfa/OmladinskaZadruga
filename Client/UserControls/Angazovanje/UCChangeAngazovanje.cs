@@ -20,6 +20,9 @@ namespace Client.UserControls.Angazovanje
             dgvAngazovanja.DataSource = mainController.GetAngazovanja();
         }
 
-        
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            dgvAngazovanja.DataSource = mainController.SearchAngazovanja(txtFilter);
+        }
     }
 }
