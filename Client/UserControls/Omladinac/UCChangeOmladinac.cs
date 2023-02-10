@@ -15,13 +15,6 @@ namespace Client.UserControls.Omladinac
         }
 
 
-        private void btnOdaberi_Click(object sender, EventArgs e)
-        {
-            mainController.PrikaziOmladinca(dgvOmladinci, txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
-            btnIzmeni.Enabled = true;
-            btnObrisi.Enabled = true;
-        }
-
         private void btnIzmeni_Click(object sender, EventArgs e)
         {
             mainController.UpdateOmladinac(dgvOmladinci,txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
@@ -35,6 +28,14 @@ namespace Client.UserControls.Omladinac
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
             dgvOmladinci.DataSource = mainController.SearchOmladinac(txtFilter);
+        }
+
+
+        private void dgvOmladinci_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mainController.PrikaziOmladinca(dgvOmladinci, txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
+            btnIzmeni.Enabled = true;
+            btnObrisi.Enabled = true;
         }
     }
 }

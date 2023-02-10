@@ -67,5 +67,10 @@ namespace Common
             }
             return result;
         }
+
+        public override string ToString()
+        {
+            return Ime + " " + Prezime;
+        }
     }
 }

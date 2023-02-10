@@ -41,6 +41,7 @@
             this.dodajToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblAdministrator = new System.Windows.Forms.Label();
+            this.izmeniToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,14 +94,14 @@
             // dodajToolStripMenuItem1
             // 
             this.dodajToolStripMenuItem1.Name = "dodajToolStripMenuItem1";
-            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
+            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.dodajToolStripMenuItem1.Text = "Dodaj";
             this.dodajToolStripMenuItem1.Click += new System.EventHandler(this.dodajToolStripMenuItem1_Click);
             // 
             // izmeniToolStripMenuItem1
             // 
             this.izmeniToolStripMenuItem1.Name = "izmeniToolStripMenuItem1";
-            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
+            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.izmeniToolStripMenuItem1.Text = "Izmeni";
             this.izmeniToolStripMenuItem1.Click += new System.EventHandler(this.izmeniToolStripMenuItem1_Click);
             // 
@@ -122,7 +123,8 @@
             // angazovanjaToolStripMenuItem
             // 
             this.angazovanjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajToolStripMenuItem3});
+            this.dodajToolStripMenuItem3,
+            this.izmeniToolStripMenuItem2});
             this.angazovanjaToolStripMenuItem.Name = "angazovanjaToolStripMenuItem";
             this.angazovanjaToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.angazovanjaToolStripMenuItem.Text = "Angazovanja";
@@ -150,6 +152,13 @@
             this.lblAdministrator.Name = "lblAdministrator";
             this.lblAdministrator.Size = new System.Drawing.Size(0, 16);
             this.lblAdministrator.TabIndex = 0;
+            // 
+            // izmeniToolStripMenuItem2
+            // 
+            this.izmeniToolStripMenuItem2.Name = "izmeniToolStripMenuItem2";
+            this.izmeniToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.izmeniToolStripMenuItem2.Text = "Izmeni";
+            this.izmeniToolStripMenuItem2.Click += new System.EventHandler(this.izmeniToolStripMenuItem2_Click);
             // 
             // FrmMain
             // 
@@ -184,5 +193,6 @@
         private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem angazovanjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem izmeniToolStripMenuItem2;
     }
 }

@@ -21,13 +21,6 @@ namespace Client.UserControls.Poslodavac
             dgvPoslodavci.DataSource = mainController.GetPoslodavci();
         }
 
-        private void btnOdaberi_Click(object sender, EventArgs e)
-        {
-            mainController.PrikaziPoslodavca(dgvPoslodavci, txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
-            btnIzmeni.Enabled = true;
-            btnObrisi.Enabled = true;
-        }
-
         private void btnIzmeni_Click(object sender, EventArgs e)
         {
             mainController.UpdatePoslodavac(dgvPoslodavci, txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
@@ -41,6 +34,13 @@ namespace Client.UserControls.Poslodavac
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
             dgvPoslodavci.DataSource = mainController.SearchPoslodavac(txtFilter, this);
+        }
+
+        private void dgvPoslodavci_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mainController.PrikaziPoslodavca(dgvPoslodavci, txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
+            btnIzmeni.Enabled = true;
+            btnObrisi.Enabled = true;
         }
     }
 }

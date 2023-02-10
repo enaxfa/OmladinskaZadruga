@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,19 +22,22 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => $"'{Omladinac.IDOmladinca}','{Posao.Poslodavac.IDPoslodavca}','{Posao.IdPosla}', '{DatumAngazovanja}'";
         [Browsable(false)]
-        public object SelectValues => throw new NotImplementedException();
+        public object SelectValues => "a.id, o.id, o.ime, o.prezime o.jmbg, o.brojracuna, o.brojtelefona, o.datumrodjenja" +
+            ",p.id, p.naziv,p.pib, p.adresa, p.email, p.brojtelefona, tp.id, tp.Naziv, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.brojOmladinaca a.Datum";
         [Browsable(false)]
-        public string SearchCondition => throw new NotImplementedException();
+        public string SearchCondition => Uslov;
         [Browsable(false)]
-        public string SetValues => throw new NotImplementedException();
+        public string SetValues => $"Omladinac = {Omladinac.IDOmladinca}, Poslodavac = {Posao.Poslodavac.IDPoslodavca}, Posao = {Posao.IdPosla}, Datum = {DatumAngazovanja}";
         [Browsable(false)]
-        public string WhereCondition => throw new NotImplementedException();
+        public String Uslov { get; set; }
         [Browsable(false)]
-        public string JoinCondition => throw new NotImplementedException();
+        public string WhereCondition => $"Id = {Id}";
         [Browsable(false)]
-        public string JoinTable => throw new NotImplementedException();
+        public string JoinCondition => "join Posao on (a.Poslodavac = posao.Poslodavac and a.Posao = posao.Id) join Poslodavac p on (posao.Poslodavac = p.Id) join \r\nTipPosla tp on(posao.TipPosla = tp.Id)";
         [Browsable(false)]
-        public string TableAlias => throw new NotImplementedException();
+        public string JoinTable => "join Omladinac o on (a.Omladinac = o.Id) ";
+        [Browsable(false)]
+        public string TableAlias => "a";
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
         {
@@ -49,8 +53,8 @@ namespace Common
                         Ime = (string)reader[2],
                         Prezime = (string)reader[3],
                         JMBG = (string)reader[4],
-                        BrojTelefona = (string)reader[5],
-                        BrojRacuna = (string)reader[6],
+                        BrojRacuna = (string)reader[5],
+                        BrojTelefona = (string)reader[6],
                         DatumRodjenja = (DateTime)reader[7]
                     },
                     Posao = new Posao
@@ -62,19 +66,23 @@ namespace Common
                            PIB = (string)reader[10],
                            Adresa = (string)reader[11],
                            Email = (string)reader[12],
-                           Kontakt = (string)reader[13]
+                           Kontakt = (string)reader[13],
                        },
                        TipPosla = new TipPosla
                        {
                            Id = (int)reader[14],
                            Naziv = (string)reader[15]
                        },
-                       BrojOmladinaca = (int)reader[16]
+                       Lokacija = (string)reader[16],
+                       Satnica = (int)reader[17],
+                       CenaRadnogSata = (int)reader[18],
+                       BrojOmladinaca = (int)reader[19]
                     },
-                    DatumAngazovanja = (DateTime)reader[17]
+                    DatumAngazovanja = (DateTime)reader[20]
                 });
             }
             return result;
         }
+
     }
 }

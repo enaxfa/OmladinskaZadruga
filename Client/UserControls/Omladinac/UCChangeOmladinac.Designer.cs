@@ -31,7 +31,6 @@ namespace Client.UserControls.Omladinac
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOdaberi = new System.Windows.Forms.Button();
             this.dgvOmladinci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
@@ -63,18 +62,6 @@ namespace Client.UserControls.Omladinac
             this.label1.TabIndex = 77;
             this.label1.Text = "Pretraži omladince";
             // 
-            // btnOdaberi
-            // 
-            this.btnOdaberi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOdaberi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnOdaberi.Location = new System.Drawing.Point(418, 404);
-            this.btnOdaberi.Name = "btnOdaberi";
-            this.btnOdaberi.Size = new System.Drawing.Size(172, 45);
-            this.btnOdaberi.TabIndex = 76;
-            this.btnOdaberi.Text = "Izaberi omladinca";
-            this.btnOdaberi.UseVisualStyleBackColor = false;
-            this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
-            // 
             // dgvOmladinci
             // 
             this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -87,6 +74,7 @@ namespace Client.UserControls.Omladinac
             this.dgvOmladinci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOmladinci.Size = new System.Drawing.Size(537, 209);
             this.dgvOmladinci.TabIndex = 74;
+            this.dgvOmladinci.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOmladinci_CellMouseClick);
             // 
             // txtFilter
             // 
@@ -246,7 +234,6 @@ namespace Client.UserControls.Omladinac
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.dgvOmladinci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
@@ -264,7 +251,6 @@ namespace Client.UserControls.Omladinac
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.DataGridView dgvOmladinci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;

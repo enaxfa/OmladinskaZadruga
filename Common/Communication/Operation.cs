@@ -18,6 +18,7 @@
         GetOmladinci,
         GetPoslovi,
         AddAngazovanja,
-        UpdatePosao
+        UpdatePosao,
+        GetAngazovanja
     }
 }

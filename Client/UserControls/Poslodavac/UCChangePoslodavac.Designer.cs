@@ -31,7 +31,6 @@ namespace Client.UserControls.Poslodavac
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOdaberi = new System.Windows.Forms.Button();
             this.dgvPoslodavci = new System.Windows.Forms.DataGridView();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
@@ -61,18 +60,6 @@ namespace Client.UserControls.Poslodavac
             this.label1.TabIndex = 83;
             this.label1.Text = "Pretraži poslodavce";
             // 
-            // btnOdaberi
-            // 
-            this.btnOdaberi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOdaberi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnOdaberi.Location = new System.Drawing.Point(414, 407);
-            this.btnOdaberi.Name = "btnOdaberi";
-            this.btnOdaberi.Size = new System.Drawing.Size(172, 45);
-            this.btnOdaberi.TabIndex = 82;
-            this.btnOdaberi.Text = "Izaberi poslodavca";
-            this.btnOdaberi.UseVisualStyleBackColor = false;
-            this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
-            // 
             // dgvPoslodavci
             // 
             this.dgvPoslodavci.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -85,6 +72,7 @@ namespace Client.UserControls.Poslodavac
             this.dgvPoslodavci.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPoslodavci.Size = new System.Drawing.Size(537, 206);
             this.dgvPoslodavci.TabIndex = 80;
+            this.dgvPoslodavci.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPoslodavci_CellMouseClick);
             // 
             // txtFilter
             // 
@@ -237,7 +225,6 @@ namespace Client.UserControls.Poslodavac
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnOdaberi);
             this.Controls.Add(this.dgvPoslodavci);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.pnlDetails);
@@ -254,7 +241,6 @@ namespace Client.UserControls.Poslodavac
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.DataGridView dgvPoslodavci;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlDetails;

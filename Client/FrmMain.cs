@@ -67,5 +67,10 @@ namespace Client
         {
             FormCoordinator.Instance.OpenUCAddAngazovanje();
         }
+
+        private void izmeniToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormCoordinator.Instance.OpenUCChangeAngazovanje();
+        }
     }
 }

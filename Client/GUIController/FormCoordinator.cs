@@ -1,4 +1,5 @@
 ﻿using Client.Controller;
+using Client.UserControls.Angazovanje;
 using Client.UserControls.Omladinac;
 using Client.UserControls.Posao;
 using Client.UserControls.Poslodavac;
@@ -81,6 +82,11 @@ namespace Client.GUIController
         internal void OpenUCAddAngazovanje()
         {
             frmMain.SetPanel(new UCAddAngazovanje());
+        }
+
+        internal void OpenUCChangeAngazovanje()
+        {
+            frmMain.SetPanel(new UCChangeAngazovanje());
         }
     }
 }

@@ -148,5 +148,12 @@ namespace Server
             UpdatePosaoSO so = new UpdatePosaoSO();
             so.ExecuteTemplate(posao);
         }
+
+        internal List<Angazovanje> GetAngazovanja(Angazovanje angazovanje)
+        {
+            GetAngazovanjaSO so = new GetAngazovanjaSO();
+            so.ExecuteTemplate(angazovanje);
+            return so.Result;
+        }
     }
 }

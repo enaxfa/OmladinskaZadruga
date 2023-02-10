@@ -19,7 +19,12 @@ namespace Common
         public int Satnica { get; set; }
         public decimal CenaRadnogSata { get; set; }
         public int BrojOmladinaca { get; set; }
-        
+
+        public override string ToString()
+        {
+            return Poslodavac.Naziv + "-" + TipPosla.Naziv;
+        }
+
         [Browsable(false)]
         public string TableName => "Posao";
         [Browsable(false)]

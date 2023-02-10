@@ -248,5 +248,17 @@ namespace Client
             Response response = transfer.Receive<Response>();
             response.GetResponseResult<Posao>();
         }
+
+        internal List<Angazovanje> GetAngazovanja()
+        {
+            Request request = new Request()
+            {
+                Operation = Operation.GetAngazovanja,
+                RequestObject = new Angazovanje()
+            };
+            transfer.Send(request);
+            Response response = transfer.Receive<Response>();
+            return response.GetResponseResult<List<Angazovanje>>();
+        }
     }
 }

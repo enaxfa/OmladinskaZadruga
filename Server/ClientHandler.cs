@@ -97,6 +97,9 @@ namespace Server
                     case Operation.AddAngazovanja:
                         Controller.Instance.AddAngazovanja((List<Angazovanje>)request.RequestObject);
                         break;
+                    case Operation.GetAngazovanja:
+                        response.Result = Controller.Instance.GetAngazovanja((Angazovanje)request.RequestObject);
+                        break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");
                         break;

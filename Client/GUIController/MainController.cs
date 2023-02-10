@@ -51,15 +51,14 @@ namespace Client.Controller
             }
         }
         
-        internal BindingList<Omladinac> SearchOmladinac(TextBox txtFilter)
+        internal List<Omladinac> SearchOmladinac(TextBox txtFilter)
         {
             
             try
             {
                 Omladinac o = new Omladinac();
                 o.Uslov = $"Ime like '%{txtFilter.Text}%' or Prezime like '%{txtFilter.Text}%' or JMBG like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%' or BrojRacuna like '%{txtFilter.Text}%' or DatumRodjenja like '%{txtFilter.Text}%'";
-                List<Omladinac> omladinci = Communication.Instance.SearchOmladinac(o);
-                return new BindingList<Omladinac>(omladinci);
+                return Communication.Instance.SearchOmladinac(o);
             }
             catch (Exception ex)
             {
@@ -110,8 +109,8 @@ namespace Client.Controller
                 
                 Communication.Instance.UpdateOmladinac(omladinac);
                 MessageBox.Show("Uspešno ste izmenili omladinca!");
-                ClearTable(dgvOmladinci);
-                
+                dgvOmladinci.DataSource = GetOmladinci();
+
             }
             catch (Exception ex)
             {
@@ -126,7 +125,7 @@ namespace Client.Controller
             {
                 Communication.Instance.DeleteOmladinac(omladinac);
                 MessageBox.Show("Uspešno ste obrisali omladinca!");
-                ClearTable(dgvOmladinci);
+                dgvOmladinci.DataSource = GetOmladinci();
                 UCHelper.ResetFields(txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
             }
             catch (Exception ex)
@@ -174,14 +173,13 @@ namespace Client.Controller
             
         }
 
-        internal BindingList<Poslodavac> SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
+        internal List<Poslodavac> SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
         {
             try
             {
                 Poslodavac p = new Poslodavac();
                 p.Uslov = $"Naziv like '%{txtFilter.Text}%' or PIB like '%{txtFilter.Text}%' or Adresa like '%{txtFilter.Text}%' or Email like '%{txtFilter.Text}%' or BrojTelefona like '%{txtFilter.Text}%'";
-                List<Poslodavac> poslodavci = Communication.Instance.SearchPoslodavac(p);
-                return new BindingList<Poslodavac>(poslodavci);
+                return Communication.Instance.SearchPoslodavac(p);
             }
             catch (Exception ex)
             {
@@ -224,8 +222,8 @@ namespace Client.Controller
                 poslodavac.Kontakt = txtBrTelefona.Text;
 
                 Communication.Instance.UpdatePoslodavac(poslodavac);
+                dgvPoslodavci.DataSource = GetPoslodavci();
                 MessageBox.Show("Uspešno ste izmenili poslodavca!");
-                ClearTable(dgvPoslodavci);
 
             }
             catch (Exception ex)
@@ -240,8 +238,8 @@ namespace Client.Controller
             try
             {
                 Communication.Instance.DeletePoslodavac(poslodavac);
+                dgvPoslodavci.DataSource = GetPoslodavci();
                 MessageBox.Show("Uspešno ste obrisali poslodavca!");
-                ClearTable(dgvPoslodavci);
                 UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
             }
             catch (Exception ex)
@@ -290,7 +288,7 @@ namespace Client.Controller
             UCHelper.ResetComboBox(cbPoslodavac, cbTipPosla);
         }
 
-        internal BindingList<Posao> SearchPosao(TextBox txtFilter)
+        internal List<Posao> SearchPosao(TextBox txtFilter)
         {
             
             try
@@ -298,8 +296,7 @@ namespace Client.Controller
                 Posao p = new Posao();
                 p.Uslov = $"posao.lokacija like '%{txtFilter.Text}%' or posao.satnica like '%{txtFilter.Text}%' or posao.cenaradnogsata like '%{txtFilter.Text}%'" +
                     $" or posao.brojomladinaca like '%{txtFilter.Text}%' or p.Naziv like '%{txtFilter.Text}%' or tp.Naziv like '%{txtFilter.Text}%'";
-                List<Posao> poslovi = Communication.Instance.SearchPosao(p);
-                return new BindingList<Posao>(poslovi);
+                return Communication.Instance.SearchPosao(p);
             }
             catch (Exception ex)
             {
@@ -310,11 +307,11 @@ namespace Client.Controller
             
         }
 
-        internal BindingList<Omladinac> GetOmladinci()
+        internal List<Omladinac> GetOmladinci()
         {
             try
             {
-                return new BindingList<Omladinac>(Communication.Instance.GetOmladinci());
+                return Communication.Instance.GetOmladinci();
             }
             catch (Exception ex)
             {
@@ -324,11 +321,11 @@ namespace Client.Controller
             }
         }
 
-        internal BindingList<Posao> GetPoslovi()
+        internal List<Posao> GetPoslovi()
         {
             try
             {
-                return new BindingList<Posao>(Communication.Instance.GetPoslovi());
+                return Communication.Instance.GetPoslovi();
             }
             catch (Exception ex)
             {
@@ -338,11 +335,11 @@ namespace Client.Controller
             }
         }
 
-        internal BindingList<Poslodavac> GetPoslodavci()
+        internal List<Poslodavac> GetPoslodavci()
         {
             try
             {
-                return new BindingList<Poslodavac>(Communication.Instance.GetPoslodavci());
+                return Communication.Instance.GetPoslodavci();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); return null; }
         }
@@ -400,6 +397,20 @@ namespace Client.Controller
             posao.BrojOmladinaca -= omladinci.Count;
             Communication.Instance.UpdatePosao(posao);
             MessageBox.Show("Uspesno ste dodali angazovanja");
+        }
+
+        internal List<Angazovanje> GetAngazovanja()
+        {
+            try
+            {
+                return Communication.Instance.GetAngazovanja();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
     }
 }
