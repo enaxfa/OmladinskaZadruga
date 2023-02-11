@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AdministratorSO\LoginSO.cs" />
     <Compile Include="AngazovanjeSO\AddAngazovanjaSO.cs" />
-    <Compile Include="AngazovanjeSO\DeleteAngazovanjeSO.cs" />
     <Compile Include="AngazovanjeSO\GetAngazovanjaSO.cs" />
     <Compile Include="AngazovanjeSO\SearchAngazovanjaSO.cs" />
     <Compile Include="AngazovanjeSO\UpdateAngazovanjeSO.cs" />

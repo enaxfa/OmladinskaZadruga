@@ -35,7 +35,6 @@ namespace Client.UserControls.Posao
 
         private void dgvPoslovi_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
             label4.Visible = true;
             lblBrOml.Visible = true;
             lblBrOml.Text = mainController.VratiBrojOmladinacaZaPosao(dgvPoslovi);

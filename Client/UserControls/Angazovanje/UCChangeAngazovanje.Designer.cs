@@ -52,7 +52,6 @@
             this.txtPosao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnIzmeni = new System.Windows.Forms.Button();
-            this.btnObrisi = new System.Windows.Forms.Button();
             this.dgvOmladinci = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.txtFilterOml = new System.Windows.Forms.TextBox();
@@ -299,19 +298,6 @@
             this.btnIzmeni.UseVisualStyleBackColor = false;
             this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
-            // btnObrisi
-            // 
-            this.btnObrisi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnObrisi.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnObrisi.Enabled = false;
-            this.btnObrisi.Location = new System.Drawing.Point(286, 408);
-            this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(145, 45);
-            this.btnObrisi.TabIndex = 86;
-            this.btnObrisi.Text = "Obrisi angazovanje";
-            this.btnObrisi.UseVisualStyleBackColor = false;
-            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click_1);
-            // 
             // dgvOmladinci
             // 
             this.dgvOmladinci.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -375,7 +361,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtFilterOml);
             this.Controls.Add(this.dgvOmladinci);
-            this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeni);
             this.Controls.Add(this.pnlPosao);
             this.Controls.Add(this.pnlOmladinac);
@@ -421,7 +406,6 @@
         private System.Windows.Forms.TextBox txtPoslodavac;
         private System.Windows.Forms.TextBox txtPosao;
         private System.Windows.Forms.Button btnIzmeni;
-        private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.DataGridView dgvOmladinci;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtFilterOml;

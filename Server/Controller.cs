@@ -163,11 +163,6 @@ namespace Server
             return so.Result;
         }
 
-        internal void DeleteAngazovanje(Angazovanje angazovanje)
-        {
-            DeleteAngazovanjeSO so = new DeleteAngazovanjeSO();
-            so.ExecuteTemplate(angazovanje);
-        }
 
         internal void UpdateAngazovanje(Angazovanje angazovanje)
         {

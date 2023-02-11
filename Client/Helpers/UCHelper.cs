@@ -49,6 +49,7 @@ namespace Client.Helpers
         {
             try
             {
+                
                 if (txt.Text.Length != 13)
                 {
                     txt.BackColor = Color.LightCoral;
@@ -57,9 +58,9 @@ namespace Client.Helpers
                 else
                 {
                     txt.BackColor = Color.White;
+                    AllNumberValidation(txt);
                     return true;
                 }
-                AllNumberValidation(txt);   
             }
             catch (Exception)
             {

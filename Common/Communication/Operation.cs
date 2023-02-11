@@ -21,7 +21,6 @@
         UpdatePosao,
         GetAngazovanja,
         SearchAngazovanje,
-        DeleteAngazovanje,
         UpdateAngazovanje
     }
 }

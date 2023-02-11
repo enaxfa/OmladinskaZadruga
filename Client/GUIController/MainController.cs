@@ -470,23 +470,6 @@ namespace Client.Controller
             txtBrOml.Text = angazovanje.Posao.BrojOmladinaca.ToString();
         }
 
-        internal void DeleteAngazovanje(DataGridView dgvAngazovanja)
-        {
-            try
-            {
-                Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
-                Communication.Instance.DeleteAngazovanje(angazovanje);
-                angazovanje.Posao.BrojOmladinaca += 1;
-                Communication.Instance.UpdatePosao(angazovanje.Posao);
-                dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
-                MessageBox.Show("Uspesno ste izbrisali angazovanje");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         internal void PrikaziOmladinca(DataGridView dgvOmladinci, TextBox txtImeOmladinca, TextBox txtBrTelOml, TextBox txtBrRacOml, TextBox txtDatumRodj)
         {
@@ -504,11 +487,7 @@ namespace Client.Controller
 
         internal void UpdateAngazovanje(DataGridView dgvAngazovanja, DataGridView dgvOmladinci, DateTimePicker dtpDatumAngazovanja)
         {
-            if (dgvOmladinci.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Niste izabrali ni jednog omladinca!");
-                return;
-            }
+           
             if (dgvOmladinci.SelectedRows.Count > 1)
             {
                 MessageBox.Show("Izaberite samo jednog omladinca!");
@@ -522,7 +501,8 @@ namespace Client.Controller
             try
             {
                 Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
-                angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
+                if(dgvOmladinci.SelectedRows.Count == 1)
+                    angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
                 String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
                 angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
                 Communication.Instance.UpdateAngazovanje(angazovanje);

@@ -29,15 +29,11 @@ namespace Client.UserControls.Angazovanje
         private void dgvAngazovanja_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             mainController.PrikaziAngazovanje(dgvAngazovanja,txtImeOmladinca,txtBrTelOml,txtBrRacOml,txtDatumRodj, txtPosao,txtPoslodavac,txtSatnica,txtCenaRS,txtBrOml);
-            btnObrisi.Enabled = true;
+            
             dgvOmladinci.DataSource = mainController.GetOmladinci();
         }
 
         
-        private void btnObrisi_Click_1(object sender, EventArgs e)
-        {
-            mainController.DeleteAngazovanje(dgvAngazovanja);
-        }
 
         private void dgvOmladinci_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
