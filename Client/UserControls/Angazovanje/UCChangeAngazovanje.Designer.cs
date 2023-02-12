@@ -369,6 +369,7 @@
             this.Controls.Add(this.txtFilter);
             this.Name = "UCChangeAngazovanje";
             this.Size = new System.Drawing.Size(1440, 610);
+            this.Load += new System.EventHandler(this.UCChangeAngazovanje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAngazovanja)).EndInit();
             this.pnlOmladinac.ResumeLayout(false);
             this.pnlOmladinac.PerformLayout();

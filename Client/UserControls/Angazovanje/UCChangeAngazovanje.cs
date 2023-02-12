@@ -18,6 +18,7 @@ namespace Client.UserControls.Angazovanje
         {
             InitializeComponent();
             dgvAngazovanja.DataSource = mainController.GetAngazovanja();
+            dgvOmladinci.DataSource = mainController.GetOmladinci();
             dtpDatumAngazovanja.MinDate = DateTime.Now;
         }
 
@@ -30,7 +31,6 @@ namespace Client.UserControls.Angazovanje
         {
             mainController.PrikaziAngazovanje(dgvAngazovanja,txtImeOmladinca,txtBrTelOml,txtBrRacOml,txtDatumRodj, txtPosao,txtPoslodavac,txtSatnica,txtCenaRS,txtBrOml);
             
-            dgvOmladinci.DataSource = mainController.GetOmladinci();
         }
 
         
@@ -55,6 +55,12 @@ namespace Client.UserControls.Angazovanje
         private void dtpDatumAngazovanja_MouseEnter(object sender, EventArgs e)
         {
             btnIzmeni.Enabled = true;
+        }
+
+        private void UCChangeAngazovanje_Load(object sender, EventArgs e)
+        {
+            dgvAngazovanja.ClearSelection();
+            dgvOmladinci.ClearSelection();
         }
     }
 }

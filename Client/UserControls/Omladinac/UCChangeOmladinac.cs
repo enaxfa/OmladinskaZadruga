@@ -37,5 +37,10 @@ namespace Client.UserControls.Omladinac
             btnIzmeni.Enabled = true;
             btnObrisi.Enabled = true;
         }
+
+        private void UCChangeOmladinac_Load(object sender, EventArgs e)
+        {
+            dgvOmladinci.ClearSelection();
+        }
     }
 }

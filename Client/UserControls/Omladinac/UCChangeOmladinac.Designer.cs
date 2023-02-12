@@ -239,6 +239,7 @@ namespace Client.UserControls.Omladinac
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCChangeOmladinac";
             this.Size = new System.Drawing.Size(1150, 565);
+            this.Load += new System.EventHandler(this.UCChangeOmladinac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();

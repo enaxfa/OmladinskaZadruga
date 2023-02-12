@@ -42,5 +42,10 @@ namespace Client.UserControls.Poslodavac
             btnIzmeni.Enabled = true;
             btnObrisi.Enabled = true;
         }
+
+        private void UCChangePoslodavac_Load(object sender, EventArgs e)
+        {
+            dgvPoslodavci.ClearSelection();
+        }
     }
 }

@@ -49,5 +49,11 @@ namespace Client.UserControls.Posao
         {
             mainController.AddAngazovanje(dgvPoslovi, dgvOmladinci, dtpDatumAngazovanja, lblBrOml);
         }
+
+        private void UCAddAngazovanje_Load(object sender, EventArgs e)
+        {
+            dgvOmladinci.ClearSelection();
+            dgvPoslovi.ClearSelection();
+        }
     }
 }

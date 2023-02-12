@@ -184,6 +184,7 @@ namespace Client.UserControls.Posao
             this.Controls.Add(this.txtFilterPosao);
             this.Name = "UCAddAngazovanje";
             this.Size = new System.Drawing.Size(1440, 610);
+            this.Load += new System.EventHandler(this.UCAddAngazovanje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoslovi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOmladinci)).EndInit();
             this.ResumeLayout(false);

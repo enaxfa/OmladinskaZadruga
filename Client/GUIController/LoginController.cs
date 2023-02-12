@@ -48,7 +48,7 @@ namespace Client.GUIController
             }
             else
             {
-                MessageBox.Show("Korisnik ne postoji!");
+                MessageBox.Show("Netacna sifra ili korisnicko ime!");
             }
         }
     }

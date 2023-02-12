@@ -230,6 +230,7 @@ namespace Client.UserControls.Poslodavac
             this.Controls.Add(this.pnlDetails);
             this.Name = "UCChangePoslodavac";
             this.Size = new System.Drawing.Size(1150, 650);
+            this.Load += new System.EventHandler(this.UCChangePoslodavac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoslodavci)).EndInit();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();

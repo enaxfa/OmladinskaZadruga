@@ -42,7 +42,7 @@ namespace Client.Controller
                     DatumRodjenja = DateTime.ParseExact(datumRodjString, formatDatum, CultureInfo.InvariantCulture)
                 };
                 Communication.Instance.AddOmladinac(omladinac);
-                MessageBox.Show("Uspešno ste dodali omladinca!");
+                MessageBox.Show("Uspešno ste sacuvali omladinca!");
                 UCHelper.ResetFields(txtIme, txtPrezime, txtJMBG, txtDatumRodjenja, txtBrRacuna, txtBrTelefona);
             }
             catch (Exception ex)
@@ -163,7 +163,7 @@ namespace Client.Controller
                     Kontakt = txtBrTelefona.Text
                 };
                 Communication.Instance.AddPoslodavac(poslodavac);
-                MessageBox.Show("Uspešno ste dodali poslodavca!");
+                MessageBox.Show("Uspešno ste sacuvali poslodavca!");
                 UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
             }
             catch (Exception ex)
@@ -409,7 +409,7 @@ namespace Client.Controller
                 Communication.Instance.AddAngazovanja(angazovanja);
                 posao.BrojOmladinaca -= omladinci.Count;
                 Communication.Instance.UpdatePosao(posao);
-                MessageBox.Show("Uspesno ste dodali angazovanja");
+                MessageBox.Show("Uspesno ste sacuvali angazovanja");
             }
             catch (Exception ex)
             {
@@ -487,7 +487,12 @@ namespace Client.Controller
 
         internal void UpdateAngazovanje(DataGridView dgvAngazovanja, DataGridView dgvOmladinci, DateTimePicker dtpDatumAngazovanja)
         {
-           
+            
+            if (dgvAngazovanja.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Morate izabrati angazovanje koje menjate!");
+                return;
+            }
             if (dgvOmladinci.SelectedRows.Count > 1)
             {
                 MessageBox.Show("Izaberite samo jednog omladinca!");
