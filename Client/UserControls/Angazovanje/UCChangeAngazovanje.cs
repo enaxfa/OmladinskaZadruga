@@ -37,6 +37,12 @@ namespace Client.UserControls.Angazovanje
 
         private void dgvOmladinci_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if(dgvAngazovanja.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Prvo izaberite angazovanje koje menjate");
+                dgvOmladinci.ClearSelection();
+                return;
+            }
             mainController.PrikaziOmladinca(dgvOmladinci, txtImeOmladinca, txtBrTelOml, txtBrRacOml, txtDatumRodj);
             btnIzmeni.Enabled = true;
         }
@@ -62,5 +68,6 @@ namespace Client.UserControls.Angazovanje
             dgvAngazovanja.ClearSelection();
             dgvOmladinci.ClearSelection();
         }
+
     }
 }
