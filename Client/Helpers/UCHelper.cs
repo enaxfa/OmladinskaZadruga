@@ -58,8 +58,7 @@ namespace Client.Helpers
                 else
                 {
                     txt.BackColor = Color.White;
-                    AllNumberValidation(txt);
-                    return true;
+                    return AllNumberValidation(txt);
                 }
             }
             catch (Exception)
