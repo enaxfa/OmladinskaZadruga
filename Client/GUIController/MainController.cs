@@ -356,10 +356,12 @@ namespace Client.Controller
         }
 
         private int brojOmladinaca;
-        internal string VratiBrojOmladinacaZaPosao(DataGridView dgvPoslovi)
+        internal string VratiBrojOmladinacaZaPosao(DataGridView dgvPoslovi, DataGridView dgvOmladinci)
         {
             Posao posao = (Posao)dgvPoslovi.SelectedRows[0].DataBoundItem;
             brojOmladinaca = posao.BrojOmladinaca;
+            if (dgvOmladinci.SelectedRows.Count > 0)
+                return VratiBrojPreostalihOmladinaca(dgvOmladinci);
             return brojOmladinaca.ToString();
         }
 

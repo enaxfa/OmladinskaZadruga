@@ -37,7 +37,7 @@ namespace Client.UserControls.Posao
         {
             label4.Visible = true;
             lblBrOml.Visible = true;
-            lblBrOml.Text = mainController.VratiBrojOmladinacaZaPosao(dgvPoslovi);
+            lblBrOml.Text = mainController.VratiBrojOmladinacaZaPosao(dgvPoslovi, dgvOmladinci);
         }
 
         private void dgvOmladinci_CellClick(object sender, DataGridViewCellEventArgs e)

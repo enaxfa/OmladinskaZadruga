@@ -43,7 +43,7 @@ namespace Client.UserControls.Angazovanje
 
         private void txtFilterOml_TextChanged(object sender, EventArgs e)
         {
-            mainController.SearchOmladinac(txtFilterOml);
+            dgvOmladinci.DataSource = mainController.SearchOmladinac(txtFilterOml);
         }
 
         private void btnIzmeni_Click(object sender, EventArgs e)
