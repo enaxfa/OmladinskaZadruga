@@ -30,7 +30,7 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => $"'{Ime}','{Prezime}', '{JMBG}','{BrojTelefona}',{BrojRacuna},'{DatumRodjenja}'";
         [Browsable(false)]
-        public object SelectValues => "*";
+        public string SelectValues => "*";
         [Browsable(false)]
         public string SearchCondition => Uslov;
         [Browsable(false)]

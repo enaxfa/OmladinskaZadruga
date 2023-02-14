@@ -16,8 +16,6 @@ namespace Client.GUIController
     {
         private FrmMain frmMain;
         private FrmLogin frmLogin;
-        private MainController mainController;
-        private LoginController loginController;
         private static FormCoordinator instance;
         public static FormCoordinator Instance
         {
@@ -32,8 +30,6 @@ namespace Client.GUIController
         }
         private FormCoordinator()
         {
-            mainController = new MainController();
-            loginController = new LoginController();
             frmLogin = new FrmLogin();
         }
 

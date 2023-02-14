@@ -74,7 +74,7 @@ namespace Server
                         Controller.Instance.DeletePoslodavac((Poslodavac)request.RequestObject);
                         break;
                     case Operation.GetPoslodavce:
-                        response.Result = Controller.Instance.GetPoslodavce((Poslodavac)request.RequestObject);
+                        response.Result = Controller.Instance.GetPoslodavci((Poslodavac)request.RequestObject);
                         break;
                     case Operation.GetTipPoslova:
                         response.Result = Controller.Instance.GetTipPoslova((TipPosla)request.RequestObject);

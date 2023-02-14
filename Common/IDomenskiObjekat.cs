@@ -12,7 +12,7 @@ namespace Common
     {
         string TableName { get; }
         string InsertValues { get; }
-        object SelectValues { get; }
+        string SelectValues { get; }
         string SearchCondition { get; }
         string SetValues { get;  }
         string WhereCondition { get; }

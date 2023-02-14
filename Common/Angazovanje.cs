@@ -22,7 +22,7 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => $"'{Omladinac.IDOmladinca}','{Posao.Poslodavac.IDPoslodavca}','{Posao.IdPosla}', '{DatumAngazovanja}'";
         [Browsable(false)]
-        public object SelectValues => "a.id,o.id, o.ime, o.prezime, o.jmbg, o.brojracuna, o.brojtelefona, o.datumrodjenja" +
+        public string SelectValues => "a.id,o.id, o.ime, o.prezime, o.jmbg, o.brojracuna, o.brojtelefona, o.datumrodjenja" +
             ",p.id, p.naziv, p.pib, p.adresa, p.email, p.brojtelefona, tp.id, tp.Naziv, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.brojOmladinaca, posao.Id, a.Datum";
         [Browsable(false)]
         public string SearchCondition => Uslov;

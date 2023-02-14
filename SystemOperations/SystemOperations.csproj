@@ -57,7 +57,7 @@
     <Compile Include="PosaoSO\UpdatePosaoSO.cs" />
     <Compile Include="PoslodavacSO\AddPoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\DeletePoslodavacSO.cs" />
-    <Compile Include="PoslodavacSO\GetPoslodavceSO.cs" />
+    <Compile Include="PoslodavacSO\GetPoslodavciSO.cs" />
     <Compile Include="PoslodavacSO\SearchPoslodavacSO.cs" />
     <Compile Include="PoslodavacSO\UpdatePoslodavacSO.cs" />
     <Compile Include="SOBase.cs" />

@@ -68,6 +68,13 @@ namespace Server
             so.ExecuteTemplate(omladinac);
         }
 
+        internal List<Omladinac> GetOmladinci(Omladinac omladinac)
+        {
+            GetOmladinciSO so = new GetOmladinciSO();
+            so.ExecuteTemplate(omladinac);
+            return so.Result;
+        }
+
         internal void AddPoslodavac(Poslodavac poslodavac)
         {
             AddPoslodavacSO so = new AddPoslodavacSO();
@@ -93,9 +100,9 @@ namespace Server
             so.ExecuteTemplate(poslodavac);
         }
 
-        internal List<Poslodavac> GetPoslodavce(Poslodavac poslodavac)
+        internal List<Poslodavac> GetPoslodavci(Poslodavac poslodavac)
         {
-            GetPoslodavceSO so = new GetPoslodavceSO();
+            GetPoslodavciSO so = new GetPoslodavciSO();
             so.ExecuteTemplate(poslodavac);
             return so.Result;
         }
@@ -119,13 +126,12 @@ namespace Server
             so.ExecuteTemplate(posao);
             return so.Result;
         }
-
-        internal List<Omladinac> GetOmladinci(Omladinac omladinac)
+        internal void UpdatePosao(Posao posao)
         {
-            GetOmladinciSO so = new GetOmladinciSO();
-            so.ExecuteTemplate(omladinac);
-            return so.Result;
+            UpdatePosaoSO so = new UpdatePosaoSO();
+            so.ExecuteTemplate(posao);
         }
+
 
         internal object GetPoslovi(Posao posao)
         {
@@ -143,11 +149,7 @@ namespace Server
             }
         }
 
-        internal void UpdatePosao(Posao posao)
-        {
-            UpdatePosaoSO so = new UpdatePosaoSO();
-            so.ExecuteTemplate(posao);
-        }
+        
 
         internal List<Angazovanje> GetAngazovanja(Angazovanje angazovanje)
         {

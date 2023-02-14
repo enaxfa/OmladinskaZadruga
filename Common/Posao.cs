@@ -30,7 +30,7 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => $"{Poslodavac.IDPoslodavca},'{Lokacija}', {Satnica},{CenaRadnogSata},{BrojOmladinaca}, {TipPosla.Id}";
         [Browsable(false)]
-        public object SelectValues => "p.Id, p.Naziv, tp.Id, tp.Naziv, posao.Id, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.BrojOmladinaca";
+        public string SelectValues => "p.Id, p.Naziv, tp.Id, tp.Naziv, posao.Id, posao.Lokacija, posao.Satnica, posao.CenaRadnogSata, posao.BrojOmladinaca";
         [Browsable(false)]
         public String Uslov { get; set; }
         [Browsable(false)]

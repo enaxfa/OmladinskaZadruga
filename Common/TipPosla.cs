@@ -25,7 +25,7 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => "";
         [Browsable(false)]
-        public object SelectValues => "*";
+        public string SelectValues => "*";
         [Browsable(false)]
         public string SearchCondition => "";
         [Browsable(false)]

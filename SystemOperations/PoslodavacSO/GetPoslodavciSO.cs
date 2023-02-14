@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SystemOperations.PoslodavacSO
 {
-    public class GetPoslodavceSO : SOBase
+    public class GetPoslodavciSO : SOBase
     {
         public List<Poslodavac> Result { get; set; }
         protected override void ExecuteOperation(IDomenskiObjekat entity)

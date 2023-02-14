@@ -33,7 +33,7 @@ namespace Client.UserControls.Poslodavac
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            dgvPoslodavci.DataSource = mainController.SearchPoslodavac(txtFilter, this);
+            dgvPoslodavci.DataSource = mainController.SearchPoslodavac(txtFilter);
         }
 
         private void dgvPoslodavci_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

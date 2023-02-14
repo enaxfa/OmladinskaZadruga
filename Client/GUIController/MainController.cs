@@ -174,7 +174,7 @@ namespace Client.Controller
             
         }
 
-        internal List<Poslodavac> SearchPoslodavac(TextBox txtFilter, UCChangePoslodavac userControl)
+        internal List<Poslodavac> SearchPoslodavac(TextBox txtFilter)
         {
             try
             {
@@ -184,7 +184,6 @@ namespace Client.Controller
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
                 return null;
             }

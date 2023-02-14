@@ -29,7 +29,7 @@ namespace Common
         [Browsable(false)]
         public string InsertValues => $"'{Naziv}', '{PIB}', '{Adresa}','{Email}','{Kontakt}'";
         [Browsable(false)]
-        public object SelectValues => "*";
+        public string SelectValues => "*";
         [Browsable(false)]
         public String Uslov { get; set; }
         [Browsable(false)]
