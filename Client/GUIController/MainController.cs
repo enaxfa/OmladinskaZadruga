@@ -110,7 +110,7 @@ namespace Client.Controller
                 Communication.Instance.UpdateOmladinac(omladinac);
                 MessageBox.Show("Uspešno ste izmenili omladinca!");
                 dgvOmladinci.DataSource = GetOmladinci();
-
+                dgvOmladinci.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -127,6 +127,7 @@ namespace Client.Controller
                 Communication.Instance.DeleteOmladinac(omladinac);
                 MessageBox.Show("Uspešno ste obrisali omladinca!");
                 dgvOmladinci.DataSource = GetOmladinci();
+                dgvOmladinci.ClearSelection();
                 UCHelper.ResetFields(txtIme, txtPrezime, txtJMBG, txtBrRacuna, txtBrTelefona, txtDatumRodjenja);
             }
             catch (Exception ex)
@@ -224,6 +225,7 @@ namespace Client.Controller
 
                 Communication.Instance.UpdatePoslodavac(poslodavac);
                 dgvPoslodavci.DataSource = GetPoslodavci();
+                dgvPoslodavci.ClearSelection();
                 MessageBox.Show("Uspešno ste izmenili poslodavca!");
 
             }
@@ -241,6 +243,7 @@ namespace Client.Controller
                 Poslodavac poslodavac = (Poslodavac)dgvPoslodavci.SelectedRows[0].DataBoundItem;
                 Communication.Instance.DeletePoslodavac(poslodavac);
                 dgvPoslodavci.DataSource = GetPoslodavci();
+                dgvPoslodavci.ClearSelection();
                 MessageBox.Show("Uspešno ste obrisali poslodavca!");
                 UCHelper.ResetFields(txtNaziv, txtPIB, txtAdresa, txtEmail, txtBrTelefona);
             }
@@ -410,6 +413,8 @@ namespace Client.Controller
                 Communication.Instance.AddAngazovanja(angazovanja);
                 posao.BrojOmladinaca -= omladinci.Count;
                 Communication.Instance.UpdatePosao(posao);
+                dgvOmladinci.ClearSelection();
+                dgvPoslovi.ClearSelection();
                 MessageBox.Show("Uspesno ste sacuvali angazovanja");
             }
             catch (Exception ex)
@@ -513,6 +518,8 @@ namespace Client.Controller
                 angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
                 Communication.Instance.UpdateAngazovanje(angazovanje);
                 dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
+                dgvOmladinci.ClearSelection();
+                dgvAngazovanja.ClearSelection();
                 MessageBox.Show("Uspesno ste sacuvali angazovanje");
             }
             catch (Exception ex)

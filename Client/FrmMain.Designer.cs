@@ -59,7 +59,7 @@
             this.angazovanjaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1422, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1422, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -69,7 +69,7 @@
             this.dodajToolStripMenuItem,
             this.izmeniToolStripMenuItem});
             this.omladinacToolStripMenuItem.Name = "omladinacToolStripMenuItem";
-            this.omladinacToolStripMenuItem.Size = new System.Drawing.Size(95, 26);
+            this.omladinacToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.omladinacToolStripMenuItem.Text = "Omladinac";
             // 
             // dodajToolStripMenuItem
@@ -92,7 +92,7 @@
             this.dodajToolStripMenuItem1,
             this.izmeniToolStripMenuItem1});
             this.poslodavacToolStripMenuItem.Name = "poslodavacToolStripMenuItem";
-            this.poslodavacToolStripMenuItem.Size = new System.Drawing.Size(97, 26);
+            this.poslodavacToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.poslodavacToolStripMenuItem.Text = "Poslodavac";
             // 
             // dodajToolStripMenuItem1
@@ -114,7 +114,7 @@
             this.posaoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajToolStripMenuItem2});
             this.posaoToolStripMenuItem.Name = "posaoToolStripMenuItem";
-            this.posaoToolStripMenuItem.Size = new System.Drawing.Size(62, 26);
+            this.posaoToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.posaoToolStripMenuItem.Text = "Posao";
             // 
             // dodajToolStripMenuItem2
@@ -130,7 +130,7 @@
             this.dodajToolStripMenuItem3,
             this.izmeniToolStripMenuItem2});
             this.angazovanjaToolStripMenuItem.Name = "angazovanjaToolStripMenuItem";
-            this.angazovanjaToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
+            this.angazovanjaToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.angazovanjaToolStripMenuItem.Text = "Angazovanja";
             // 
             // dodajToolStripMenuItem3
@@ -151,9 +151,9 @@
             // 
             this.pnlMain.Controls.Add(this.pictureBox1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 30);
+            this.pnlMain.Location = new System.Drawing.Point(0, 28);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1422, 533);
+            this.pnlMain.Size = new System.Drawing.Size(1422, 535);
             this.pnlMain.TabIndex = 1;
             // 
             // pictureBox1

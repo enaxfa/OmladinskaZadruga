@@ -29,15 +29,13 @@ namespace Client.GUIController
 
         internal void Login(TextBox txtUsername, TextBox txtPassword)
         {
-            //if (!UCHelper.EmptyFieldValidation(txtUsername) | !UCHelper.EmptyFieldValidation(txtPassword))
-                //return;
+            if (!UCHelper.EmptyFieldValidation(txtUsername) | !UCHelper.EmptyFieldValidation(txtPassword))
+                return;
 
             Administrator a = new Administrator
             {
-                //KorisnickoIme = txtUsername.Text,
-                //Sifra = txtPassword.Text
-                KorisnickoIme = "pera",
-                Sifra = "pera"
+                KorisnickoIme = txtUsername.Text,
+                Sifra = txtPassword.Text
             };
             Administrator administrator = Communication.Instance.Login(a);
 

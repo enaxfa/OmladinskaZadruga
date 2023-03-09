@@ -62,7 +62,6 @@ namespace Client
             FormCoordinator.Instance.OpenUCAddPosao();
         }
 
-
         private void dodajToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             FormCoordinator.Instance.OpenUCAddAngazovanje();
