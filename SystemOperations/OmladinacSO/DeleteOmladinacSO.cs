@@ -9,9 +9,9 @@ namespace SystemOperations.OmladinacSO
 {
     public class DeleteOmladinacSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Delete(entity);
+            repository.Delete((Omladinac)entity);
         }
     }
 }

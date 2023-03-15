@@ -12,9 +12,9 @@ namespace SystemOperations.AngazovanjeSO
     {
         public List<Angazovanje> Result { get; set; }
 
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAllWithCondition(entity).Cast<Angazovanje>().ToList();
+            Result = repository.GetAllWithCondition((Angazovanje)entity).Cast<Angazovanje>().ToList();
         }
     }
 }

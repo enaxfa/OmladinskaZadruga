@@ -10,9 +10,9 @@ namespace SystemOperations.OmladinacSO
     public class GetOmladinciSO : SOBase
     {
         public List<Omladinac> Result { get; set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAll(entity).Cast<Omladinac>().ToList();
+            Result = repository.GetAll((Omladinac)entity).Cast<Omladinac>().ToList();
         }
     }
 }

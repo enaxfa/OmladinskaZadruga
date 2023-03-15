@@ -9,9 +9,9 @@ namespace SystemOperations.PoslodavacSO
 {
     public class DeletePoslodavacSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Delete(entity);
+            repository.Delete((Poslodavac)entity);
         }
     }
 }

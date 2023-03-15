@@ -10,9 +10,9 @@ namespace SystemOperations.PoslodavacSO
     public class GetPoslodavciSO : SOBase
     {
         public List<Poslodavac> Result { get; set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAll(entity).Cast<Poslodavac>().ToList();
+            Result = repository.GetAll((Poslodavac)entity).Cast<Poslodavac>().ToList();
         }
     }
 }

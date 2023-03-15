@@ -9,9 +9,9 @@ namespace SystemOperations.PoslodavacSO
 {
     public class UpdatePoslodavacSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Update(entity);
+            repository.Update((Poslodavac)entity);
         }
     }
 }

@@ -457,7 +457,7 @@ namespace Client.Controller
 
        
 
-        internal void PrikaziAngazovanje(DataGridView dgvAngazovanja, TextBox txtImeOmladinca, TextBox txtBrTelOml, TextBox txtBrRacOml, TextBox txtDatumRodj, TextBox txtPosao, TextBox txtPoslodavac, TextBox txtSatnica, TextBox txtCenaRS, TextBox txtBrOml)
+        internal void PrikaziAngazovanje(DataGridView dgvAngazovanja, TextBox txtImeOmladinca, TextBox txtBrTelOml, TextBox txtBrRacOml, TextBox txtDatumRodj, TextBox txtPosao, TextBox txtPoslodavac, TextBox txtSatnica, TextBox txtCenaRS, TextBox txtBrOml, DateTimePicker dtpDatumAngazovanja)
         {
             if (dgvAngazovanja.SelectedRows.Count == 0)
             {
@@ -474,6 +474,7 @@ namespace Client.Controller
             txtSatnica.Text = angazovanje.Posao.Satnica.ToString();
             txtCenaRS.Text = angazovanje.Posao.CenaRadnogSata.ToString();
             txtBrOml.Text = angazovanje.Posao.BrojOmladinaca.ToString();
+            dtpDatumAngazovanja.Value = angazovanje.DatumAngazovanja;
         }
 
 

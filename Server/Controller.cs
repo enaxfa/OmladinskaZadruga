@@ -143,10 +143,8 @@ namespace Server
         internal void AddAngazovanja(List<Angazovanje> angazovanja)
         {
             AddAngazovanjaSO so = new AddAngazovanjaSO();
-            foreach(Angazovanje a in angazovanja)
-            {
-                so.ExecuteTemplate(a);
-            }
+            so.ExecuteTemplate(angazovanja);
+            
         }
 
         

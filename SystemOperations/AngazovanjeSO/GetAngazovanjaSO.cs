@@ -11,9 +11,9 @@ namespace SystemOperations.AngazovanjeSO
     public class GetAngazovanjaSO : SOBase
     {
         public List<Angazovanje> Result { get; set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAll(entity).Cast<Angazovanje>().ToList();
+            Result = repository.GetAll((Angazovanje)entity).Cast<Angazovanje>().ToList();
         }
 
     }

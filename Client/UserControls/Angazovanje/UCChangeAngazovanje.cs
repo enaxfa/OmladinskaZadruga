@@ -19,7 +19,6 @@ namespace Client.UserControls.Angazovanje
             InitializeComponent();
             dgvAngazovanja.DataSource = mainController.GetAngazovanja();
             dgvOmladinci.DataSource = mainController.GetOmladinci();
-            dtpDatumAngazovanja.MinDate = DateTime.Now;
         }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
@@ -29,7 +28,7 @@ namespace Client.UserControls.Angazovanje
 
         private void dgvAngazovanja_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            mainController.PrikaziAngazovanje(dgvAngazovanja,txtImeOmladinca,txtBrTelOml,txtBrRacOml,txtDatumRodj, txtPosao,txtPoslodavac,txtSatnica,txtCenaRS,txtBrOml);
+            mainController.PrikaziAngazovanje(dgvAngazovanja,txtImeOmladinca,txtBrTelOml,txtBrRacOml,txtDatumRodj, txtPosao,txtPoslodavac,txtSatnica,txtCenaRS,txtBrOml,dtpDatumAngazovanja);
             
         }
 

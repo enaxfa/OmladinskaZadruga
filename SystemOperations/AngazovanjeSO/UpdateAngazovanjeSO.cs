@@ -9,9 +9,9 @@ namespace SystemOperations.AngazovanjeSO
 {
     public class UpdateAngazovanjeSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Update(entity);
+            repository.Update((Angazovanje)entity);
         }
     }
 }

@@ -9,9 +9,9 @@ namespace SystemOperations.OmladinacSO
 {
     public class AddOmladinacSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Add(entity);
+            repository.Add((Omladinac)entity);
         }
     }
 }

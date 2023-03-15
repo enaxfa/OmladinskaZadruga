@@ -9,9 +9,9 @@ namespace SystemOperations.PosaoSO
 {
     public class AddPosaoSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Add(entity);
+            repository.Add((Posao)entity);
         }
     }
 }

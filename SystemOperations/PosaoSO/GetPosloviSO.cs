@@ -10,9 +10,9 @@ namespace SystemOperations.PosaoSO
     public class GetPosloviSO : SOBase
     {
         public List<Posao> Result { get; set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-           Result = repository.GetAll(entity).Cast<Posao>().ToList();
+           Result = repository.GetAll((Posao)entity).Cast<Posao>().ToList();
         }
     }
 }

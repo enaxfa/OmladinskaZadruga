@@ -10,9 +10,9 @@ namespace SystemOperations.PosaoSO
     public class SearchPosaoSO : SOBase
     {
         public List<Posao> Result { get; set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAllWithCondition(entity).Cast<Posao>().ToList();
+            Result = repository.GetAllWithCondition((Posao)entity).Cast<Posao>().ToList();
         }
     }
 }

@@ -11,9 +11,9 @@ namespace SystemOperations.OmladinacSO
     {
         public List<Omladinac> Result { get; set; }
 
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAllWithCondition(entity).Cast<Omladinac>().ToList();
+            Result = repository.GetAllWithCondition((Omladinac)entity).Cast<Omladinac>().ToList();
         }
     }
 }

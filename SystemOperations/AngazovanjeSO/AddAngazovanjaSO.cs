@@ -9,9 +9,20 @@ namespace SystemOperations.AngazovanjeSO
 {
     public class AddAngazovanjaSO : SOBase
     {
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            repository.Add(entity);
+            List<Angazovanje> angazovanja = (List<Angazovanje>)entity;
+            List<Angazovanje> postojecaAngazovanja = repository.GetAll(new Angazovanje()).Cast<Angazovanje>().ToList();
+            foreach (Angazovanje angazovanje in postojecaAngazovanja)
+            {
+                foreach(Angazovanje a in angazovanja)
+                {
+                    if (angazovanje.Omladinac.Equals(a.Omladinac) && angazovanje.DatumAngazovanja == a.DatumAngazovanja)
+                        throw new Exception("Omladinac vec radi tog dana");
+                }
+            }
+            foreach(Angazovanje a in angazovanja)
+                repository.Add(a);
         }
     }
 }

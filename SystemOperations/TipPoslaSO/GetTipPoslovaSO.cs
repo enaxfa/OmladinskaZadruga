@@ -10,9 +10,9 @@ namespace SystemOperations.TipPoslaSO
     public class GetTipPoslovaSO : SOBase
     {
         public List<TipPosla> Result { get; set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
-            Result = repository.GetAll(entity).Cast<TipPosla>().ToList();
+            Result = repository.GetAll((TipPosla)entity).Cast<TipPosla>().ToList();
         }
     }
 }

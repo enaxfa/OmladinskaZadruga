@@ -19,7 +19,7 @@ namespace SystemOperations
             repository = new GenericDBRepository();
         }
 
-        public void ExecuteTemplate(IDomenskiObjekat entity)
+        public void ExecuteTemplate(object entity)
         {
             try
             {
@@ -37,6 +37,6 @@ namespace SystemOperations
             }
         }
 
-        protected abstract void ExecuteOperation(IDomenskiObjekat entity);
+        protected abstract void ExecuteOperation(object entity);
     }
 }

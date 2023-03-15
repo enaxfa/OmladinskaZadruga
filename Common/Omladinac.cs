@@ -47,8 +47,8 @@ namespace Common
         public string JoinTable => "";
         [Browsable(false)]
         public string TableAlias => "";
-
-        
+       
+       
 
         [Browsable(false)]
         public List<IDomenskiObjekat> GetEntities(SqlDataReader reader)
@@ -68,6 +68,14 @@ namespace Common
                 });
             }
             return result;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj is Omladinac o)
+            {
+                return o.IDOmladinca == this.IDOmladinca;
+            }
+            return false;
         }
 
         public override string ToString()

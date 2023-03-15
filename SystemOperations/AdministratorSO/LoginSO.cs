@@ -10,7 +10,7 @@ namespace SystemOperations.AdministratorSO
     public class LoginSO : SOBase
     {
         public Administrator Result { get; private set; }
-        protected override void ExecuteOperation(IDomenskiObjekat entity)
+        protected override void ExecuteOperation(object entity)
         {
             Administrator a = (Administrator)entity;
             foreach (Administrator admin in repository.GetAll(new Administrator()))
