@@ -456,7 +456,6 @@ namespace Client.Controller
         }
 
        
-
         internal void PrikaziAngazovanje(DataGridView dgvAngazovanja, TextBox txtImeOmladinca, TextBox txtBrTelOml, TextBox txtBrRacOml, TextBox txtDatumRodj, TextBox txtPosao, TextBox txtPoslodavac, TextBox txtSatnica, TextBox txtCenaRS, TextBox txtBrOml, DateTimePicker dtpDatumAngazovanja)
         {
             if (dgvAngazovanja.SelectedRows.Count == 0)
@@ -512,12 +511,7 @@ namespace Client.Controller
             }
             try
             {
-                Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
-                if(dgvOmladinci.SelectedRows.Count == 1)
-                    angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
-                String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
-                angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
-                Communication.Instance.UpdateAngazovanje(angazovanje);
+                Communication.Instance.UpdateAngazovanje(angazovanja);
                 dgvAngazovanja.DataSource = Communication.Instance.GetAngazovanja();
                 dgvOmladinci.ClearSelection();
                 dgvAngazovanja.ClearSelection();
@@ -527,6 +521,28 @@ namespace Client.Controller
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private List<Angazovanje> angazovanja = new List<Angazovanje>();
+        internal void SacuvajIzmene(DataGridView dgvAngazovanja, DataGridView dgvOmladinci, DateTimePicker dtpDatumAngazovanja)
+        {
+            Angazovanje angazovanje = (Angazovanje)dgvAngazovanja.SelectedRows[0].DataBoundItem;
+            if (dgvOmladinci.SelectedRows.Count == 1)
+                angazovanje.Omladinac = (Omladinac)dgvOmladinci.SelectedRows[0].DataBoundItem;
+            String datum = dtpDatumAngazovanja.Value.Date.ToString("yyyy-MM-dd");
+            angazovanje.DatumAngazovanja = Convert.ToDateTime(datum);
+            dgvAngazovanja.Refresh();
+            dodajUListu(angazovanje);
+        }
+
+        private void dodajUListu(Angazovanje angazovanje)
+        {
+            if (!angazovanja.Contains(angazovanje))
+                angazovanja.Add(angazovanje);
+            else
+            {
+               angazovanja.Remove(angazovanje);
+               angazovanja.Add(angazovanje);
             }
         }
     }

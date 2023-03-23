@@ -7,11 +7,23 @@ using System.Threading.Tasks;
 
 namespace SystemOperations.AngazovanjeSO
 {
-    public class UpdateAngazovanjeSO : SOBase
+    public class UpdateAngazovanjaSO : SOBase
     {
         protected override void ExecuteOperation(object entity)
         {
-            repository.Update((Angazovanje)entity);
+            List<Angazovanje> angazovanja = (List<Angazovanje>)entity;
+            List<Angazovanje> postojecaAngazovanja = repository.GetAll(new Angazovanje()).Cast<Angazovanje>().ToList();
+            foreach (Angazovanje angazovanje in postojecaAngazovanja)
+            {
+                foreach (Angazovanje a in angazovanja)
+                {
+                    if (angazovanje.Omladinac.Equals(a.Omladinac) && angazovanje.DatumAngazovanja == a.DatumAngazovanja)
+                        throw new Exception("Omladinac vec radi tog dana");
+                }
+            }
+            foreach (Angazovanje a in angazovanja)
+                repository.Update(a);
         }
+        
     }
 }

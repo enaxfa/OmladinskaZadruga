@@ -274,12 +274,12 @@ namespace Client
         }
 
 
-        internal void UpdateAngazovanje(Angazovanje angazovanje)
+        internal void UpdateAngazovanje(List<Angazovanje> angazovanja)
         {
             Request request = new Request()
             {
                 Operation = Operation.UpdateAngazovanje,
-                RequestObject = angazovanje
+                RequestObject = angazovanja
             };
             transfer.Send(request);
             Response response = transfer.Receive<Response>();

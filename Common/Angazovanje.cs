@@ -88,5 +88,11 @@ namespace Common
             return result;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is Angazovanje a)
+                return a.Id == this.Id;
+            return false;
+        }
     }
 }

@@ -164,10 +164,10 @@ namespace Server
         }
 
 
-        internal void UpdateAngazovanje(Angazovanje angazovanje)
+        internal void UpdateAngazovanja(List<Angazovanje> angazovanja)
         {
-            UpdateAngazovanjeSO so = new UpdateAngazovanjeSO();
-            so.ExecuteTemplate(angazovanje);
+            UpdateAngazovanjaSO so = new UpdateAngazovanjaSO();
+            so.ExecuteTemplate(angazovanja);
         }
     }
 }

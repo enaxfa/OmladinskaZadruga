@@ -104,7 +104,7 @@ namespace Server
                         response.Result = Controller.Instance.SearchAngazovanja((Angazovanje)request.RequestObject);
                         break;
                     case Operation.UpdateAngazovanje:
-                        Controller.Instance.UpdateAngazovanje((Angazovanje)request.RequestObject);
+                        Controller.Instance.UpdateAngazovanja((List<Angazovanje>)request.RequestObject);
                         break;
                     default:
                         response.Exception = new Exception("Operation is not yet implemented!");

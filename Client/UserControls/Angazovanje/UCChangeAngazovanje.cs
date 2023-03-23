@@ -28,11 +28,10 @@ namespace Client.UserControls.Angazovanje
 
         private void dgvAngazovanja_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            dgvOmladinci.ClearSelection();
             mainController.PrikaziAngazovanje(dgvAngazovanja,txtImeOmladinca,txtBrTelOml,txtBrRacOml,txtDatumRodj, txtPosao,txtPoslodavac,txtSatnica,txtCenaRS,txtBrOml,dtpDatumAngazovanja);
             
         }
-
-        
 
         private void dgvOmladinci_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -43,6 +42,7 @@ namespace Client.UserControls.Angazovanje
                 return;
             }
             mainController.PrikaziOmladinca(dgvOmladinci, txtImeOmladinca, txtBrTelOml, txtBrRacOml, txtDatumRodj);
+            mainController.SacuvajIzmene(dgvAngazovanja, dgvOmladinci, dtpDatumAngazovanja);
             btnIzmeni.Enabled = true;
         }
 
@@ -57,16 +57,16 @@ namespace Client.UserControls.Angazovanje
         }
 
 
-        private void dtpDatumAngazovanja_MouseEnter(object sender, EventArgs e)
-        {
-            btnIzmeni.Enabled = true;
-        }
-
         private void UCChangeAngazovanje_Load(object sender, EventArgs e)
         {
             dgvAngazovanja.ClearSelection();
             dgvOmladinci.ClearSelection();
         }
 
+        private void dtpDatumAngazovanja_ValueChanged(object sender, EventArgs e)
+        {
+            mainController.SacuvajIzmene(dgvAngazovanja, dgvOmladinci, dtpDatumAngazovanja);
+            btnIzmeni.Enabled = true;
+        }
     }
 }
