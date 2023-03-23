@@ -22,7 +22,7 @@ namespace Common
 
         public override string ToString()
         {
-            return Poslodavac.Naziv + "-" + TipPosla.Naziv + " " + Lokacija;
+            return Poslodavac.Naziv + "-" + TipPosla.Naziv + ": " + Lokacija;
         }
 
         [Browsable(false)]

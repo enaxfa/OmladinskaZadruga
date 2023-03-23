@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAngazovanja = new System.Windows.Forms.DataGridView();
-            this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlOmladinac = new System.Windows.Forms.Panel();
             this.txtDatumRodj = new System.Windows.Forms.TextBox();
             this.txtBrRacOml = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.txtFilterOml = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpDatumAngazovanja = new System.Windows.Forms.DateTimePicker();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAngazovanja)).BeginInit();
             this.pnlOmladinac.SuspendLayout();
             this.pnlPosao.SuspendLayout();
@@ -86,17 +86,6 @@
             this.dgvAngazovanja.Size = new System.Drawing.Size(573, 209);
             this.dgvAngazovanja.TabIndex = 79;
             this.dgvAngazovanja.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAngazovanja_CellMouseClick);
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFilter.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.txtFilter.Location = new System.Drawing.Point(88, 110);
-            this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(247, 24);
-            this.txtFilter.TabIndex = 78;
-            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // pnlOmladinac
             // 
@@ -352,6 +341,17 @@
             this.dtpDatumAngazovanja.TabIndex = 90;
             this.dtpDatumAngazovanja.ValueChanged += new System.EventHandler(this.dtpDatumAngazovanja_ValueChanged);
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFilter.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.txtFilter.Location = new System.Drawing.Point(88, 110);
+            this.txtFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(247, 24);
+            this.txtFilter.TabIndex = 78;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
             // UCChangeAngazovanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -385,7 +385,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvAngazovanja;
-        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Panel pnlOmladinac;
         private System.Windows.Forms.TextBox txtDatumRodj;
         private System.Windows.Forms.TextBox txtBrRacOml;
@@ -412,5 +411,6 @@
         private System.Windows.Forms.TextBox txtFilterOml;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtpDatumAngazovanja;
+        private System.Windows.Forms.TextBox txtFilter;
     }
 }

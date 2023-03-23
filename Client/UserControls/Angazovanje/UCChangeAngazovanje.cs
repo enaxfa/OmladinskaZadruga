@@ -19,6 +19,7 @@ namespace Client.UserControls.Angazovanje
             InitializeComponent();
             dgvAngazovanja.DataSource = mainController.GetAngazovanja();
             dgvOmladinci.DataSource = mainController.GetOmladinci();
+            dgvAngazovanja.Columns[1].Width = 200;
         }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
