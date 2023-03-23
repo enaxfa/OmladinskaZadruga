@@ -42,6 +42,17 @@ namespace Client.UserControls.Posao
 
         private void dgvOmladinci_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            foreach (DataGridViewRow gr in old)
+            {
+                if (gr == dgvOmladinci.CurrentRow)
+                {
+                    gr.Selected = false;
+                }
+                else
+                {
+                    gr.Selected = true;
+                }
+            }
             lblBrOml.Text = mainController.VratiBrojPreostalihOmladinaca(dgvOmladinci);
         }
 
@@ -54,6 +65,12 @@ namespace Client.UserControls.Posao
         {
             dgvOmladinci.ClearSelection();
             dgvPoslovi.ClearSelection();
+        }
+        DataGridViewRow[] old;
+        private void dgvOmladinci_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            old = new DataGridViewRow[dgvOmladinci.SelectedRows.Count];
+            dgvOmladinci.SelectedRows.CopyTo(old, 0);
         }
     }
 }

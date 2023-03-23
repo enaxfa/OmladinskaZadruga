@@ -103,6 +103,7 @@ namespace Client.UserControls.Posao
             this.dgvOmladinci.Size = new System.Drawing.Size(795, 158);
             this.dgvOmladinci.TabIndex = 85;
             this.dgvOmladinci.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOmladinci_CellClick);
+            this.dgvOmladinci.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOmladinci_CellMouseDown);
             // 
             // txtFilterOmladinac
             // 
